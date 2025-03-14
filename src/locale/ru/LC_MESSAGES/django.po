@@ -1,0 +1,100 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-03-10 14:35+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\movies\forms.py:14 .\movies\models.py:63
+msgid "Title"
+msgstr "Название"
+
+#: .\movies\forms.py:15 .\movies\models.py:67
+msgid "Title orig"
+msgstr "Оригинальное название"
+
+#: .\movies\forms.py:16 .\movies\models.py:71
+msgid "Release year"
+msgstr "Год выпуска"
+
+#: .\movies\forms.py:17 .\movies\models.py:18 .\movies\models.py:26
+#: .\movies\models.py:77
+msgid "Country"
+msgstr "Страна"
+
+#: .\movies\forms.py:18 .\movies\models.py:33 .\movies\models.py:41
+#: .\movies\models.py:82
+msgid "Genre"
+msgstr "Жанр"
+
+#: .\movies\forms.py:19 .\movies\models.py:48 .\movies\models.py:56
+#: .\movies\models.py:87
+msgid "Director"
+msgstr "Режиссер"
+
+#: .\movies\forms.py:20 .\movies\models.py:92
+msgid "Slogan"
+msgstr "Слоган"
+
+#: .\movies\forms.py:21 .\movies\models.py:98
+msgid "Description"
+msgstr "Описание"
+
+#: .\movies\forms.py:22 .\movies\models.py:101
+msgid "KP rating"
+msgstr "Рейтинг КП"
+
+#: .\movies\forms.py:23 .\movies\models.py:104
+msgid "My rating"
+msgstr "Рейтинг мой"
+
+#: .\movies\forms.py:24 .\movies\models.py:110
+msgid "Poster"
+msgstr "Постер"
+
+#: .\movies\forms.py:25 .\movies\models.py:114
+msgid "Kinopoisk url"
+msgstr "Страница на КП"
+
+#: .\movies\models.py:27
+msgid "Countries"
+msgstr "Страны"
+
+#: .\movies\models.py:42
+msgid "Genres"
+msgstr "Жанры"
+
+#: .\movies\models.py:57
+msgid "Directors"
+msgstr "Режиссеры"
+
+#: .\movies\models.py:131
+msgid "Movie"
+msgstr "Фильм"
+
+#: .\movies\models.py:132
+msgid "Movies"
+msgstr "Фильмы"
+
+#: .\templates\admin\base_site.html:3
+msgid "Django site admin"
+msgstr ""
+
+#: .\templates\admin\base_site.html:6
+msgid "Movies DB Administration"
+msgstr "Админка для Movies DB"
