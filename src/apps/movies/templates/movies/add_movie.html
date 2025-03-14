@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+    <meta charset="utf-8" />
+    <title>Добавить фильм</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'movies/style.css' %}">
+</head>
+<body>
+    <h1 class="big-header">Добавить новый фильм</h1>
+
+    <form action="/movie/add_movie/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="my-fieldset aligned">
+            {% for field in form %}
+            <div class="form-row">
+                {{ field.errors }}
+                {{ field.label_tag }} {{ field }}
+            </div>
+            {% endfor %}
+        </fieldset>
+        <div class="submit-row">
+            <input type="submit" value="Сохранить" class="universal-button"/>
+            <!-- input type="submit" value="Отмена" class="universal-button"/ -->
+        </div>
+    </form>
+</body>
+</html>

@@ -55,7 +55,6 @@ junit-*.xml
 
 # Django stuff:
 *.log
-local_settings.py
 
 # Local
 .DS_Store
@@ -86,36 +85,17 @@ celerybeat-schedule*
 .env
 
 # virtualenv
+.venv
 venv/
 ENV/
-
-# Spyder project settings
-.spyderproject
-
-# Rope project settings
-.ropeproject
-
-# deployed static files folder
-src/vangus/static/*
-static/*
-media/*
 
 *.sublime-workspace
 *~
 .dir-locals.el
 .vscode
+.idea
 
 node_modules/
-
-# vue frontend
-src/frontend/templates/frontend/index.html
-src/frontend/static/build
-src/frontend/static/js/*
-
-.tern-port
-
-# IDEA Folder
-.idea
 
 .envrc
 *.isorted
@@ -123,4 +103,4 @@ src/frontend/static/js/*
 .postgres
 *.sqlite
 
-staticfiles
+src/media/*

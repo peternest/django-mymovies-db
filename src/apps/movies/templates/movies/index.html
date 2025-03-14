@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="ru-RU">
+<head>
+    <meta charset="utf-8" />
+    <title>100 лучших фильмов</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'movies/style.css' %}">
+</head>
+<body>
+<table class="main-table">
+<tr>
+    <td class="main-table-left">
+        <div class="sticky-sidebar">
+
+            <form id="filter-sort-form" action="/movies/" method="get" class="bla">
+                <label>Страны</label><br>
+                <select name="country" class="sort-selector" required>
+                    {% for item in country_list %}
+                    <option value="{{ item.value }}" {% if item.is_selected %}selected{% endif %}>
+                        {{ item.name }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <br><br>
+
+                <label>Жанры</label><br>
+                <select name="genre" class="sort-selector" required>
+                    {% for item in genre_list %}
+                    <option value="{{ item.value }}" {% if item.is_selected %}selected{% endif %}>
+                        {{ item.name }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <br><br>
+
+                <label>Режиссеры</label><br>
+                <select name="director" class="sort-selector" required>
+                    {% for item in director_list %}
+                    <option value="{{ item.value }}" {% if item.is_selected %}selected{% endif %}>
+                        {{ item.name }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <br><br>
+
+                <input type="submit" value="Фильтровать" style="width: 12em;"/>
+            </form>
+        </div>
+    </td>
+
+    <td class="main-table-center">
+        <h1 class="big-header">100 лучших фильмов</h1>
+    
+        <!-- Используем форму из контейнера 'main-table-left', см. атрибут form ниже -->
+        <label>Сортировать по</label>
+        <select name="sort" class="sort-selector" required form="filter-sort-form">
+            {% for item in sort_list %}
+            <option value="{{ item.value }}" {% if item.is_selected %}selected{% endif %}>
+                {{ item.name }}
+            </option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Сортировать" form="filter-sort-form"/>
+        <br><br>
+    
+        {% if top_100_movies %}
+            <ol class="movie-list">
+            {% for mov in top_100_movies %}
+                <li class="movie-list-item">
+                    <div class="flex-container">
+                        <div class="mv-poster">
+                            {% if mov.poster %}
+                            <a href="/movies/{{ mov.id }}/">
+                            <img src="{{ mov.poster.url }}" alt="{{ mov.title }}" style="width:72px; height:108px;">
+                            </a>
+                            {% endif %}
+                        </div>
+                        <a href="/movies/{{ mov.id }}/" class="mv-link">
+                            <div class="mv-title">{{ mov.title }}</div>
+                            <div class="mv-title-orig">{% if mov.title_orig %}{{ mov.title_orig }}, {% endif %}{{ mov.release_year }}</div> 
+                        </a>
+                        <div class="mv-rating">{{ mov.kp_rating }} / {{ mov.my_rating }}</div>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </td>
+
+    <td class="main-table-right">
+        <div class="sticky-sidebar">
+            <a href="/movies/add_movie/" class="universal-button">Добавить фильм</a>
+        </div>
+    </td>
+</tr>
+</table>
+</body>
+</html>
