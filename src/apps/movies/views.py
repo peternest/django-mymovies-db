@@ -1,17 +1,14 @@
 from dataclasses import dataclass
-from typing import List
+from typing import Final, List
 
 from django.db.models import Model
 from django.db.models.manager import BaseManager
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.views.generic import DetailView, ListView
+from django.views.generic import DetailView, ListView, RedirectView
 
 from .forms import MovieForm
 from .models import Country, Genre, Director, Movie
-
-
-OPTION_ALL = "Все"
 
 
 @dataclass
@@ -21,17 +18,18 @@ class Option:
     is_selected: bool
 
 
-sort_list: List[Option] = [
-    Option("рейтингу КП", "-kp_rating", False),
-    Option("моему рейтингу", "-my_rating", False),
-    Option("году выпуска", "-release_year", False),
-    Option("алфавиту", "title", False)
-]
-
-
-class IndexView(ListView):
+class MoviesListView(ListView):
     template_name = "movies/index.html"
     context_object_name = "top_100_movies"
+
+    OPTION_ALL: Final = "Все"
+
+    sort_list: List[Option] = [
+        Option("рейтингу КП", "-kp_rating", False),
+        Option("моему рейтингу", "-my_rating", False),
+        Option("году выпуска", "-release_year", False),
+        Option("алфавиту", "title", False)
+    ]
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -51,13 +49,13 @@ class IndexView(ListView):
         director_value = self.request.GET.get("director", "")
 
         queryset = Movie.objects.all()
-        if country_value and country_value != OPTION_ALL:
+        if country_value and country_value != self.OPTION_ALL:
             queryset = queryset.filter(countries__country=country_value)
 
-        if genre_value and genre_value != OPTION_ALL:
+        if genre_value and genre_value != self.OPTION_ALL:
             queryset = queryset.filter(genres__genre=genre_value)
 
-        if director_value and director_value != OPTION_ALL:
+        if director_value and director_value != self.OPTION_ALL:
             queryset = queryset.filter(directors__director=director_value)
 
         return queryset.order_by(self.get_ordering())
@@ -67,13 +65,13 @@ class IndexView(ListView):
 
     def _make_sort_list(self):
         sort_value = self.request.GET.get("sort", "-kp_rating")
-        for item in sort_list:
+        for item in self.sort_list:
             item.is_selected = (item.value == sort_value)
-        return sort_list
+        return self.sort_list
 
     def _make_option_list(self, model: Model, field_name: str) -> List[Option]:
         new_list: List[Option] = [
-            Option(OPTION_ALL, OPTION_ALL, False)
+            Option(self.OPTION_ALL, self.OPTION_ALL, False)
         ]
         queryset = model.objects.all().order_by(field_name)
         for obj in queryset:
@@ -91,9 +89,17 @@ class IndexView(ListView):
                 print(f"{m.title}, {m.poster.name}, {m.poster.path}")
 
 
-class DetailView(DetailView):
+class MoviesDetailView(DetailView):
     model = Movie
     template_name = "movies/detail.html"
+
+
+class MoviesRedirectView(RedirectView):
+    url = "/movies/top100/"
+
+
+class APIMoviesRedirectView(RedirectView):
+    url = "/api/movies/top100/"
 
 
 def add_movie(request):
