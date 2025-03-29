@@ -2,7 +2,7 @@
 <html lang="ru-RU">
 <head>
     <meta charset="utf-8" />
-    <title>{{ movie.title }} ({{ movie.release_year }})</title>
+    <title>{{ movie.title }} ({{ movie.range_of_years }})</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'movies/style.css' %}">
 </head>
@@ -19,7 +19,8 @@
     <td class="movie-card">
         <table class="movie-card-table">
         <tr>
-            <td colspan="2" class="movie-title-big">{{ movie.title }} ({{ movie.release_year }})</td>
+            <td colspan="2" class="movie-title-big">{{ movie.title }} 
+                ({% if movie.is_series %}сериал {{ movie.range_of_years }}{% else %}{{ movie.release_year }}{% endif %})</td>
         </tr>
         <tr>
             <td colspan="2" class="movie-title-orig">{{ movie.title_orig }}</td>
@@ -29,7 +30,7 @@
         </tr>
         <tr>
             <td class="movie-key">Год выпуска</td>
-            <td class="movie-value">{{ movie.release_year }}</td>
+            <td class="movie-value">{{ movie.release_year }}{% if movie.is_series %} (сезонов {{ movie.num_of_seasons }}){% endif %}</td>
         </tr>
         <tr>
             <td class="movie-key">Страна</td>

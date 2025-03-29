@@ -4,9 +4,9 @@ from django.core.validators import MinValueValidator
 
 
 """
-> python manage.py makemigrations movies -- call after changes in the models
-> python manage.py sqlmigrate movies 0001 -- show sql for the given migration
-> python manage.py migrate -- perform migrations!
+> py manage.py makemigrations movies -- call after changes in the models
+> py manage.py sqlmigrate movies 0001 -- show sql for the given migration
+> py manage.py migrate -- perform migrations!
 
 If the model field has blank=True, then required=False on the form field. Оtherwise, required=True.
 """
@@ -67,10 +67,25 @@ class Movie(models.Model):
         verbose_name=_('Title orig'),
         blank=True
     )
+    is_series = models.BooleanField(
+        verbose_name=_('Is series'),
+        default=False
+    )
     release_year = models.IntegerField(
         verbose_name=_('Release year'),
         default=2000,
         validators=[MinValueValidator(1900)]
+    )
+    series_last_year = models.IntegerField(
+        verbose_name=_('Series last year'),
+        blank=True,
+        null=True,
+        validators=[MinValueValidator(1900)]
+    )
+    num_of_seasons = models.IntegerField(
+        verbose_name=_('Number of seasons'),
+        default=1,
+        validators=[MinValueValidator(1)]
     )
     countries = models.ManyToManyField(
         Country,
@@ -126,6 +141,12 @@ class Movie(models.Model):
 
     def get_directors(self) -> str:
         return ', '.join(self.directors.values_list('director', flat=True))
+
+    def range_of_years(self) -> str:
+        if self.is_series and self.num_of_seasons > 1:
+            last_year: str = f"{self.series_last_year}" if self.series_last_year else "..."
+            return f"{self.release_year}—{last_year}"
+        return f"{self.release_year}"
 
     class Meta:
         verbose_name = _('Movie')

@@ -2,7 +2,7 @@
 <html lang="ru-RU">
 <head>
     <meta charset="utf-8" />
-    <title>100 лучших фильмов</title>
+    <title>{% if is_series %}50 лучших сериалов{% else %}100 лучших фильмов{% endif %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'movies/style.css' %}">
 </head>
@@ -12,7 +12,9 @@
     <td class="main-table-left">
         <div class="sticky-sidebar">
 
-            <form id="filter-sort-form" action="/movies/top100/" method="get" class="bla">
+            <form id="filter-sort-form" 
+                action={% if is_series %}"/movies/series-top50/"{% else %}"/movies/top100/"{% endif %} 
+                method="get" class="bla">
                 <label>Страны</label><br>
                 <select name="country" class="sort-selector" required>
                     {% for item in country_list %}
@@ -49,8 +51,8 @@
     </td>
 
     <td class="main-table-center">
-        <h1 class="big-header">100 лучших фильмов</h1>
-    
+        <h1 class="big-header">{% if is_series %}50 лучших сериалов{% else %}100 лучших фильмов{% endif %}</h1>
+
         <!-- Используем форму из контейнера 'main-table-left', см. атрибут form ниже -->
         <label>Сортировать по</label>
         <select name="sort" class="sort-selector" required form="filter-sort-form">
@@ -62,7 +64,7 @@
         </select>
         <input type="submit" value="Сортировать" form="filter-sort-form"/>
         <br><br>
-    
+
         {% if top_100_movies %}
             <ol class="movie-list">
             {% for mov in top_100_movies %}
@@ -77,7 +79,7 @@
                         </div>
                         <a href="/movies/{{ mov.id }}/" class="mv-link">
                             <div class="mv-title">{{ mov.title }}</div>
-                            <div class="mv-title-orig">{% if mov.title_orig %}{{ mov.title_orig }}, {% endif %}{{ mov.release_year }}</div> 
+                            <div class="mv-title-orig">{% if mov.title_orig %}{{ mov.title_orig }}, {% endif %}{{ mov.range_of_years }}</div> 
                         </a>
                         <div class="mv-rating">{{ mov.kp_rating }} / {{ mov.my_rating }}</div>
                     </div>

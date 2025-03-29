@@ -21,6 +21,7 @@ class Option:
 class MoviesListView(ListView):
     template_name = "movies/index.html"
     context_object_name = "top_100_movies"
+    is_series = False
 
     OPTION_ALL: Final = "Все"
 
@@ -37,6 +38,7 @@ class MoviesListView(ListView):
         context["country_list"] = self._make_option_list(Country, "country")
         context["genre_list"] = self._make_option_list(Genre, "genre")
         context["director_list"] = self._make_option_list(Director, "director")
+        context["is_series"] = self.is_series
         # print("Context {")
         # for k,v in context.items():
         #    print(f"  '{k}' = '{v}'")
@@ -48,7 +50,7 @@ class MoviesListView(ListView):
         genre_value = self.request.GET.get("genre", "")
         director_value = self.request.GET.get("director", "")
 
-        queryset = Movie.objects.all()
+        queryset = Movie.objects.filter(is_series=self.is_series)
         if country_value and country_value != self.OPTION_ALL:
             queryset = queryset.filter(countries__country=country_value)
 
