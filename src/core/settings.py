@@ -15,11 +15,13 @@ envpath = BASE_DIR / ".env"
 if envpath.exists():
     env.read_env(envpath)
 
-DEBUG = env('DEBUG')
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = env("SECRET_KEY")
 
-SECRET_KEY = env('SECRET_KEY')
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -90,19 +92,7 @@ TEMPLATES = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-
-    # The db() method is an alias for db_url().
-    # 'default': env.db(),
-
-    # read os.environ['SQLITE_URL']
-    # 'extra': env.db_url(
-    #    'SQLITE_URL',
-    #    default='sqlite:////tmp/my-tmp-sqlite.db'
-    # )
+    'default': env.db()
 }
 
 
@@ -135,16 +125,17 @@ LOCALE_PATHS = [BASE_DIR / "locale"]
 USE_I18N = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/5.1/howto/static-files/
-
-STATIC_URL = 'static/'
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-MEDIA_ROOT = BASE_DIR / "media"
-MEDIA_URL = "/media/"
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/5.1/howto/static-files/
+
+STATIC_URL = env("STATIC_URL", default="static/")
+STATIC_ROOT = BASE_DIR / "static/"
+
+MEDIA_URL = env("MEDIA_URL", default="media/")   # Было /media/
+MEDIA_ROOT = BASE_DIR / "media/"
