@@ -7,8 +7,8 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView, RedirectView
 
-from .forms import MovieForm
-from .models import Country, Genre, Director, Movie
+from apps.movies.forms import MovieForm
+from apps.movies.models import Country, Genre, Director, Movie
 
 
 @dataclass

@@ -1,7 +1,7 @@
 from django.forms import ModelForm, NumberInput, SelectMultiple, Textarea, TextInput, URLInput
 from django.utils.translation import gettext_lazy as _
 
-from .models import Movie
+from apps.movies.models import Movie
 
 
 class MovieForm(ModelForm):

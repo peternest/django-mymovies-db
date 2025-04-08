@@ -1,6 +1,6 @@
 from django.urls import path
 
-from . import views
+from apps.movies import views
 
 urlpatterns = [
     path("top100/", views.MoviesListView.as_view(is_series=False)),

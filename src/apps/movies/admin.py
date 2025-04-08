@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Country, Director, Genre, Movie
+from apps.movies.models import Country, Director, Genre, Movie
 
 admin.site.register(Country)
 admin.site.register(Director)
