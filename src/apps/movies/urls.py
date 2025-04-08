@@ -7,5 +7,6 @@ urlpatterns = [
     path("series-top50/", views.MoviesListView.as_view(is_series=True)),
     path("<int:pk>/", views.MoviesDetailView.as_view()),
     path("add/", views.add_movie),
+    path("add_director/", views.add_director),
     path("", views.MoviesRedirectView.as_view()),
 ]

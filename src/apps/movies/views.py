@@ -3,11 +3,11 @@ from typing import Final, List
 
 from django.db.models import Model
 from django.db.models.manager import BaseManager
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView, RedirectView
 
-from apps.movies.forms import MovieForm
+from apps.movies.forms import MovieForm, DirectorForm
 from apps.movies.models import Country, Genre, Director, Movie
 
 
@@ -115,5 +115,15 @@ def add_movie(request):
             print(form.errors)
     else:
         form = MovieForm()
-
     return render(request, "movies/add_movie.html", {"form": form})
+
+
+def add_director(request):
+    if request.method == "POST":
+        form = DirectorForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Added!")
+    else:
+        form = DirectorForm()
+    return render(request, 'movies/add_director.html', {'form': form})

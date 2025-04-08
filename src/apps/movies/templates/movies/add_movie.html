@@ -16,6 +16,11 @@
             <div class="form-row">
                 {{ field.errors }}
                 {{ field.label_tag }} {{ field }}
+                {% if field.name == 'directors' %}
+                    <button type="button" class="add-director-btn" onclick="openDirectorPopup()">
+                        <img src="{% static 'movies/plus-icon.png' %}" alt="Добавить директора">
+                    </button>
+                {% endif %}
             </div>
             {% endfor %}
         </fieldset>
@@ -24,5 +29,24 @@
             <!-- input type="submit" value="Отмена" class="universal-button"/ -->
         </div>
     </form>
+
+    <script>
+        function openDirectorPopup() {
+            const popup = window.open(
+                "/movies/add_director",
+                "Add Director",
+                "width=400,height=200"
+            );
+            
+            window.addEventListener('message', function(event) {
+                if (event.data.type === 'director_added') {
+                    const selectElement = document.querySelector('[name="directors"]');
+                    const option = new Option(event.data.name, event.data.id);
+                    selectElement.add(option);
+                    option.selected = true;
+                }
+            });
+        }
+    </script>
 </body>
 </html>

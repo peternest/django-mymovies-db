@@ -1,7 +1,19 @@
 from django.forms import ModelForm, NumberInput, SelectMultiple, Textarea, TextInput, URLInput
 from django.utils.translation import gettext_lazy as _
 
-from apps.movies.models import Movie
+from apps.movies.models import Director, Movie
+
+
+class DirectorForm(ModelForm):
+    class Meta:
+        model = Director
+        fields = ["director"]
+        labels = {
+            "director": _("Director name")
+        }
+        widgets = {
+            "director": TextInput(attrs={"class": "text-field"})
+        }
 
 
 class MovieForm(ModelForm):
