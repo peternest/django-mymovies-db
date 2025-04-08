@@ -26,7 +26,10 @@ class MovieSerializer(serializers.HyperlinkedModelSerializer):
         fields = [
             "title",
             "title_orig",
+            "is_series",
             "release_year",
+            "series_last_year",
+            "num_of_seasons",
             "countries",
             "genres",
             "directors",
@@ -34,5 +37,6 @@ class MovieSerializer(serializers.HyperlinkedModelSerializer):
             "description",
             "kp_rating",
             "my_rating",
+            "poster",
             "kinopoisk_url"
         ]

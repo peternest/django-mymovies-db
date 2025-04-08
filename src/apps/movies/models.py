@@ -114,11 +114,13 @@ class Movie(models.Model):
     )
     kp_rating = models.FloatField(
         verbose_name=_('KP rating'),
+        default=0.0
     )
     my_rating = models.FloatField(
         verbose_name=_('My rating'),
         blank=True,
-        null=True
+        null=True,
+        default=None
     )
     poster = models.ImageField(   # 600x900, relative to MEDIA_ROOT
         upload_to="images/",
@@ -143,6 +145,8 @@ class Movie(models.Model):
         return ', '.join(self.directors.values_list('director', flat=True))
 
     def range_of_years(self) -> str:
+        """Returns "release_year — last_year" for series and "release_year" for movies."""
+
         if self.is_series and self.num_of_seasons > 1:
             last_year: str = f"{self.series_last_year}" if self.series_last_year else "..."
             return f"{self.release_year}—{last_year}"
@@ -151,3 +155,9 @@ class Movie(models.Model):
     class Meta:
         verbose_name = _('Movie')
         verbose_name_plural = _('Movies')
+        constraints = [
+            models.CheckConstraint(
+                check=models.Q(series_last_year__gte=models.F('release_year')),
+                name='series_last_year_gte_release_year'
+            ),
+        ]
