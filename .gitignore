@@ -103,4 +103,5 @@ node_modules/
 .postgres
 *.sqlite3
 
+data/*
 src/media/*
