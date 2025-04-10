@@ -2,20 +2,20 @@
 <html lang="ru-RU">
 <head>
     <meta charset="utf-8" />
-    <title>Добавить режиссера</title>
+    <title>Добавить страну</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'movies/style.css' %}">
 </head>
 <body>
-    <h1 class="medium-header">Добавить режиссера</h1>
+    <h1 class="medium-header">Добавить страну</h1>
 
     <div class="popup-form">
-        <form action="/movies/add_director/" method="post">
+        <form action="/movies/add_country/" method="post">
             {% csrf_token %}
             <div class="form-row">
-                Режиссер:
-                {{ form.director }}
-                {{ form.director.errors }}
+                Страна:
+                {{ form.country }}
+                {{ form.country.errors }}
             </div>
             <div class="form-buttons">
                 <input type="submit" value="Сохранить" class="universal-button">

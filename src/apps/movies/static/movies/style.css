@@ -25,6 +25,10 @@ a, p, ol, ul, li, table, tbody, th, tr, td
     border-collapse: collapse;
 }
 
+.required {
+    font-weight: bold;
+}
+
 
 
 /*
@@ -38,10 +42,16 @@ ADD MOVIE
     margin-bottom: 30px;
 }
 .form-row {
-    /* border-bottom: 1px solid gray; */
+    /* border: 1px solid gray; */
     display: flex;
     padding: 10px;
-    overflow: hidden;
+}
+.form-row-errors {
+    display: flex;
+    padding: 0px;
+}
+.errorlist {
+    color: red;
 }
 .aligned label {
     display: block;
@@ -71,7 +81,7 @@ ADD MOVIE
     padding: 8px 20px;
 }
 
-.add-director-btn {
+.add-btn {
     align-items: flex-start;
     gap: 10px;
     padding: 5px;
@@ -81,15 +91,16 @@ ADD MOVIE
     width: 30px;
     height: 30px;
 }
-.add-director-btn img {
+.add-btn img {
     width: 30px;
     height: 30px;
 }
 .popup-form {
     padding: 20px;
-    width: 300px;
+    /*width: 300px;*/
 }
 .form-buttons {
+    padding-left: 10px;
     margin-top: 20px;
     display: flex;
     gap: 10px;
@@ -132,6 +143,11 @@ INDEX PAGE
 .big-header {
     font-size: 32px;
     font-weight: 600;
+}
+.medium-header {
+    font-size: 24px;
+    font-weight: 600;
+    padding-left: 35px;
 }
 .sort-selector {
 	font-size: 16px;

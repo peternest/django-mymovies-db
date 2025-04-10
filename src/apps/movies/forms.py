@@ -1,7 +1,22 @@
 from django.forms import ModelForm, NumberInput, SelectMultiple, Textarea, TextInput, URLInput
 from django.utils.translation import gettext_lazy as _
 
-from apps.movies.models import Director, Movie
+from apps.movies.models import Country, Director, Genre, Movie
+
+
+# The form’s is_bound attribute will tell you whether a form has data bound to it or not.
+
+
+class CountryForm(ModelForm):
+    class Meta:
+        model = Country
+        fields = ["country"]
+        labels = {
+            "country": _("Country name")
+        }
+        widgets = {
+            "country": TextInput(attrs={"class": "text-field"})
+        }
 
 
 class DirectorForm(ModelForm):
@@ -16,8 +31,21 @@ class DirectorForm(ModelForm):
         }
 
 
+class GenreForm(ModelForm):
+    class Meta:
+        model = Genre
+        fields = ["genre"]
+        labels = {
+            "genre": _("Genre name")
+        }
+        widgets = {
+            "genre": TextInput(attrs={"class": "text-field"})
+        }
+
+
 class MovieForm(ModelForm):
-    # slug = CharField(validators=[validate_slug])
+    required_css_class = "required"
+    # error_css_class = "error"
 
     class Meta:
         model = Movie
@@ -40,18 +68,26 @@ class MovieForm(ModelForm):
             "kinopoisk_url": _('Kinopoisk url')
         }
         widgets = {
-            "title": TextInput(attrs={'class': 'text-field'}),
-            "title_orig": TextInput(attrs={'class': 'text-field'}),
-            "release_year": NumberInput(attrs={'class': 'release-field'}),
-            "series_last_year": NumberInput(attrs={'class': 'release-field'}),
-            "num_of_seasons": NumberInput(attrs={'class': 'release-field'}),
+            "title": TextInput(attrs={"class": "text-field"}),
+            "title_orig": TextInput(attrs={"class": "text-field"}),
+            "release_year": NumberInput(attrs={"class": "release-field"}),
+            "series_last_year": NumberInput(attrs={"class": "release-field"}),
+            "num_of_seasons": NumberInput(attrs={"class": "release-field"}),
             "countries": SelectMultiple(attrs={"size": 8}),
             "genres": SelectMultiple(attrs={"size": 8}),
             "directors": SelectMultiple(attrs={"size": 8}),
-            "slogan": TextInput(attrs={'class': 'text-field'}),
+            "slogan": TextInput(attrs={"class": "text-field"}),
             "description": Textarea(attrs={"cols": 80, "rows": 5}),
-            "kp_rating": NumberInput(attrs={'class': 'float-field'}),
-            "my_rating": NumberInput(attrs={'class': 'float-field'}),
+            "kp_rating": NumberInput(attrs={"class": "float-field"}),
+            "my_rating": NumberInput(attrs={"class": "float-field"}),
             # "poster": ImageField(),
-            "kinopoisk_url": URLInput(attrs={'class': 'url-field'})
+            "kinopoisk_url": URLInput(attrs={"class": "url-field"})
+        }
+        error_messages = {
+            "title": {
+                "max_length": _("This title is too long.")
+            },
+            "release_year": {
+                "CHANGE_ME": _("Release year should be greater 1900.")
+            }
         }

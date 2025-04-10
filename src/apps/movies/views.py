@@ -7,7 +7,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.views.generic import DetailView, ListView, RedirectView
 
-from apps.movies.forms import MovieForm, DirectorForm
+from apps.movies.forms import CountryForm, DirectorForm, GenreForm, MovieForm
 from apps.movies.models import Country, Genre, Director, Movie
 
 
@@ -23,7 +23,7 @@ class MoviesListView(ListView):
     context_object_name = "top_100_movies"
     is_series = False
 
-    OPTION_ALL: Final = "Все"
+    OPTION_ALL: Final[str] = "Все"
 
     sort_list: List[Option] = [
         Option("рейтингу КП", "-kp_rating", False),
@@ -45,7 +45,7 @@ class MoviesListView(ListView):
         # print("}")
         return context
 
-    def get_queryset(self):
+    def get_queryset(self) -> BaseManager[Movie]:
         country_value = self.request.GET.get("country", "")
         genre_value = self.request.GET.get("genre", "")
         director_value = self.request.GET.get("director", "")
@@ -62,10 +62,10 @@ class MoviesListView(ListView):
 
         return queryset.order_by(self.get_ordering())
 
-    def get_ordering(self):
+    def get_ordering(self) -> str:
         return self.request.GET.get("sort", "-kp_rating")
 
-    def _make_sort_list(self):
+    def _make_sort_list(self) -> List[Option]:
         sort_value = self.request.GET.get("sort", "-kp_rating")
         for item in self.sort_list:
             item.is_selected = (item.value == sort_value)
@@ -118,6 +118,17 @@ def add_movie(request):
     return render(request, "movies/add_movie.html", {"form": form})
 
 
+def add_country(request):
+    if request.method == "POST":
+        form = CountryForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Added!")
+    else:
+        form = CountryForm()
+    return render(request, "movies/add_country.html", {"form": form})
+
+
 def add_director(request):
     if request.method == "POST":
         form = DirectorForm(request.POST)
@@ -126,4 +137,15 @@ def add_director(request):
             return HttpResponse("Added!")
     else:
         form = DirectorForm()
-    return render(request, 'movies/add_director.html', {'form': form})
+    return render(request, "movies/add_director.html", {"form": form})
+
+
+def add_genre(request):
+    if request.method == "POST":
+        form = GenreForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("Added!")
+    else:
+        form = GenreForm()
+    return render(request, "movies/add_genre.html", {"form": form})

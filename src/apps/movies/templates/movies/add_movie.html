@@ -12,40 +12,61 @@
     <form action="/movies/add/" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <fieldset class="my-fieldset aligned">
+            {{ form.non_field_errors }}
+
             {% for field in form %}
             <div class="form-row">
-                {{ field.errors }}
                 {{ field.label_tag }} {{ field }}
-                {% if field.name == 'directors' %}
-                    <button type="button" class="add-director-btn" onclick="openDirectorPopup()">
+                {% if field.name == 'countries' %}
+                    <button type="button" class="add-btn" onclick="openDirectorPopup('country')">
+                        <img src="{% static 'movies/plus-icon.png' %}" alt="Добавить страну">
+                    </button>
+                {% elif field.name == 'directors' %}
+                    <button type="button" class="add-btn" onclick="openDirectorPopup('director')">
                         <img src="{% static 'movies/plus-icon.png' %}" alt="Добавить директора">
+                    </button>
+                {% elif field.name == 'genres' %}
+                    <button type="button" class="add-btn" onclick="openDirectorPopup('genre')">
+                        <img src="{% static 'movies/plus-icon.png' %}" alt="Добавить жанр">
                     </button>
                 {% endif %}
             </div>
+            <div class="form-row-errors">{{ field.errors }}</div>
             {% endfor %}
         </fieldset>
         <div class="submit-row">
             <input type="submit" value="Сохранить" class="universal-button"/>
-            <!-- input type="submit" value="Отмена" class="universal-button"/ -->
         </div>
     </form>
 
     <script>
-        function openDirectorPopup() {
+        function openDirectorPopup(value) {
             const popup = window.open(
-                "/movies/add_director",
-                "Add Director",
+                "/movies/add_" + value,
+                "Add Item",
                 "width=400,height=200"
             );
-            
+
+            popup.window.addEventListener('load', () => {
+                popup.window.addEventListener('unload', () => {
+                    console.log('> Popup Closed');
+                    // window.location.reload();
+                });
+            });
+
+            /*
             window.addEventListener('message', function(event) {
+                console.log("Listen:", event);
                 if (event.data.type === 'director_added') {
                     const selectElement = document.querySelector('[name="directors"]');
-                    const option = new Option(event.data.name, event.data.id);
-                    selectElement.add(option);
-                    option.selected = true;
+                    if (selectElement) {
+                        const option = new Option(event.data.name, event.data.id);
+                        selectElement.add(option);
+                        option.selected = true;
+                    }
                 }
             });
+            */
         }
     </script>
 </body>
