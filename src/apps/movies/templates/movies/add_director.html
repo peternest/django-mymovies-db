@@ -10,7 +10,7 @@
     <h1 class="medium-header">Добавить режиссера</h1>
 
     <div class="popup-form">
-        <form action="/movies/add_director/" method="post">
+        <form id="director-form"  action="/movies/add_director/" method="post">
             {% csrf_token %}
             <div class="form-row">
                 Режиссер:

@@ -10,7 +10,7 @@
     <h1 class="medium-header">Добавить страну</h1>
 
     <div class="popup-form">
-        <form action="/movies/add_country/" method="post">
+        <form id="country-form" action="/movies/add_country/" method="post">
             {% csrf_token %}
             <div class="form-row">
                 Страна:

@@ -9,7 +9,7 @@
 <body>
     <h1 class="big-header">Добавить новый фильм</h1>
 
-    <form action="/movies/add/" method="post" enctype="multipart/form-data">
+    <form id="movie-form" action="/movies/add/" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <fieldset class="my-fieldset aligned">
             {{ form.non_field_errors }}
@@ -18,15 +18,15 @@
             <div class="form-row">
                 {{ field.label_tag }} {{ field }}
                 {% if field.name == 'countries' %}
-                    <button type="button" class="add-btn" onclick="openDirectorPopup('country')">
+                    <button type="button" class="add-btn" onclick="openPopup('country')">
                         <img src="{% static 'movies/plus-icon.png' %}" alt="Добавить страну">
                     </button>
                 {% elif field.name == 'directors' %}
-                    <button type="button" class="add-btn" onclick="openDirectorPopup('director')">
+                    <button type="button" class="add-btn" onclick="openPopup('director')">
                         <img src="{% static 'movies/plus-icon.png' %}" alt="Добавить директора">
                     </button>
                 {% elif field.name == 'genres' %}
-                    <button type="button" class="add-btn" onclick="openDirectorPopup('genre')">
+                    <button type="button" class="add-btn" onclick="openPopup('genre')">
                         <img src="{% static 'movies/plus-icon.png' %}" alt="Добавить жанр">
                     </button>
                 {% endif %}
@@ -40,33 +40,52 @@
     </form>
 
     <script>
-        function openDirectorPopup(value) {
+        function openPopup(value) {
+            // value = country | director | genre
+
             const popup = window.open(
-                "/movies/add_" + value,
+                "/movies/add_" + value + "/",
                 "Add Item",
                 "width=400,height=200"
             );
 
-            popup.window.addEventListener('load', () => {
-                popup.window.addEventListener('unload', () => {
-                    console.log('> Popup Closed');
-                    // window.location.reload();
+            let plural = ""
+            if (value === "country") {
+                plural = "countries";
+            } else if (value === "director") {
+                plural = "directors";
+            } else if (value === "genre") {
+                plural = "genres";
+            }
+
+            popup.window.addEventListener('unload', () => {
+                const url = "/movies/get_" + plural + "/";
+                const elementId = "id_" + plural;
+
+                fetch(url)
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    const selectControl = document.getElementById(elementId);
+                    if (selectControl) {
+                        selectControl.innerHTML = "";
+                        data.objlist.forEach(item => {
+                            const option = new Option(item.name, item.id);
+                            selectControl.add(option);
+                        });
+                    }
+                    else {
+                        console.log("Not found:", elementId)
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error:", error);
                 });
             });
-
-            /*
-            window.addEventListener('message', function(event) {
-                console.log("Listen:", event);
-                if (event.data.type === 'director_added') {
-                    const selectElement = document.querySelector('[name="directors"]');
-                    if (selectElement) {
-                        const option = new Option(event.data.name, event.data.id);
-                        selectElement.add(option);
-                        option.selected = true;
-                    }
-                }
-            });
-            */
         }
     </script>
 </body>

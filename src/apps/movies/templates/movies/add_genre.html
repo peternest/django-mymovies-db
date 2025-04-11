@@ -10,7 +10,7 @@
     <h1 class="medium-header">Добавить жанр</h1>
 
     <div class="popup-form">
-        <form action="/movies/add_genre/" method="post">
+        <form id="genre-form"  action="/movies/add_genre/" method="post">
             {% csrf_token %}
             <div class="form-row">
                 Жанр:

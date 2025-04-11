@@ -25,6 +25,7 @@ class Country(models.Model):
     class Meta:
         verbose_name = _('Country')
         verbose_name_plural = _('Countries')
+        ordering = ["country"]
 
 
 class Genre(models.Model):
@@ -40,6 +41,7 @@ class Genre(models.Model):
     class Meta:
         verbose_name = _('Genre')
         verbose_name_plural = _('Genres')
+        ordering = ["genre"]
 
 
 class Director(models.Model):
@@ -55,6 +57,7 @@ class Director(models.Model):
     class Meta:
         verbose_name = _('Director')
         verbose_name_plural = _('Directors')
+        ordering = ["director"]
 
 
 class Movie(models.Model):
@@ -97,7 +100,7 @@ class Movie(models.Model):
         verbose_name=_('Genre'),
         blank=False
     )
-    directors = models.ManyToManyField(   # One to Many!?
+    directors = models.ManyToManyField(
         Director,
         verbose_name=_('Director'),
         blank=False
@@ -136,6 +139,7 @@ class Movie(models.Model):
         return f"{self.title} ({self.release_year})"
 
     def get_countries(self) -> str:
+        """To be used in Movie detail template."""
         return ', '.join(self.countries.values_list('country', flat=True))
 
     def get_genres(self) -> str:
@@ -155,6 +159,7 @@ class Movie(models.Model):
     class Meta:
         verbose_name = _('Movie')
         verbose_name_plural = _('Movies')
+        ordering = ["title"]
         constraints = [
             models.CheckConstraint(
                 check=models.Q(series_last_year__gte=models.F('release_year')),

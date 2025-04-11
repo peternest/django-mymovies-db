@@ -3,8 +3,9 @@ from typing import Final, List
 
 from django.db.models import Model
 from django.db.models.manager import BaseManager
-from django.http import HttpResponseRedirect, HttpResponse
+from django.http import HttpResponseRedirect, HttpResponse, JsonResponse, HttpRequest
 from django.shortcuts import render
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import DetailView, ListView, RedirectView
 
 from apps.movies.forms import CountryForm, DirectorForm, GenreForm, MovieForm
@@ -104,7 +105,7 @@ class APIMoviesRedirectView(RedirectView):
     url = "/api/movies/top100/"
 
 
-def add_movie(request):
+def add_movie(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = MovieForm(request.POST, request.FILES)
         if form.is_valid():
@@ -118,34 +119,67 @@ def add_movie(request):
     return render(request, "movies/add_movie.html", {"form": form})
 
 
-def add_country(request):
+@csrf_exempt
+def add_country(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = CountryForm(request.POST)
         if form.is_valid():
-            form.save()
-            return HttpResponse("Added!")
+            instance = form.save()
+            return HttpResponse(f"Добавлен '{instance.country}'")
+        else:
+            return HttpResponse("Ошибка: такая страна уже существует!")
     else:
         form = CountryForm()
     return render(request, "movies/add_country.html", {"form": form})
 
 
-def add_director(request):
+@csrf_exempt
+def add_director(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = DirectorForm(request.POST)
         if form.is_valid():
-            form.save()
-            return HttpResponse("Added!")
+            instance = form.save()
+            return HttpResponse(f"Добавлен '{instance.director}'")
+        else:
+            return HttpResponse("Ошибка: такой режиссер уже существует!")
     else:
         form = DirectorForm()
     return render(request, "movies/add_director.html", {"form": form})
 
 
-def add_genre(request):
+@csrf_exempt
+def add_genre(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = GenreForm(request.POST)
         if form.is_valid():
-            form.save()
-            return HttpResponse("Added!")
+            instance = form.save()
+            return HttpResponse(f"Добавлен '{instance.genre}'")
+        else:
+            return HttpResponse("Ошибка: такой жанр уже существует!")
     else:
         form = GenreForm()
     return render(request, "movies/add_genre.html", {"form": form})
+
+
+def get_objlist(request: HttpRequest, field_name: str) -> JsonResponse:
+    """Used by Javascript to retrieve the list of values for a model."""
+
+    model: Model = ""
+    if field_name == "country":
+        model = Country
+    elif field_name == "director":
+        model = Director
+    elif field_name == "genre":
+        model = Genre
+
+    queryset = model.objects.all().order_by(field_name)
+    objlist = []
+    for obj in queryset:
+        objlist.append({
+            "id": getattr(obj, "id"),
+            "name": getattr(obj, field_name)
+        })
+    return JsonResponse({
+        "success": True,
+        "objlist": objlist
+    })
