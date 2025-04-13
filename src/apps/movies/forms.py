@@ -79,7 +79,7 @@ class MovieForm(ModelForm):
             "kp_rating": _("KP rating"),
             "my_rating": _("My rating"),
             "poster": _("Poster"),
-            "kinopoisk_url": _('Kinopoisk url')
+            "kinopoisk_url": _("Kinopoisk url")
         }
         widgets = {
             "title": TextInput(attrs={"class": "text-field"}),
