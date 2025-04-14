@@ -7,6 +7,7 @@ from django.http import HttpResponseRedirect, HttpResponse, JsonResponse, HttpRe
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import DetailView, ListView, RedirectView
+from django.utils.translation import gettext_lazy as _
 
 from apps.movies.forms import CountryForm, DirectorForm, GenreForm, MovieForm
 from apps.movies.models import Country, Genre, Director, Movie
@@ -125,9 +126,9 @@ def add_country(request: HttpRequest) -> HttpResponse:
         form = CountryForm(request.POST)
         if form.is_valid():
             instance = form.save()
-            return HttpResponse(f"Добавлен '{instance.country}'")
+            return HttpResponse(_("Added") + f" '{instance.country}'")
         else:
-            return HttpResponse("Ошибка: такая страна уже существует!")
+            return HttpResponse(_("Error: such country already exists!"))
     else:
         form = CountryForm()
     return render(request, "movies/add_country.html", {"form": form})
@@ -139,9 +140,9 @@ def add_director(request: HttpRequest) -> HttpResponse:
         form = DirectorForm(request.POST)
         if form.is_valid():
             instance = form.save()
-            return HttpResponse(f"Добавлен '{instance.director}'")
+            return HttpResponse(_("Added") + f" '{instance.director}'")
         else:
-            return HttpResponse("Ошибка: такой режиссер уже существует!")
+            return HttpResponse(_("Error: such director already exists!"))
     else:
         form = DirectorForm()
     return render(request, "movies/add_director.html", {"form": form})
@@ -153,9 +154,9 @@ def add_genre(request: HttpRequest) -> HttpResponse:
         form = GenreForm(request.POST)
         if form.is_valid():
             instance = form.save()
-            return HttpResponse(f"Добавлен '{instance.genre}'")
+            return HttpResponse(_("Added") + f" '{instance.genre}'")
         else:
-            return HttpResponse("Ошибка: такой жанр уже существует!")
+            return HttpResponse(_("Error: such genre already exists!"))
     else:
         form = GenreForm()
     return render(request, "movies/add_genre.html", {"form": form})
