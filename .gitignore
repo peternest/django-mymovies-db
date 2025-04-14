@@ -94,14 +94,14 @@ ENV/
 .dir-locals.el
 .vscode
 .idea
+.envrc
+*.isorted
 
 node_modules/
 
-.envrc
-*.isorted
 .pytest_cache
 .postgres
 *.sqlite3
 
-data/*
+src/data/*
 src/media/*
