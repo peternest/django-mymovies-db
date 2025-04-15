@@ -130,9 +130,14 @@ INDEX PAGE
     width: 25%;
     vertical-align: top;
 }
-.sticky-sidebar {
+.sticky-sidebar-left {
     position: sticky;
     top: 150px;
+    margin-left: 30px;
+}
+.sticky-sidebar-right {
+    position: sticky;
+    top: 180px;
     margin-left: 30px;
 }
 .bla {
@@ -200,7 +205,9 @@ INDEX PAGE
 }
 .mv-rating {
     margin-left: 10px;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 600;
+    color: goldenrod;
 }
 
 
