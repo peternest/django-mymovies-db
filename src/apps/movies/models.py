@@ -1,15 +1,6 @@
 from django.db import models
-from django.utils.translation import gettext_lazy as _
 from django.core.validators import MinValueValidator
-
-
-"""
-> py manage.py makemigrations movies -- call after changes in the models
-> py manage.py sqlmigrate movies 0001 -- show sql for the given migration
-> py manage.py migrate -- perform migrations!
-
-If the model field has blank=True, then required=False on the form field. Оtherwise, required=True.
-"""
+from django.utils.translation import gettext_lazy as _
 
 
 class Country(models.Model):
