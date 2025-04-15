@@ -1,16 +1,55 @@
 
-# Movies Database made by Django
+# My Movies Database
 
-## Subtitle
+This is my pet project to keep track of my favorite movies and series.
+Powered by Django web framework.
 
-This is the pet project to demonstrate different features of Django for web-development.
-Apearance is made like that of mature sites such as IMDB or Kinopoisk.
+## Key features
 
-## List of features
+* Show the list of top 100 movies or series ordered by title, rating or release year.
+* Filter the list of movies by countries, genres, directors or release years.
+* Add new movie/series into database or modify existing one.
+* Show/edit data using REST api.
 
-* Add new movie into database or modify existing one.
-* Store movie poster.
-* Show list of movies ordered by title, rating or release year.
-* Filter list of movies by countries, genres, directors or release years.
+## Configuration
 
-Database is local and stored in SQLite format.
+Configuration is stored in `src/.env`, for example see `src/.env.sample`
+Movie database is stored in PostgreSQL, but you can use any supported DBMS, see `DATABASE_URL` parameter in `src/.env`.
+
+## How to install on a local machine
+
+This project requires Python 3.11+. [Poetry](https://python-poetry.org/) is used to manage dependencies.
+
+Clone the repo into some folder:
+```
+$ git clone https://github.com/peternest/django-mymovies-db.git
+```
+
+Copy `src/.env.sample` to `src/.env` and edit the latter according to your configuration.
+
+Probably you will create virtual environment first:
+```
+$ poetry shell
+```
+
+Install requirements:
+```
+$ poetry install --no-root
+````
+
+Change the folder to `src`, where `manage.py` lives:
+```
+$ cd src
+```
+
+If you want to load some initial data in RUSSIAN (about 100 movies), execute:
+```
+$ python manage.py loaddata data/my_fixture.json
+```
+
+Run the development server:
+```
+$ python manage.py runserver
+```
+
+Once the app is running, you can test it by navigating to http://localhost:8000.
