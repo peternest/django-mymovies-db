@@ -13,7 +13,7 @@ Powered by Django web framework.
 
 ## Configuration
 
-Configuration is stored in `src/.env`, for example see `src/.env.sample`
+Configuration is stored in `src/.env`, for example see `src/.env.sample`.
 Movie database is stored in PostgreSQL, but you can use any supported DBMS, see `DATABASE_URL` parameter in `src/.env`.
 
 ## How to install on a local machine
@@ -27,7 +27,7 @@ $ git clone https://github.com/peternest/django-mymovies-db.git
 
 Copy `src/.env.sample` to `src/.env` and edit the latter according to your configuration.
 
-Probably you will create virtual environment first:
+Probably you will want to create virtual environment first:
 ```
 $ poetry shell
 ```
@@ -37,7 +37,7 @@ Install requirements:
 $ poetry install --no-root
 ````
 
-Change the folder to `src`, where `manage.py` lives:
+Change to `src` folder, where `manage.py` lives:
 ```
 $ cd src
 ```
