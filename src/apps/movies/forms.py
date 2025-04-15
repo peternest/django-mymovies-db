@@ -1,6 +1,6 @@
 from django.forms import (
     ModelForm, ModelMultipleChoiceField,
-    NumberInput, SelectMultiple, Textarea, TextInput, URLInput
+    NumberInput, SelectMultiple, Textarea, TextInput, URLField, URLInput
 )
 from django.utils.translation import gettext_lazy as _
 
@@ -63,6 +63,12 @@ class MovieForm(ModelForm):
         label=_("Director"),
         widget=SelectMultiple(attrs={"size": 8})
     )
+    kinopoisk_url = URLField(
+        label=_("Kinopoisk url"),
+        required=False,
+        widget=URLInput(attrs={"class": "url-field"}),
+        assume_scheme="https"  # supress warning
+    )
 
     class Meta:
         model = Movie
@@ -79,7 +85,6 @@ class MovieForm(ModelForm):
             "kp_rating": _("KP rating"),
             "my_rating": _("My rating"),
             "poster": _("Poster"),
-            "kinopoisk_url": _("Kinopoisk url")
         }
         widgets = {
             "title": TextInput(attrs={"class": "text-field"}),
@@ -92,7 +97,6 @@ class MovieForm(ModelForm):
             "kp_rating": NumberInput(attrs={"class": "float-field"}),
             "my_rating": NumberInput(attrs={"class": "float-field"}),
             # "poster": ImageField(),
-            "kinopoisk_url": URLInput(attrs={"class": "url-field"})
         }
         error_messages = {
             "title": {
