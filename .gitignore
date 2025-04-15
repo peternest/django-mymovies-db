@@ -104,4 +104,7 @@ node_modules/
 *.sqlite3
 
 src/data/*
-src/media/*
+!src/data/my_fixture.json
+
+src/media/images/*
+!src/media/images/_PosterPlaceholder.jpg

@@ -119,7 +119,8 @@ class Movie(models.Model):
     poster = models.ImageField(   # 600x900, relative to MEDIA_ROOT
         upload_to="images/",
         verbose_name=_("Poster"),
-        blank=True
+        blank=True,
+        default="images/_PosterPlaceholder.jpg"
     )
     kinopoisk_url = models.URLField(
         verbose_name=_("Kinopoisk url"),
