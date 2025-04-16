@@ -45,6 +45,16 @@
                 </select>
                 <br><br>
 
+                <label>Годы</label><br>
+                <select name="years" class="sort-selector" required>
+                    {% for item in years_list %}
+                    <option value="{{ item.value }}" {% if item.is_selected %}selected{% endif %}>
+                        {{ item.name }}
+                    </option>
+                    {% endfor %}
+                </select>
+                <br><br>
+
                 <input type="submit" value="Фильтровать" style="width: 12em;"/>
             </form>
         </div>

@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Final, List
 
-from django.db.models import Model
+from django.db.models import Model, Q
 from django.db.models.manager import BaseManager
 from django.http import HttpResponseRedirect, HttpResponse, JsonResponse, HttpRequest
 from django.shortcuts import render
@@ -40,6 +40,7 @@ class MoviesListView(ListView):
         context["country_list"] = self._make_option_list(Country, "country")
         context["genre_list"] = self._make_option_list(Genre, "genre")
         context["director_list"] = self._make_option_list(Director, "director")
+        context["years_list"] = self._make_years_list()
         context["is_series"] = self.is_series
         # print("Context {")
         # for k,v in context.items():
@@ -51,6 +52,7 @@ class MoviesListView(ListView):
         country_value = self.request.GET.get("country", "")
         genre_value = self.request.GET.get("genre", "")
         director_value = self.request.GET.get("director", "")
+        years_value = self.request.GET.get("years", "")
 
         queryset = Movie.objects.filter(is_series=self.is_series)
         if country_value and country_value != self.OPTION_ALL:
@@ -62,6 +64,12 @@ class MoviesListView(ListView):
         if director_value and director_value != self.OPTION_ALL:
             queryset = queryset.filter(directors__director=director_value)
 
+        if years_value and years_value != self.OPTION_ALL:
+            years_list = years_value.split("–")
+            year_from = years_list[0]
+            year_to = years_list[1]
+            queryset = queryset.filter(Q(release_year__gte=year_from, release_year__lte=year_to))
+
         return queryset.order_by(self.get_ordering())
 
     def get_ordering(self) -> str:
@@ -72,6 +80,20 @@ class MoviesListView(ListView):
         for item in self.sort_list:
             item.is_selected = (item.value == sort_value)
         return self.sort_list
+
+    def _make_years_list(self) -> List[Option]:
+        new_list: List[Option] = [
+            Option(self.OPTION_ALL, self.OPTION_ALL, False),
+            Option("1900–1949", "1900–1949", False),
+        ]
+        for year in range(1950, 2030, 10):
+            yr = f"{year}–{year + 9}"
+            new_list.append(Option(yr, yr, False))
+
+        years_value = self.request.GET.get("years", "")
+        for item in new_list:
+            item.is_selected = (item.value == years_value)
+        return new_list
 
     def _make_option_list(self, model: Model, field_name: str) -> List[Option]:
         new_list: List[Option] = [

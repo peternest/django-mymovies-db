@@ -132,13 +132,13 @@ INDEX PAGE
 }
 .sticky-sidebar-left {
     position: sticky;
-    top: 150px;
+    top: 90px;
     margin-left: 30px;
 }
 .sticky-sidebar-right {
     position: sticky;
     top: 180px;
-    margin-left: 30px;
+    text-align: center;
 }
 .form-direction {
     display: flex;
@@ -208,6 +208,8 @@ INDEX PAGE
     font-weight: 600;
     color: goldenrod;
     text-align: center;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 .mv-rating2 {
     font-size: 20px;
@@ -215,7 +217,6 @@ INDEX PAGE
     color: grey;
     text-align: center;
 }
-
 
 
 
