@@ -112,9 +112,7 @@ class Movie(models.Model):
     )
     my_rating = models.FloatField(
         verbose_name=_("My rating"),
-        blank=True,
-        null=True,
-        default=None
+        default=0.0
     )
     poster = models.ImageField(   # 600x900, relative to MEDIA_ROOT
         upload_to="images/",

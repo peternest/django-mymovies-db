@@ -82,8 +82,8 @@ class MovieForm(ModelForm):
             "num_of_seasons": _("Number of seasons"),
             "slogan": _("Slogan"),
             "description": _("Description"),
-            "kp_rating": _("KP rating"),
             "my_rating": _("My rating"),
+            "kp_rating": _("KP rating"),
             "poster": _("Poster"),
         }
         widgets = {
@@ -94,8 +94,8 @@ class MovieForm(ModelForm):
             "num_of_seasons": NumberInput(attrs={"class": "release-field"}),
             "slogan": TextInput(attrs={"class": "text-field"}),
             "description": Textarea(attrs={"cols": 80, "rows": 5}),
-            "kp_rating": NumberInput(attrs={"class": "float-field"}),
             "my_rating": NumberInput(attrs={"class": "float-field"}),
+            "kp_rating": NumberInput(attrs={"class": "float-field"}),
             # "poster": ImageField(),
         }
         error_messages = {

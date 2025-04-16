@@ -140,7 +140,7 @@ INDEX PAGE
     top: 180px;
     margin-left: 30px;
 }
-.bla {
+.form-direction {
     display: flex;
     flex-direction: column;
 }
@@ -203,12 +203,19 @@ INDEX PAGE
     margin-top: 10px;
     font-size: 14px;
 }
-.mv-rating {
-    margin-left: 10px;
+.mv-rating1 {
     font-size: 20px;
     font-weight: 600;
     color: goldenrod;
+    text-align: center;
 }
+.mv-rating2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: grey;
+    text-align: center;
+}
+
 
 
 

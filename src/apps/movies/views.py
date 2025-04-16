@@ -28,8 +28,8 @@ class MoviesListView(ListView):
     OPTION_ALL: Final[str] = "Все"
 
     sort_list: List[Option] = [
-        Option("рейтингу КП", "-kp_rating", False),
         Option("моему рейтингу", "-my_rating", False),
+        Option("рейтингу КП", "-kp_rating", False),
         Option("году выпуска", "-release_year", False),
         Option("алфавиту", "title", False)
     ]
@@ -65,10 +65,10 @@ class MoviesListView(ListView):
         return queryset.order_by(self.get_ordering())
 
     def get_ordering(self) -> str:
-        return self.request.GET.get("sort", "-kp_rating")
+        return self.request.GET.get("sort", "-my_rating")
 
     def _make_sort_list(self) -> List[Option]:
-        sort_value = self.request.GET.get("sort", "-kp_rating")
+        sort_value = self.request.GET.get("sort", "-my_rating")
         for item in self.sort_list:
             item.is_selected = (item.value == sort_value)
         return self.sort_list

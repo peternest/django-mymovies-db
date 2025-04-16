@@ -91,7 +91,7 @@ msgstr "Рейтинг КП"
 
 #: .\apps\movies\forms.py:80 .\apps\movies\models.py:123
 msgid "My rating"
-msgstr "Рейтинг мой"
+msgstr "Мой рейтинг"
 
 #: .\apps\movies\forms.py:81 .\apps\movies\models.py:130
 msgid "Poster"

@@ -14,7 +14,7 @@
 
             <form id="filter-sort-form" 
                 action={% if is_series %}"/movies/series-top50/"{% else %}"/movies/top100/"{% endif %} 
-                method="get" class="bla">
+                method="get" class="form-direction">
                 <label>Страны</label><br>
                 <select name="country" class="sort-selector" required>
                     {% for item in country_list %}
@@ -81,7 +81,10 @@
                             <div class="mv-title">{{ mov.title }}</div>
                             <div class="mv-title-orig">{% if mov.title_orig %}{{ mov.title_orig }}, {% endif %}{{ mov.range_of_years }}</div> 
                         </a>
-                        <div class="mv-rating">{{ mov.kp_rating }} / {{ mov.my_rating }}</div>
+                        <div>
+                            <div class="mv-rating1">({{ mov.my_rating }})</div>
+                            <div class="mv-rating2">{{ mov.kp_rating }}</div>
+                        </div>
                     </div>
                 </li>
                 {% endfor %}
