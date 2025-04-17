@@ -1,0 +1,2216 @@
+[
+{
+  "model": "movies.country",
+  "pk": 1,
+  "fields": {
+    "country": "Великобритания"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 2,
+  "fields": {
+    "country": "Германия"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 3,
+  "fields": {
+    "country": "Италия"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 4,
+  "fields": {
+    "country": "Россия"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 5,
+  "fields": {
+    "country": "США"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 6,
+  "fields": {
+    "country": "Австралия"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 7,
+  "fields": {
+    "country": "Франция"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 8,
+  "fields": {
+    "country": "СССР"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 9,
+  "fields": {
+    "country": "Япония"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 10,
+  "fields": {
+    "country": "Китай"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 11,
+  "fields": {
+    "country": "Гонконг"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 12,
+  "fields": {
+    "country": "Новая Зеландия"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 13,
+  "fields": {
+    "country": "Австрия"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 14,
+  "fields": {
+    "country": "Алжир"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 15,
+  "fields": {
+    "country": "Ангола"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 16,
+  "fields": {
+    "country": "Аргентина"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 28,
+  "fields": {
+    "country": "Бельгия"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 29,
+  "fields": {
+    "country": "Бразилия"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 30,
+  "fields": {
+    "country": "Ямайка"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 31,
+  "fields": {
+    "country": "Чехия"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 32,
+  "fields": {
+    "country": "Болгария"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 33,
+  "fields": {
+    "country": "Уругвай"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 1,
+  "fields": {
+    "genre": "Комедия"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 2,
+  "fields": {
+    "genre": "Драма"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 3,
+  "fields": {
+    "genre": "Мелодрама"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 4,
+  "fields": {
+    "genre": "Приключение"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 5,
+  "fields": {
+    "genre": "Фантастика"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 6,
+  "fields": {
+    "genre": "Фэнтези"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 7,
+  "fields": {
+    "genre": "Детектив"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 8,
+  "fields": {
+    "genre": "Криминал"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 9,
+  "fields": {
+    "genre": "Спорт"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 10,
+  "fields": {
+    "genre": "История"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 11,
+  "fields": {
+    "genre": "Военный"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 12,
+  "fields": {
+    "genre": "Боевик"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 13,
+  "fields": {
+    "genre": "Триллер"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 14,
+  "fields": {
+    "genre": "Биография"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 15,
+  "fields": {
+    "genre": "Аниме"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 16,
+  "fields": {
+    "genre": "Мультфильм"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 17,
+  "fields": {
+    "genre": "Семейный"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 18,
+  "fields": {
+    "genre": "Мюзикл"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 1,
+  "fields": {
+    "director": "Фрэнк Дарабонт"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 2,
+  "fields": {
+    "director": "Никита Михалков"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 3,
+  "fields": {
+    "director": "Андрей Тарковский"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 4,
+  "fields": {
+    "director": "Братья Вачовски"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 5,
+  "fields": {
+    "director": "Эльдар Рязанов"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 6,
+  "fields": {
+    "director": "Стивен Спилберг"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 7,
+  "fields": {
+    "director": "Семён Серзин"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 8,
+  "fields": {
+    "director": "Роберт Земекис"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 9,
+  "fields": {
+    "director": "Оливье Накаш"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 10,
+  "fields": {
+    "director": "Эрик Толедано"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 11,
+  "fields": {
+    "director": "Александр Андрющенко"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 12,
+  "fields": {
+    "director": "Михаил Локшин"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 13,
+  "fields": {
+    "director": "Гай Ричи"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 14,
+  "fields": {
+    "director": "Виктор Сальва"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 15,
+  "fields": {
+    "director": "Кэмерон Кроу"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 16,
+  "fields": {
+    "director": "Дэвид Финчер"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 17,
+  "fields": {
+    "director": "Клим Шипенко"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 18,
+  "fields": {
+    "director": "Игорь Волошин"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 19,
+  "fields": {
+    "director": "Олег Трофим"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 20,
+  "fields": {
+    "director": "Кристофер Нолан"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 21,
+  "fields": {
+    "director": "Владимир Бортко"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 22,
+  "fields": {
+    "director": "Хаяо Миядзаки"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 23,
+  "fields": {
+    "director": "Чжан Имоу"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 24,
+  "fields": {
+    "director": "Александр Роу"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 25,
+  "fields": {
+    "director": "Алексей Балабанов"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 26,
+  "fields": {
+    "director": "Феликс Умаров"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 27,
+  "fields": {
+    "director": "Питер Джексон"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 28,
+  "fields": {
+    "director": "Леонид Гайдай"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 29,
+  "fields": {
+    "director": "Игорь Масленников"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 30,
+  "fields": {
+    "director": "Джон Мактирнан"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 31,
+  "fields": {
+    "director": "Марк Захаров"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 32,
+  "fields": {
+    "director": "Джеймс Кэмерон"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 33,
+  "fields": {
+    "director": "Татьяна Лиознова"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 34,
+  "fields": {
+    "director": "Гари Хэлворсон"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 35,
+  "fields": {
+    "director": "Марк Сендроуски"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 36,
+  "fields": {
+    "director": "Антон Маслов"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 37,
+  "fields": {
+    "director": "Дэвид Линч"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 38,
+  "fields": {
+    "director": "Павел Арсенов"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 39,
+  "fields": {
+    "director": "Владимир Басов"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 40,
+  "fields": {
+    "director": "Бен Стилер"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 41,
+  "fields": {
+    "director": "Станислав Говорухин"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 42,
+  "fields": {
+    "director": "Александр Войтинский"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 43,
+  "fields": {
+    "director": "Элем Климов"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 44,
+  "fields": {
+    "director": "Ричард Линклейтер"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 45,
+  "fields": {
+    "director": "Анна Меликян"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 46,
+  "fields": {
+    "director": "Владимир Щегольков"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 47,
+  "fields": {
+    "director": "Скотт Фрэнк"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 48,
+  "fields": {
+    "director": "Дэвид Наттер"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 53,
+  "fields": {
+    "director": "Андрей Кончаловский"
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 1,
+  "fields": {
+    "title": "Побег из Шоушенка",
+    "title_orig": "The Shawshank Redemption",
+    "is_series": false,
+    "release_year": 1994,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Страх - это кандалы. Надежда - это свобода»",
+    "description": "Бухгалтер Энди Дюфрейн обвинён в убийстве собственной жены и её любовника. Оказавшись в тюрьме под названием Шоушенк, он сталкивается с жестокостью и беззаконием, царящими по обе стороны решётки. Каждый, кто попадает в эти стены, становится их рабом до конца жизни. Но Энди, обладающий живым умом и доброй душой, находит подход как к заключённым, так и к охранникам, добиваясь их особого к себе расположения.",
+    "kp_rating": 9.1,
+    "my_rating": 9.0,
+    "poster": "images/The_Shawshank_Redemption_8njUjJP.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/326/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      2
+    ],
+    "directors": [
+      1
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 2,
+  "fields": {
+    "title": "Человек из Подольска",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 2020,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Все мы немного человек из Подольска»",
+    "description": "Николай любит Амстердам, но живёт в Подольске, мечтает о музыкальной карьере, но занимает скромную должность в районной газете. Внезапное задержание московской полицией вовлекает его в смешной и страшный аттракцион, исход которого невозможно предсказать. Точно ли он находится в полицейском участке, кто эти требовательные интеллектуалы в погонах и откуда им всё про него известно?",
+    "kp_rating": 7.1,
+    "my_rating": 7.0,
+    "poster": "images/Человек_из_Подольска_19zmbk6.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1395841/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      2,
+      1
+    ],
+    "directors": [
+      7
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 3,
+  "fields": {
+    "title": "Форрест Гамп",
+    "title_orig": "Forrest Gump",
+    "is_series": false,
+    "release_year": 1994,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Мир уже никогда не будет прежним, после того как вы увидите его глазами Форреста Гампа»",
+    "description": "Сидя на автобусной остановке, Форрест Гамп — не очень умный, но добрый и открытый парень — рассказывает случайным встречным историю своей необыкновенной жизни.  С самого малолетства парень страдал от заболевания ног, соседские мальчишки дразнили его, но в один прекрасный день Форрест открыл в себе невероятные способности к бегу. Подруга детства Дженни всегда его поддерживала и защищала, но вскоре дороги их разошлись.",
+    "kp_rating": 8.9,
+    "my_rating": 8.0,
+    "poster": "images/Forrest_Gump_XhlFu5R.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/448/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      11,
+      2,
+      10,
+      1,
+      3
+    ],
+    "directors": [
+      8
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 4,
+  "fields": {
+    "title": "Матрица",
+    "title_orig": "The Matrix",
+    "is_series": false,
+    "release_year": 1999,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Добро пожаловать в реальный мир»",
+    "description": "Жизнь Томаса Андерсона разделена на две части: днём он — самый обычный офисный работник, получающий нагоняи от начальства, а ночью превращается в хакера по имени Нео, и нет места в сети, куда он бы не смог проникнуть. Но однажды всё меняется. Томас узнаёт ужасающую правду о реальности.",
+    "kp_rating": 8.5,
+    "my_rating": 8.0,
+    "poster": "images/The_Matrix_uwApUpM.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/301/",
+    "countries": [
+      6,
+      5
+    ],
+    "genres": [
+      12,
+      5
+    ],
+    "directors": [
+      4
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 5,
+  "fields": {
+    "title": "1+1",
+    "title_orig": "Intouchables",
+    "is_series": false,
+    "release_year": 2011,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Sometimes you have to reach into someone else's world to find out what's missing in your own»",
+    "description": "Пострадав в результате несчастного случая, богатый аристократ Филипп нанимает в помощники человека, который менее всего подходит для этой работы, – молодого жителя предместья Дрисса, только что освободившегося из тюрьмы. Несмотря на то, что Филипп прикован к инвалидному креслу, Дриссу удается привнести в размеренную жизнь аристократа дух приключений.",
+    "kp_rating": 8.8,
+    "my_rating": 8.0,
+    "poster": "images/Intouchables_gkTR1gi.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/535341/",
+    "countries": [
+      7
+    ],
+    "genres": [
+      2,
+      1
+    ],
+    "directors": [
+      9,
+      10
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 6,
+  "fields": {
+    "title": "Сто лет тому вперёд",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 2024,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Они живут в разных мирах. Коля Герасимов — в Москве 2024 года, Алиса Селезнёва — на сто лет позже. Коля — обычный старшеклассник, ему нет дела до будущего. Алису не отпускает прошлое: она пытается найти маму, которая пропала, сражаясь с космическими пиратами. Встреча Алисы и Коли станет началом невероятных приключений.",
+    "kp_rating": 7.6,
+    "my_rating": 7.0,
+    "poster": "images/Сто_лет_тому_вперед_8nn7Phn.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1334852/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      4,
+      5
+    ],
+    "directors": [
+      11
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 7,
+  "fields": {
+    "title": "Мастер и Маргарита",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 2023,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Москва, 1930-е годы. Популярный драматург обвиняется в антисоветчине: спектакль по его пьесе отменяют, а самого его выгоняют из союза литераторов. В не самый лучший момент своей жизни он встречает глубоко несчастную в браке красавицу Маргариту и начинает новый роман, героями которого становятся люди из его окружения, в том числе — мистический персонаж Воланд, списанный со знакомого иностранца.",
+    "kp_rating": 7.6,
+    "my_rating": 8.0,
+    "poster": "images/Мастер_и_Маргарита_tzBbLgL.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1115471/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      2,
+      3,
+      6
+    ],
+    "directors": [
+      12
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 8,
+  "fields": {
+    "title": "Револьвер",
+    "title_orig": "Revolver",
+    "is_series": false,
+    "release_year": 2005,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Единственный способ стать умнее - это играть с более умным противником»",
+    "description": "Семь лет назад Джейк влип в неприятную историю. Город был помешан на нелегальных азартных играх, организованных преступным боссом Мака. Однажды накануне большой игры Мака потерял своего парня, и Джейку Грину предложили пойти на замену. Под давлением Грин согласился и выиграл за карточным столом. С этого всё и началось.",
+    "kp_rating": 7.3,
+    "my_rating": 8.0,
+    "poster": "images/Revolver_rgIQRrx.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/18973/",
+    "countries": [
+      1,
+      7
+    ],
+    "genres": [
+      12,
+      7,
+      2,
+      8,
+      13
+    ],
+    "directors": [
+      13
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 9,
+  "fields": {
+    "title": "Мирный воин",
+    "title_orig": "Peaceful Warrior",
+    "is_series": false,
+    "release_year": 2006,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«There are no ordinary moments»",
+    "description": "Дэн Миллмен - талантливый гимнаст колледжа, мечтающий о выступлении на Олимпийских играх. У него всё есть: награды, друзья по команде, быстрые мотоциклы, девушки и бесшабашные вечеринки.  Мир Дэна переворачивается с ног на голову, когда он встречает загадочного незнакомца по имени Сократ, у которого достаточно возможностей, чтоб открыть новый мир силы и понимания. После серьёзной травмы, с помощью Сократа и эфемерной молодой девушки по имени Джой, Ден понимает, что ему много чему ещё придется научиться...",
+    "kp_rating": 7.8,
+    "my_rating": 7.5,
+    "poster": "images/Peaceful_Warrior_ROsg9bl.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/87161/",
+    "countries": [
+      2,
+      5
+    ],
+    "genres": [
+      14,
+      2,
+      3,
+      9
+    ],
+    "directors": [
+      14
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 10,
+  "fields": {
+    "title": "Джерри Магуайер",
+    "title_orig": "Jerry Maruire",
+    "is_series": false,
+    "release_year": 1996,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Everybody loved him... Everybody disappeared»",
+    "description": "Уволенный за критику начальства спортивный агент Джерри Магуайер решает создать свою фирму. Лишь два человека верят в него — влюбленная в Магуайера Дороти и Род Тидвелл — талантливый спортсмен, но нахальный и крайне злобный тип.  Но обстоятельства не останавливают Джерри — он уверен в себе и твердо знает, чего хочет. И все могло бы быть как нельзя лучше, если бы не его бывшие коллеги. Для них все методы хороши, особенно если нужно доказать правдолюбцу, кто правит бал. И Джерри Магуайер знает — если он проиграет, то встать на ноги ему не удастся никогда.",
+    "kp_rating": 7.4,
+    "my_rating": 7.5,
+    "poster": "images/Jerry_Maguire_9nTapUY.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/4561/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      2,
+      1,
+      3,
+      9
+    ],
+    "directors": [
+      15
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 11,
+  "fields": {
+    "title": "Бойцовский клуб",
+    "title_orig": "Fight Club",
+    "is_series": false,
+    "release_year": 1999,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Интриги. Хаос. Мыло»",
+    "description": "Сотрудник страховой компании страдает хронической бессонницей и отчаянно пытается вырваться из мучительно скучной жизни. Однажды в очередной командировке он встречает некоего Тайлера Дёрдена — харизматического торговца мылом с извращенной философией. Тайлер уверен, что самосовершенствование — удел слабых, а единственное, ради чего стоит жить, — саморазрушение.  Проходит немного времени, и вот уже новые друзья лупят друг друга почем зря на стоянке перед баром, и очищающий мордобой доставляет им высшее блаженство. Приобщая других мужчин к простым радостям физической жестокости, они основывают тайный Бойцовский клуб, который начинает пользоваться невероятной популярностью.",
+    "kp_rating": 8.7,
+    "my_rating": 8.0,
+    "poster": "images/Fight_Club_3eW0cyD.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/361/",
+    "countries": [
+      2,
+      5
+    ],
+    "genres": [
+      2,
+      8,
+      13
+    ],
+    "directors": [
+      16
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 12,
+  "fields": {
+    "title": "Холоп",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 2019,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Из князи в грязи»",
+    "description": "27-летний московский мажор Григорий ошалел от безнаказанности. Богатый папа стабильно его отмазывает, да так, что уже обновил автопарк и оборудование отделению полиции, где служит начальником его друг. После очередной выходки терпение отца иссякает, и он обращается к психологу, практикующему шоковые методы воздействия на пациентов.  Вскоре сынуля попадает в аварию и приходит в себя на деревенской конюшне. На дворе — Россия 1860 года, а сам он — бесправный конюх Гришка, которому за любую провинность и ослушание всегда готовы всыпать плетей, а то и вздёрнуть на глазах у всего честного народа.",
+    "kp_rating": 7.2,
+    "my_rating": 7.0,
+    "poster": "images/Холоп_8XrOvYN.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1183582/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      1,
+      3
+    ],
+    "directors": [
+      17
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 13,
+  "fields": {
+    "title": "Повелитель ветра",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 2023,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Путешествие за пределы возможного»",
+    "description": "Знаменитый российский путешественник Федор Конюхов, за плечами которого покорение земных полюсов, океанов и высочайших вершин, отправляется в новое, свое самое опасное путешествие. Ему предстоит обогнуть Землю на воздушном шаре в полном одиночестве. Полет готовит целая команда, но нельзя предвидеть все опасности, которые ждут путешественника в экстремальных условиях. Конюхов попадает в ураган — без связи, без сна, почти без воздуха он должен идти только вперед, чтобы вернуться к тем, кого любит.",
+    "kp_rating": 7.7,
+    "my_rating": 8.0,
+    "poster": "images/Повелитель_ветра_nRh8ToD.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1253841/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      14,
+      2,
+      4
+    ],
+    "directors": [
+      18
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 14,
+  "fields": {
+    "title": "Майор Гром: Чумной Доктор",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 2021,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Кто твой герой?»",
+    "description": "Майор полиции Игорь Гром известен всему Санкт-Петербургу пробивным характером и непримиримой позицией по отношению к преступникам всех мастей. Неимоверная сила, аналитический склад ума и неподкупность — всё это делает майора Грома идеальным полицейским. Но всё резко меняется с появлением человека в маске Чумного Доктора. Заявив, что его город «болен чумой беззакония», он принимается за «лечение», убивая людей, которые в своё время избежали наказания при помощи денег и влияния. Общество взбудоражено. Полиция бессильна. Игорь впервые сталкивается с трудностями в расследовании, от итогов которого может зависеть судьба всего города.",
+    "kp_rating": 7.3,
+    "my_rating": 7.0,
+    "poster": "images/Майор_Гром_Чумной_Доктор_sFMpMQV.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1109271/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      12,
+      7,
+      1,
+      8
+    ],
+    "directors": [
+      19
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 15,
+  "fields": {
+    "title": "Интерстеллар",
+    "title_orig": "Interstellar",
+    "is_series": false,
+    "release_year": 2014,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Следующий шаг человечества станет величайшим»",
+    "description": "Когда засуха, пыльные бури и вымирание растений приводят человечество к продовольственному кризису, коллектив исследователей и учёных отправляется сквозь червоточину (которая предположительно соединяет области пространства-времени через большое расстояние) в путешествие, чтобы превзойти прежние ограничения для космических путешествий человека и найти планету с подходящими для человечества условиями.",
+    "kp_rating": 8.3,
+    "my_rating": 8.0,
+    "poster": "images/Interstellar_rrO5hDJ.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/258687/",
+    "countries": [
+      1,
+      5
+    ],
+    "genres": [
+      2,
+      4,
+      5
+    ],
+    "directors": [
+      20
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 16,
+  "fields": {
+    "title": "Собачье сердце",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1988,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Москва, 1924 год. В результате одного из сложнейших опытов профессор Филипп Филиппович Преображенский делает потрясающее открытие: после пересадки гипофиза человека пёс Шарик начинает приобретать человеческие черты. Сенсационная новость мгновенно разлетается по Москве и приносит мировому светилу очередную порцию признания. Однако радость оказывается недолгой: вопрос, что из Шарика — то есть гражданина Шарикова — может получиться «высокая психическая личность», очень быстро становится под сомнение.",
+    "kp_rating": 8.4,
+    "my_rating": 8.2,
+    "poster": "images/Собачье_сердце_ESdCwRI.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/77335/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      2,
+      1,
+      5
+    ],
+    "directors": [
+      21
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 17,
+  "fields": {
+    "title": "Унесённые призраками",
+    "title_orig": "Sen to Chihiro no kamikakushi",
+    "is_series": false,
+    "release_year": 2001,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«The tunnel led Chihiro to a mysterious town...»",
+    "description": "Тихиро с мамой и папой переезжает в новый дом. Заблудившись по дороге, они оказываются в странном пустынном городе, где их ждет великолепный пир. Родители с жадностью набрасываются на еду и к ужасу девочки превращаются в свиней, став пленниками злой колдуньи Юбабы. Теперь, оказавшись одна среди волшебных существ и загадочных видений, Тихиро должна придумать, как избавить своих родителей от чар коварной старухи.",
+    "kp_rating": 8.5,
+    "my_rating": 8.0,
+    "poster": "images/Унесённые_призраками_Wlo91A6.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/370/",
+    "countries": [
+      9
+    ],
+    "genres": [
+      15,
+      16,
+      17
+    ],
+    "directors": [
+      22
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 18,
+  "fields": {
+    "title": "Исчезнувшая",
+    "title_orig": "Gone Girl",
+    "is_series": false,
+    "release_year": 2014,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Что имеем — не храним, потерявши — плачем»",
+    "description": "Всё было готово для празднования пятилетия супружеской жизни, когда вдруг необъяснимо пропала виновница торжества. Остались следы борьбы в доме, кровь, которую явно пытались стереть, и цепочка подсказок в игре «охота за сокровищами» - жена ежегодно устраивала её для своего обожаемого мужа. И похоже, что эти подсказки дают шанс пролить свет на судьбу исчезнувшей.",
+    "kp_rating": 8.0,
+    "my_rating": 8.0,
+    "poster": "images/Gone_Girl_Hfkdy4o.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/692861/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      7,
+      2,
+      13
+    ],
+    "directors": [
+      16
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 19,
+  "fields": {
+    "title": "Герой",
+    "title_orig": "Ying xiong",
+    "is_series": false,
+    "release_year": 2002,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«One man's strength will unite an empire»",
+    "description": "Китай расколот на княжества, но уже есть лидер, который хочет покорить соседей и стать императором объединенной страны. К нему засланы убийцы, безукоризненно владеющие боевыми искусствами и имеющие фольклорные имена — Сломанный Меч, Летящий Снег и Небо. Их противник обозначен как Безымянный, он хочет защитить императора и рассказывает ему о своих поединках с убийцами.",
+    "kp_rating": 7.9,
+    "my_rating": 8.0,
+    "poster": "images/Герой_lH9ITg0.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/889/",
+    "countries": [
+      11,
+      10
+    ],
+    "genres": [
+      12,
+      2,
+      6
+    ],
+    "directors": [
+      23
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 29,
+  "fields": {
+    "title": "Морозко",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1964,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Жила-была хорошая добрая девушка Настенька. Злая мачеха заставляла ее работать, не давая продыху. Однажды она решила избавиться от падчерицы и отправила ту замерзать в зимний лес. В этих же краях жил паренек Иван. Он полюбил Настеньку, да вот только был он большим хвастуном, потому лесной колдун и превратил его в медведя.",
+    "kp_rating": 8.1,
+    "my_rating": 7.8,
+    "poster": "images/Морозко_lFXpioq.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/46701/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      1,
+      3,
+      17,
+      6
+    ],
+    "directors": [
+      24
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 30,
+  "fields": {
+    "title": "Брат",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1997,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Демобилизовавшись, Данила Багров возвращается в родной городок. Но скучная жизнь провинции его не устраивает, и он отправляется в Петербург, где, по слухам, уже несколько лет процветает его старший брат. Данила находит брата, но всё оказывается не так просто — брат работает наемным убийцей.",
+    "kp_rating": 8.3,
+    "my_rating": 7.5,
+    "poster": "images/Брат_EYk5O4Y.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/41519/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      12,
+      2,
+      8
+    ],
+    "directors": [
+      25
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 31,
+  "fields": {
+    "title": "Пророк. История Александра Пушкина",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 2025,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Пушкин молод, дерзок и любим публикой: он — звезда любого бала, поклонники носят его на руках, а девушки мечтают о его внимании. Но ни высокие покровители, ни верные друзья, ни известность не могут отвести от него злой рок — ссылки, дуэли, безденежье. Пока однажды он не встречает ту самую, единственную, кто осветит его жизнь и станет его судьбой.",
+    "kp_rating": 7.0,
+    "my_rating": 7.0,
+    "poster": "images/Пророк_lyvjG2p.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1346361/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      2,
+      18
+    ],
+    "directors": [
+      26
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 36,
+  "fields": {
+    "title": "Властелин колец: Братство кольца",
+    "title_orig": "The Lord of the Rings: The Fellowship of the Ring",
+    "is_series": false,
+    "release_year": 2001,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Power can be held in the smallest of things...»",
+    "description": "Сказания о Средиземье — это хроника Великой войны за Кольцо, длившейся не одну тысячу лет. Тот, кто владел Кольцом, получал неограниченную власть, но был обязан служить злу.Тихая деревня, где живут хоббиты. Придя на 111-й день рождения к своему старому другу Бильбо Бэггинсу, волшебник Гэндальф начинает вести разговор о кольце, которое Бильбо нашел много лет назад. Это кольцо принадлежало когда-то темному властителю Средиземья Саурону, и оно дает большую власть своему обладателю. Теперь Саурон хочет вернуть себе власть над Средиземьем. Бильбо отдает Кольцо племяннику Фродо, чтобы тот отнёс его к Роковой Горе и уничтожил.",
+    "kp_rating": 8.6,
+    "my_rating": 8.0,
+    "poster": "images/Властелин_1_D52l2TN.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/328/",
+    "countries": [
+      12,
+      5
+    ],
+    "genres": [
+      12,
+      2,
+      4,
+      6
+    ],
+    "directors": [
+      27
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 37,
+  "fields": {
+    "title": "Властелин колец: Две крепости",
+    "title_orig": "The Lord of the Rings: The Two Towers",
+    "is_series": false,
+    "release_year": 2002,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Приключение продолжается»",
+    "description": "Братство распалось, но Кольцо Всевластья должно быть уничтожено. Фродо и Сэм вынуждены довериться Голлуму, который взялся провести их к вратам Мордора. Громадная армия Сарумана приближается: члены братства и их союзники готовы принять бой. Битва за Средиземье продолжается",
+    "kp_rating": 8.6,
+    "my_rating": 8.0,
+    "poster": "images/Властелин_2_SPojXTa.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/312/",
+    "countries": [
+      12,
+      5
+    ],
+    "genres": [
+      12,
+      2,
+      4,
+      6
+    ],
+    "directors": [
+      27
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 38,
+  "fields": {
+    "title": "Властелин колец: Возвращение короля",
+    "title_orig": "The Lord of the Rings: The Return of the King",
+    "is_series": false,
+    "release_year": 2003,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«There can be no triumph without loss. No victory without suffering. No freedom without sacrifice»",
+    "description": "Повелитель сил тьмы Саурон направляет свою бесчисленную армию под стены Минас-Тирита, крепости Последней Надежды. Он предвкушает близкую победу, но именно это мешает ему заметить две крохотные фигурки — хоббитов, приближающихся к Роковой Горе, где им предстоит уничтожить Кольцо Всевластья.",
+    "kp_rating": 8.7,
+    "my_rating": 8.0,
+    "poster": "images/Властелин_3_iz6wdi9.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/3498/",
+    "countries": [
+      12,
+      5
+    ],
+    "genres": [
+      12,
+      2,
+      4,
+      6
+    ],
+    "directors": [
+      27
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 39,
+  "fields": {
+    "title": "Иван Васильевич меняет профессию",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1973,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Инженер-изобретатель Тимофеев сконструировал машину времени, которая соединила его квартиру с XVI веком — точнее, с палатами государя Ивана Грозного. Туда-то и попадают тёзка царя пенсионер-общественник Иван Васильевич Бунша и квартирный вор Жорж Милославский, а сам великий государь оказывается в квартире Тимофеева.",
+    "kp_rating": 8.8,
+    "my_rating": 8.0,
+    "poster": "images/Иван_Васильевич.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/42664/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      1,
+      4,
+      5
+    ],
+    "directors": [
+      28
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 40,
+  "fields": {
+    "title": "Начало",
+    "title_orig": "Inception",
+    "is_series": false,
+    "release_year": 2010,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Твой разум - место преступления»",
+    "description": "Кобб – талантливый вор, лучший из лучших в опасном искусстве извлечения: он крадет ценные секреты из глубин подсознания во время сна, когда человеческий разум наиболее уязвим. Редкие способности Кобба сделали его ценным игроком в привычном к предательству мире промышленного шпионажа, но они же превратили его в извечного беглеца и лишили всего, что он когда-либо любил.  И вот у Кобба появляется шанс исправить ошибки. Его последнее дело может вернуть все назад, но для этого ему нужно совершить невозможное – инициацию. Вместо идеальной кражи Кобб и его команда спецов должны будут провернуть обратное. Теперь их задача – не украсть идею, а внедрить ее. Если у них получится, это и станет идеальным преступлением.  Но никакое планирование или мастерство не могут подготовить команду к встрече с опасным противником, который, кажется, предугадывает каждый их ход. Врагом, увидеть которого мог бы лишь Кобб.",
+    "kp_rating": 8.7,
+    "my_rating": 7.5,
+    "poster": "images/Inception_qa8WuPU.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/447301/",
+    "countries": [
+      1,
+      5
+    ],
+    "genres": [
+      12,
+      7,
+      2,
+      13,
+      5
+    ],
+    "directors": [
+      20
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 41,
+  "fields": {
+    "title": "Джентльмены",
+    "title_orig": "The Gentlemen",
+    "is_series": false,
+    "release_year": 2019,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Criminal. Class»",
+    "description": "Один ушлый американец ещё со студенческих лет приторговывал наркотиками, а теперь придумал схему нелегального обогащения с использованием поместий обедневшей английской аристократии и очень неплохо на этом разбогател. Другой пронырливый журналист приходит к Рэю, правой руке американца, и предлагает тому купить киносценарий, в котором подробно описаны преступления его босса при участии других представителей лондонского криминального мира — партнёра-еврея, китайской диаспоры, чернокожих спортсменов и даже русского олигарха.",
+    "kp_rating": 8.6,
+    "my_rating": 7.8,
+    "poster": "images/The_Gentlemen_IbElk53.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1143242/",
+    "countries": [
+      1,
+      5
+    ],
+    "genres": [
+      12,
+      1,
+      8
+    ],
+    "directors": [
+      13
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 42,
+  "fields": {
+    "title": "Шерлок Холмс и доктор Ватсон: Знакомство",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1979,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Молодой доктор по фамилии Ватсон возвратился из Афганистана в родной туманный Лондон. Ему нужно недорогое жилье. И вот, по совету друга, он поселяется в маленьком домике на Бейкер-стрит. Его хозяйка - милая чудаковатая старушка миссис Хадсон. Также там имеется сосед - некий мистер Шерлок Холмс. Это непонятная и таинственная личность - к нему в гости приходят оборванцы и бандиты, а иногда полицейские и лорды. Кто же он? Доктор в растерянности...",
+    "kp_rating": 8.6,
+    "my_rating": 8.0,
+    "poster": "images/Шерлок_Холмс_и_доктор_Ватсон.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/77269/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      7,
+      8
+    ],
+    "directors": [
+      29
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 43,
+  "fields": {
+    "title": "Крепкий орешек",
+    "title_orig": "Die Hard",
+    "is_series": false,
+    "release_year": 1988,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«40 Storeys High - with Suspense, Excitement and Adventure on every level!»",
+    "description": "В суперсовременном небоскребе Лос-Анджелеса полицейский Джон Макклейн ведет смертельную схватку с бандой политических террористов, взявших в заложники два десятка человек, в число которых попадает и его жена. Началось все с того, что парень приехал в город к жене, оказался на рождественском приеме, а кончилось настоящей войной...",
+    "kp_rating": 8.0,
+    "my_rating": 7.5,
+    "poster": "images/Die_Hard_azCcPsp.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/471/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      12,
+      8,
+      13
+    ],
+    "directors": [
+      30
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 44,
+  "fields": {
+    "title": "Ирония судьбы, или С легким паром!",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1975,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "31 декабря пошли друзья в баню попариться, по традиции смыть с себя все плохое, чтобы встретить Новый год чистыми, а «напарились» до такой степени (пивом и водкой), что отправили в Ленинград не того.",
+    "kp_rating": 8.2,
+    "my_rating": 8.2,
+    "poster": "images/Ирония_судьбы.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/77331/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      1,
+      3
+    ],
+    "directors": [
+      5
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 45,
+  "fields": {
+    "title": "Служебный роман",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1977,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Анатолий Ефремович Новосельцев, рядовой служащий одного статистического управления — человек робкий и застенчивый. Ему хотелось бы получить вакантное место зав. отделом, но он не знает как подступиться к этому делу. Старый приятель Самохвалов советует ему приударить за Людмилой Прокофьевной Калугиной — сухарем в юбке и директором заведения.",
+    "kp_rating": 8.3,
+    "my_rating": 8.3,
+    "poster": "images/Служебный_роман.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/43869/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      2,
+      1,
+      3
+    ],
+    "directors": [
+      5
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 46,
+  "fields": {
+    "title": "Гараж",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1979,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "На заседании гаражного кооператива предстоит выбрать четырех «крайних», которые должны сами отказаться от будущего собственного гаража. Но выбора, в общем-то, и нет — правление кооператива уже составило список сокращаемых, который собранию надо лишь утвердить.",
+    "kp_rating": 8.1,
+    "my_rating": 8.0,
+    "poster": "images/Гараж_l7oYGwX.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/44467/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      2,
+      1
+    ],
+    "directors": [
+      5
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 47,
+  "fields": {
+    "title": "Аватар",
+    "title_orig": "Avatar",
+    "is_series": false,
+    "release_year": 2009,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Это новый мир»",
+    "description": "Бывший морпех Джейк Салли прикован к инвалидному креслу. Несмотря на немощное тело, Джейк в душе по-прежнему остается воином. Он получает задание совершить путешествие в несколько световых лет к базе землян на планете Пандора, где корпорации добывают редкий минерал, имеющий огромное значение для выхода Земли из энергетического кризиса.",
+    "kp_rating": 8.0,
+    "my_rating": 7.8,
+    "poster": "images/Avatar_4OkUsrx.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/251733/",
+    "countries": [
+      1,
+      5
+    ],
+    "genres": [
+      12,
+      2,
+      4,
+      5
+    ],
+    "directors": [
+      32
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 48,
+  "fields": {
+    "title": "Темный рыцарь",
+    "title_orig": "The Dark Knight",
+    "is_series": false,
+    "release_year": 2008,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Добро пожаловать в мир Хаоса!»",
+    "description": "Бэтмен поднимает ставки в войне с криминалом. С помощью лейтенанта Джима Гордона и прокурора Харви Дента он намерен очистить улицы Готэма от преступности. Сотрудничество оказывается эффективным, но скоро они обнаружат себя посреди хаоса, развязанного восходящим криминальным гением, известным напуганным горожанам под именем Джокер.",
+    "kp_rating": 8.5,
+    "my_rating": 7.7,
+    "poster": "images/The_Dark_Knight_SjRdhr7.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/111543/",
+    "countries": [
+      1,
+      5
+    ],
+    "genres": [
+      12,
+      2,
+      8,
+      13,
+      5
+    ],
+    "directors": [
+      20
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 49,
+  "fields": {
+    "title": "Тот самый Мюнхгаузен",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1979,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Комическая фантазия о жизни, любви и смерти знаменитого барона Мюнхгаузена, жившего в XVIII веке и ставшего героем многих веселых книг и преданий, опирается на персонажей и эпизоды знаменитого романа Р. Распе, но по сути является самостоятельным произведением.«Мыслящий человек просто обязан время от времени поднимать себя за волосы» - похоже, это и удается авторам картины. Барон хочет жениться на любимой им Марте, но церковь отказывается обвенчать их, так как имеется живая жена, «усмирявшая его 20 лет». Уставшая Марта хочет, чтобы барон стал таким, как все, но барон этого не хочет, да и не может.Герцог разрешит брак только в том случае, если барон письменно подтвердит, что все его истории лживы, а он сам - обыкновенный человек.",
+    "kp_rating": 8.4,
+    "my_rating": 8.1,
+    "poster": "images/Тот_самый_Мюнхгаузен.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/77283/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      2,
+      1,
+      6
+    ],
+    "directors": [
+      31
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 50,
+  "fields": {
+    "title": "Семнадцать мгновений весны",
+    "title_orig": "",
+    "is_series": true,
+    "release_year": 1973,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Германия, канун окончания Второй мировой войны. Советский разведчик полковник Исаев, он же - штандартенфюрер СС Штирлиц, исполняет последние задания Центра, диктуемые ходом военных действий и политическими интригами верхов противоборствующих сторон.",
+    "kp_rating": 9.0,
+    "my_rating": 8.5,
+    "poster": "images/Семнадцать_мгновений.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/89540/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      11,
+      2,
+      10,
+      4
+    ],
+    "directors": [
+      33
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 51,
+  "fields": {
+    "title": "Друзья",
+    "title_orig": "Friends",
+    "is_series": true,
+    "release_year": 1994,
+    "series_last_year": 2004,
+    "num_of_seasons": 10,
+    "slogan": "«Everybody needs Friends!»",
+    "description": "Шестеро друзей – Рейчел, Моника, Фиби, Джоуи, Чендлер и Росс – живут по соседству, вместе убивают время, делятся секретами и иногда очень сильно влюбляются.",
+    "kp_rating": 9.2,
+    "my_rating": 7.0,
+    "poster": "images/Friends_Cjv1Qpr.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/77044/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      1,
+      3
+    ],
+    "directors": [
+      34
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 52,
+  "fields": {
+    "title": "Теория большого взрыва",
+    "title_orig": "The Big Bang Theory",
+    "is_series": true,
+    "release_year": 2007,
+    "series_last_year": 2019,
+    "num_of_seasons": 12,
+    "slogan": "«Smart Is The New Sexy»",
+    "description": "Два блестящих физика Леонард и Шелдон - великие умы, которые понимают, как устроена вселенная. Но их гениальность ничуть не помогает им общаться с людьми, особенно с женщинами. Всё начинает меняться, когда напротив них поселяется красавица Пенни.  Стоит также отметить пару странных друзей этих физиков: Воловиц который любит употреблять фразы на разных языках, включая русский, а Раджеш Кутрапали теряет дар речи при виде женщин.",
+    "kp_rating": 8.6,
+    "my_rating": 8.0,
+    "poster": "images/The_Big_Bang_Theory_RG4BB97.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/306084/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      1,
+      3
+    ],
+    "directors": [
+      35
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 53,
+  "fields": {
+    "title": "Вампиры средней полосы",
+    "title_orig": "",
+    "is_series": true,
+    "release_year": 2021,
+    "series_last_year": 2023,
+    "num_of_seasons": 2,
+    "slogan": "-",
+    "description": "Смоленск — среднестатистический город средней полосы России. Но не совсем. Много веков тут живут вампиры, которые хоть и позволяют себе охотиться на людей, но всё же свято чтут договор, по которому за каждое убийство нужно отдать хранителям на казнь одного из своих. Когда в березовой роще под Смоленском находят обескровленных парней, их мирная жизнь оказывается под угрозой. Теперь местной вампирской ячейке общества под руководством самого старого вампира деда Славы, он же — Святослав Вернидубович, предстоит в кратчайшие сроки найти нарушителя спокойствия.",
+    "kp_rating": 8.3,
+    "my_rating": 7.0,
+    "poster": "images/Вампиры_средней_полосы.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/1224067/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      7,
+      1,
+      6
+    ],
+    "directors": [
+      36
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 54,
+  "fields": {
+    "title": "Место встречи изменить нельзя",
+    "title_orig": "",
+    "is_series": true,
+    "release_year": 1979,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Убийства, засады, погони, перестрелки на фоне послевоенной Москвы. Сотрудники МУРа против таинственной и неуловимой банды «Чёрная кошка». Демобилизовавшийся офицер разведки Володя Шарапов начинает работать в отделе по борьбе с бандитизмом. Одно из первых дел, в расследовании которых он участвует, — убийство гражданки Ларисы Груздевой.",
+    "kp_rating": 8.9,
+    "my_rating": 8.0,
+    "poster": "images/Место_встречи_изменить_нельзя.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/77202/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      12,
+      7,
+      2,
+      8
+    ],
+    "directors": [
+      41
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 55,
+  "fields": {
+    "title": "Разделение",
+    "title_orig": "Severance",
+    "is_series": true,
+    "release_year": 2022,
+    "series_last_year": 2025,
+    "num_of_seasons": 2,
+    "slogan": "-",
+    "description": "Руководство компании Lumon Industries придумало новый способ контролировать повседневную деятельность своих сотрудников — «процедуру разделения», отделяющую рабочие воспоминания от обычных. Марк соглашается на процедуру, но вскоре начинает сомневаться в правильности своего выбора.",
+    "kp_rating": 8.2,
+    "my_rating": 8.0,
+    "poster": "images/Severance_NjeTatT.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/1343318/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      7,
+      2,
+      13,
+      5
+    ],
+    "directors": [
+      40
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 56,
+  "fields": {
+    "title": "Щит и меч",
+    "title_orig": "",
+    "is_series": true,
+    "release_year": 1968,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Великая Отечественная война. Советский разведчик за несколько лет службы в абвере завоевывает расположение немецкого военного командования. Перевод в СС обеспечивает ему доступ к ценнейшей секретной информации...",
+    "kp_rating": 8.4,
+    "my_rating": 8.0,
+    "poster": "images/Щит_и_меч.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/43732/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      11,
+      2,
+      4
+    ],
+    "directors": [
+      39
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 57,
+  "fields": {
+    "title": "Андрей Рублев",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1966,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Русь начала XV века. Страну раздирают княжеские междоусобицы. Набеги татар, голод и мор преследуют народ. В эту трагичную эпоху появляется на Руси великий живописец.",
+    "kp_rating": 8.2,
+    "my_rating": 8.0,
+    "poster": "images/Андрей_Рублев.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/8385/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      14,
+      2,
+      10
+    ],
+    "directors": [
+      3
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 58,
+  "fields": {
+    "title": "Мастер и Маргарита",
+    "title_orig": "",
+    "is_series": true,
+    "release_year": 2005,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Рукописи не горят!»",
+    "description": "1930-е годы. В Москве появляется загадочный иностранец, который представляется Воландом. Вместе с ним в жизнь советского города вторгается чертовщина и мистика, а прислуга этого господина сводит с ума обывателей и морочит им голову. Но есть у визита Воланда и оборотная, скрытая от простых смертных сторона.",
+    "kp_rating": 8.1,
+    "my_rating": 8.0,
+    "poster": "images/Мастер_и_Маргарита_2005.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/79429/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      7,
+      2,
+      3,
+      13
+    ],
+    "directors": [
+      21
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 59,
+  "fields": {
+    "title": "Гостья из будущего",
+    "title_orig": "",
+    "is_series": true,
+    "release_year": 1984,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Борьба с космическими пиратами, захватывающее путешествие во времени, знакомство с девочкой из будущего Алисой Селезневой — вот к чему привел обычный поход за кефиром мальчика Колю из 6-го класса.",
+    "kp_rating": 8.3,
+    "my_rating": 8.0,
+    "poster": "images/Гостья_из_будущего.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/77185/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      4,
+      17,
+      5
+    ],
+    "directors": [
+      38
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 60,
+  "fields": {
+    "title": "Твин Пикс",
+    "title_orig": "Twin Peaks",
+    "is_series": true,
+    "release_year": 1990,
+    "series_last_year": 2017,
+    "num_of_seasons": 3,
+    "slogan": "«A town where everyone knows everyone and nothing is what it seems»",
+    "description": "На берегу озера находят завёрнутое в полиэтилен тело старшеклассницы Лоры Палмер. В ходе расследования перед внимательными взглядами агента ФБР Купера, шерифа Трумана и его помощников проходят разные жители Твин Пикс. Открываются тёмные стороны обитателей на первый взгляд тихого и мирного городка.",
+    "kp_rating": 8.4,
+    "my_rating": 8.0,
+    "poster": "images/Twin_Peaks.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/84358/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      7,
+      2,
+      8,
+      13,
+      5
+    ],
+    "directors": [
+      37
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 61,
+  "fields": {
+    "title": "По щучьему велению",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 2023,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Не фильм, а сказка»",
+    "description": "Если ты идешь на рыбалку — будь готов к тому, что вытянешь рыбу своей мечты, волшебную Щуку, которая может исполнить три любых твоих желания. Только Емеля спустил два желания на ветер, а третье решил приберечь. Поэтому, чтобы добиться руки царской дочери Анфисы, придется ему действовать без волшебной силы, самому. А помогать ему будет Щука, которая без своей шкурки предстает обычной девушкой Василисой. Вместе им предстоит найти скатерть-самобранку, встретиться с Котом Баюном, отправиться в мрачное царство Кощея и понять, что настоящее чудо — это быть с тем, кого любишь",
+    "kp_rating": 7.8,
+    "my_rating": 9.0,
+    "poster": "images/По_щучьему_велению.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/4959134/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      4,
+      17,
+      6
+    ],
+    "directors": [
+      42
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 62,
+  "fields": {
+    "title": "Добро пожаловать, или Посторонним вход воспрещен",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1964,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Пионер Костя Иночкин, будучи в пионерском лагере, переплыл реку и оказался на запретной для посещений территории, за что и был изгнан его начальником товарищем Дыниным. Не желая доводить бабушку до инфаркта своим досрочным прибытием, мальчик тайно возвращается в лагерь, где пионеры так же тайно содержат его и предпринимают все меры, чтобы не состоялся родительский день. Ведь именно в этот день Костина бабушка заявится в лагерь...",
+    "kp_rating": 8.3,
+    "my_rating": 8.0,
+    "poster": "images/Добро_пожаловать.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/44238/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      1,
+      17
+    ],
+    "directors": [
+      43
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 63,
+  "fields": {
+    "title": "Перед рассветом",
+    "title_orig": "Before Sunrise",
+    "is_series": false,
+    "release_year": 1995,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Can the greatest romance of your life last only one night?»",
+    "description": "Молодой американец Джесси знакомится в поезде с красивой француженкой Селин. Они сразу находят много общих тем для разговоров, и Джесси уговаривает Селин сойти вместе с ним в Вене, чтобы провести вместе вечер и ночь, так как наутро он должен улететь домой в Штаты.  Этой ночью происходит чудо, между мужчиной и женщиной рождается любовь такая сильная, что всё остальное перестаёт иметь значение. Однако неумолимый обратный отсчёт продолжается, до рассвета осталось совсем немного времени, и влюблённые используют каждый драгоценный момент, чтобы узнать друг друга получше, чтобы успеть обменяться всеми своими воспоминаниями, мечтами и нежностью... перед рассветом.",
+    "kp_rating": 8.0,
+    "my_rating": 8.0,
+    "poster": "images/Before_Sunrise.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/18368/",
+    "countries": [
+      13,
+      5
+    ],
+    "genres": [
+      2,
+      3
+    ],
+    "directors": [
+      44
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 64,
+  "fields": {
+    "title": "Ход королевы",
+    "title_orig": "The Queen's Gambit",
+    "is_series": true,
+    "release_year": 2020,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Штат Кентукки, 1957 год. После смерти матери 9-летняя Элизабет Хармон остаётся сиротой и отправляется в католический приют. В этом заведении детям регулярно дают «витамины», и по совету другой подопечной Бет оставляет зелёные капсулы на ночь. Там же девочка знакомится с пожилым уборщиком Шайбелем, которого просит научить её играть в шахматы. Днём, сбежав со скучных занятий под предлогом помыть тряпку, Бет играет с мистером Шайбелем в его подвальной подсобке, а ночью, приняв зелёную капсулу, прокручивает шахматные партии на потолке общей спальни. Через несколько лет девочку удочерят, у неё начнётся совсем другая жизнь, но главную роль в ней будет играть любовь к шахматам.",
+    "kp_rating": 8.3,
+    "my_rating": 7.8,
+    "poster": "images/The_Queens_Gambit.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/1253633/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      2,
+      9
+    ],
+    "directors": [
+      47
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 65,
+  "fields": {
+    "title": "Нежность",
+    "title_orig": "",
+    "is_series": true,
+    "release_year": 2020,
+    "series_last_year": 2024,
+    "num_of_seasons": 2,
+    "slogan": "-",
+    "description": "Продолжение истории о финансовом директоре крупной компании Елене Ивановне Подберезкиной. В случайной командировке она встречает мужчину своей мечты и так же неожиданно теряет его.Елена Ивановна продолжает искать его всеми доступными и недоступными способами. В ход идет все — логика, эзотерика, помощь подруг, знакомство с новым мужчиной, поездка на ретрит и много всего другого. Она идет вперед, бежит, сломя голову, ошибается, падет, набивает шишки, но бежит, верит, желает и в итоге добегает до пункта назначения. И на этом непростом пути в поисках любви, возможно, обретает главное — себя.",
+    "kp_rating": 8.1,
+    "my_rating": 8.1,
+    "poster": "images/Нежность_rgFyGD5.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/1388641/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      1,
+      3
+    ],
+    "directors": [
+      45,
+      46
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 66,
+  "fields": {
+    "title": "Игра престолов",
+    "title_orig": "Game of Thrones",
+    "is_series": true,
+    "release_year": 2011,
+    "series_last_year": 2019,
+    "num_of_seasons": 8,
+    "slogan": "«Победа или смерть»",
+    "description": "К концу подходит время благоденствия, и лето, длившееся почти десятилетие, угасает. Вокруг средоточия власти Семи королевств, Железного трона, зреет заговор, и в это непростое время король решает искать поддержки у друга юности Эддарда Старка. В мире, где все — от короля до наемника — рвутся к власти, плетут интриги и готовы вонзить нож в спину, есть место и благородству, состраданию и любви. Между тем никто не замечает пробуждение тьмы из легенд далеко на Севере — и лишь Стена защищает живых к югу от нее.",
+    "kp_rating": 9.0,
+    "my_rating": 7.0,
+    "poster": "images/Game_of_Thrones.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/464963/",
+    "countries": [
+      1,
+      5
+    ],
+    "genres": [
+      12,
+      2,
+      3,
+      4,
+      6
+    ],
+    "directors": [
+      48
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 71,
+  "fields": {
+    "title": "Кавказская пленница, или Новые приключения Шурика",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1966,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Отправившись в одну из горных республик собирать фольклор, студент Шурик влюбляется в симпатичную Нину — спортсменку, отличницу, комсомолку и просто красавицу. Однако банда из трёх человек похищает девушку, чтобы насильно выдать замуж. Поняв, что происходит, Шурик отважно бросается освобождать кавказскую пленницу.",
+    "kp_rating": 8.5,
+    "my_rating": 8.0,
+    "poster": "images/Кавказская_пленница.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/44745/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      1,
+      3,
+      18,
+      4
+    ],
+    "directors": [
+      28
+    ]
+  }
+}
+]
