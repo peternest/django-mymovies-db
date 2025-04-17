@@ -15,20 +15,18 @@ Powered by the Django web framework.
 ## Configuration
 
 Configuration is stored in `src/.env`; for examples see `src/.env.sample`.
-The movie database is stored in PostgreSQL but you can use any supported DBMS; see `DATABASE_URL` parameter in `src/.env`.
 
 ## How to install it on a local machine
 
-This project requires Python 3.11+. [Poetry](https://python-poetry.org/) is used to manage dependencies.
+This project requires Python 3.11+. [Poetry](https://python-poetry.org/) is used to manage dependencies and should be installed also.
 
 Clone the repo into any folder:
 ```
 git clone https://github.com/peternest/django-mymovies-db.git <any-folder>
+cd <any-folder>
 ```
 
-Copy `src/.env.sample` to `src/.env` and edit the latter according to your configuration.
-
-Probably you will want to create a virtual environment first. After that install requirements:
+Create a virtual environment and install requirements:
 ```
 poetry shell
 poetry install --no-root
@@ -37,18 +35,24 @@ poetry install --no-root
 Change to the `src` folder, where `manage.py` lives:
 ```
 cd src
+```
+
+Copy `src/.env.sample` to `src/.env` and edit the latter according to your configuration.
+The movie database by default is stored in SQLite but you can use any supported DBMS; see `DATABASE_URL` parameter.
+
+Run the following commands to make initial database setup:
+```
 python manage.py makemigrations
 python manage.py migrate
 python manage.py collectstatic
-python manage.py createsuperuser
-python manage.py runserver
+python manage.py createsuperuser  # Necessary to use admin possibilities
 ```
 
-If you want to load some initial data in RUSSIAN (about 100 movies), execute:
+If you want to load some initial data in RUSSIAN (about 100 movies) and localization texts, execute:
 ```
 python manage.py loaddata data/my_fixture.json
+python manage.py compilemessages
 ```
-Note: after loading initial data movie posters will be absent (not distibuted with project). You can place them into the `src/media/images` folder and add by editing movies. Preferrable size is 600x900 px. 
 
 Run the development server:
 ```
