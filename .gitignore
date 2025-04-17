@@ -106,5 +106,5 @@ node_modules/
 src/data/*
 !src/data/my_fixture.json
 
-src/media/images/*
-!src/media/images/_PosterPlaceholder.jpg
+# src/media/images/*
+# !src/media/images/_PosterPlaceholder.jpg
