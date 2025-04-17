@@ -1,22 +1,43 @@
-html, body, 
-div, span, p, h1, h2, h3, h4, h5, h6, 
-a, p, ol, ul, li, table, tbody, th, tr, td
-{
-    background-color: white;
+body {
+    background-color: #f4f4f4;
     font-family: Roboto, Helvetica, Arial, sans-serif;
 	font-size: 14px;
 	line-height: 1;
+    margin: 0;
+    padding: 0;
 }
 
+.wrapper {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
 .universal-button {
     background: #f2f2f2;
     border: 1px inset rgb(118, 118, 118);
     border-radius: 8px;
     color: black;
-    font-size: 15px;
-    font-weight: 500;
+    font-size: 16px;
     padding: 10px;
     text-decoration: none;
+}
+.universal-button:hover {
+    background-color: #c0c0c0;
+}
+.compact-button {
+    background: #f2f2f2;
+    border: 1px inset rgb(118, 118, 118);
+    border-radius: 4px;
+    color: black;
+    font-size: 16px;
+    padding: 4px;
+    text-decoration: none;
+}
+.compact-button:hover {
+    background-color: #c0c0c0;
 }
 
 /* for debug*/
@@ -137,7 +158,7 @@ INDEX PAGE
 }
 .sticky-sidebar-right {
     position: sticky;
-    top: 180px;
+    top: 110px;
     text-align: center;
 }
 .form-direction {
@@ -147,7 +168,8 @@ INDEX PAGE
 
 .big-header {
     font-size: 32px;
-    font-weight: 600;
+    font-weight: bold;
+    margin-bottom: 30px;
 }
 .medium-header {
     font-size: 24px;

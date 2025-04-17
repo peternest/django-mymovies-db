@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="{% static 'movies/style.css' %}">
 </head>
 <body>
-    <h1 class="big-header">Добавить новый фильм</h1>
+    <div class="wrapper" style="max-width: 800px;">
+    <h1 class="big-header" style="text-align: center;">Добавить новый фильм</h1>
 
     <form id="movie-form" action="/movies/add/" method="post" enctype="multipart/form-data">
         {% csrf_token %}
@@ -38,6 +39,7 @@
             <input type="submit" value="Сохранить" class="universal-button"/>
         </div>
     </form>
+    </div>
 
     <script>
         function openPopup(value) {

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="{% static 'movies/style.css' %}">
 </head>
 <body>
+<div class="wrapper">
 <table class="main-table">
 <tr>
     <td class="main-table-left">
@@ -55,7 +56,7 @@
                 </select>
                 <br><br>
 
-                <input type="submit" value="Фильтровать" style="width: 12em;"/>
+                <input type="submit" value="Фильтровать" class="compact-button" style="width: 10em;"/>
             </form>
         </div>
     </td>
@@ -64,7 +65,7 @@
         <h1 class="big-header">{% if is_series %}50 лучших сериалов{% else %}100 лучших фильмов{% endif %}</h1>
 
         <!-- Используем форму из контейнера 'main-table-left', см. атрибут form ниже -->
-        <label>Сортировать по</label>
+        <label>Сортировать по&nbsp;</label>
         <select name="sort" class="sort-selector" required form="filter-sort-form">
             {% for item in sort_list %}
             <option value="{{ item.value }}" {% if item.is_selected %}selected{% endif %}>
@@ -72,8 +73,9 @@
             </option>
             {% endfor %}
         </select>
-        <input type="submit" value="Сортировать" form="filter-sort-form"/>
-        <br><br>
+        &nbsp;
+        <input type="submit" value="Сортировать" form="filter-sort-form" class="compact-button"/>
+        <br><br><br>
 
         {% if top_100_movies %}
             <ol class="movie-list">
@@ -97,8 +99,8 @@
                         </div>
                     </div>
                 </li>
-                {% endfor %}
-            </ul>
+            {% endfor %}
+            </ol>
         {% endif %}
     </td>
 
@@ -109,5 +111,6 @@
     </td>
 </tr>
 </table>
+</div>
 </body>
 </html>
