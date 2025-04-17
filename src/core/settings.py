@@ -9,7 +9,7 @@ env = environ.Env(
 
 # Points to 'src' folder
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(f"BASE_DIR = {BASE_DIR}")
+# print(f"BASE_DIR = {BASE_DIR}")
 
 envpath = BASE_DIR / ".env"
 if envpath.exists():
