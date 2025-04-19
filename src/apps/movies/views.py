@@ -1,16 +1,16 @@
 from dataclasses import dataclass
-from typing import Final, List
+from typing import Any, ClassVar, Final, LiteralString
 
 from django.db.models import Model, Q
 from django.db.models.manager import BaseManager
-from django.http import HttpResponseRedirect, HttpResponse, JsonResponse, HttpRequest
+from django.http import HttpRequest, HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render
+from django.utils.translation import gettext_lazy as _
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import DetailView, ListView, RedirectView
-from django.utils.translation import gettext_lazy as _
 
 from apps.movies.forms import CountryForm, DirectorForm, GenreForm, MovieForm
-from apps.movies.models import Country, Genre, Director, Movie
+from apps.movies.models import Country, Director, Genre, Movie
 
 
 @dataclass
@@ -25,16 +25,18 @@ class MoviesListView(ListView):
     context_object_name = "top_100_movies"
     is_series = False
 
-    OPTION_ALL: Final[str] = "Все"
+    OPTION_ALL: Final[LiteralString] = "Все"  # noqa: RUF001
 
-    sort_list: List[Option] = [
+    EN_DASH: Final[LiteralString] = "–"  # noqa: RUF001
+
+    sort_list: ClassVar[list[Option]] = [
         Option("моему рейтингу", "-my_rating", False),
         Option("рейтингу КП", "-kp_rating", False),
         Option("году выпуска", "-release_year", False),
         Option("алфавиту", "title", False)
     ]
 
-    def get_context_data(self, **kwargs):
+    def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
         context = super().get_context_data(**kwargs)
         context["sort_list"] = self._make_sort_list()
         context["country_list"] = self._make_option_list(Country, "country")
@@ -42,10 +44,6 @@ class MoviesListView(ListView):
         context["director_list"] = self._make_option_list(Director, "director")
         context["years_list"] = self._make_years_list()
         context["is_series"] = self.is_series
-        # print("Context {")
-        # for k,v in context.items():
-        #    print(f"  '{k}' = '{v}'")
-        # print("}")
         return context
 
     def get_queryset(self) -> BaseManager[Movie]:
@@ -65,7 +63,7 @@ class MoviesListView(ListView):
             queryset = queryset.filter(directors__director=director_value)
 
         if years_value and years_value != self.OPTION_ALL:
-            years_list = years_value.split("–")
+            years_list = years_value.split(self.EN_DASH)
             year_from = years_list[0]
             year_to = years_list[1]
             queryset = queryset.filter(Q(release_year__gte=year_from, release_year__lte=year_to))
@@ -75,19 +73,19 @@ class MoviesListView(ListView):
     def get_ordering(self) -> str:
         return self.request.GET.get("sort", "-my_rating")
 
-    def _make_sort_list(self) -> List[Option]:
+    def _make_sort_list(self) -> list[Option]:
         sort_value = self.request.GET.get("sort", "-my_rating")
         for item in self.sort_list:
             item.is_selected = (item.value == sort_value)
         return self.sort_list
 
-    def _make_years_list(self) -> List[Option]:
-        new_list: List[Option] = [
+    def _make_years_list(self) -> list[Option]:
+        new_list: list[Option] = [
             Option(self.OPTION_ALL, self.OPTION_ALL, False),
-            Option("1900–1949", "1900–1949", False),
+            Option(f"1900{self.EN_DASH}1949", f"1900{self.EN_DASH}1949", False),
         ]
         for year in range(1950, 2030, 10):
-            yr = f"{year}–{year + 9}"
+            yr = f"{year}{self.EN_DASH}{year + 9}"
             new_list.append(Option(yr, yr, False))
 
         years_value = self.request.GET.get("years", "")
@@ -95,24 +93,20 @@ class MoviesListView(ListView):
             item.is_selected = (item.value == years_value)
         return new_list
 
-    def _make_option_list(self, model: Model, field_name: str) -> List[Option]:
-        new_list: List[Option] = [
+    def _make_option_list(self, model: Model, field_name: str) -> list[Option]:
+        queryset = model.objects.all().order_by(field_name)
+
+        new_list: list[Option] = [
             Option(self.OPTION_ALL, self.OPTION_ALL, False)
         ]
-        queryset = model.objects.all().order_by(field_name)
-        for obj in queryset:
-            new_list.append(Option(getattr(obj, field_name), getattr(obj, field_name), False))
+        new_list.extend(
+            Option(getattr(obj, field_name), getattr(obj, field_name), False) for obj in queryset
+        )
 
         sel_value = self.request.GET.get(field_name, "")
         for item in new_list:
             item.is_selected = (item.value == sel_value)
         return new_list
-
-    @classmethod
-    def _debug_poster_path(cls, queryset: BaseManager[Movie]) -> None:
-        for m in queryset:
-            if m.poster:
-                print(f"{m.title}, {m.poster.name}, {m.poster.path}")
 
 
 class MoviesDetailView(DetailView):
@@ -132,11 +126,8 @@ def add_movie(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = MovieForm(request.POST, request.FILES)
         if form.is_valid():
-            # print(form.cleaned_data)
             form.save()
             return HttpResponseRedirect("/movies/")
-        else:
-            print(form.errors)
     else:
         form = MovieForm()
     return render(request, "movies/add_movie.html", {"form": form})
@@ -149,10 +140,8 @@ def add_country(request: HttpRequest) -> HttpResponse:
         if form.is_valid():
             instance = form.save()
             return HttpResponse(_("Added") + f" '{instance.country}'")
-        else:
-            return HttpResponse(_("Error: such country already exists!"))
-    else:
-        form = CountryForm()
+        return HttpResponse(_("Error: such country already exists!"))
+    form = CountryForm()
     return render(request, "movies/add_country.html", {"form": form})
 
 
@@ -163,10 +152,8 @@ def add_director(request: HttpRequest) -> HttpResponse:
         if form.is_valid():
             instance = form.save()
             return HttpResponse(_("Added") + f" '{instance.director}'")
-        else:
-            return HttpResponse(_("Error: such director already exists!"))
-    else:
-        form = DirectorForm()
+        return HttpResponse(_("Error: such director already exists!"))
+    form = DirectorForm()
     return render(request, "movies/add_director.html", {"form": form})
 
 
@@ -177,16 +164,13 @@ def add_genre(request: HttpRequest) -> HttpResponse:
         if form.is_valid():
             instance = form.save()
             return HttpResponse(_("Added") + f" '{instance.genre}'")
-        else:
-            return HttpResponse(_("Error: such genre already exists!"))
-    else:
-        form = GenreForm()
+        return HttpResponse(_("Error: such genre already exists!"))
+    form = GenreForm()
     return render(request, "movies/add_genre.html", {"form": form})
 
 
-def get_objlist(request: HttpRequest, field_name: str) -> JsonResponse:
-    """Used by Javascript to retrieve the list of values for a model."""
-
+def get_objlist(request: HttpRequest, field_name: str) -> JsonResponse:  # noqa: ARG001
+    """Retrieve the list of values for a model (used by JS)."""
     model: Model = ""
     if field_name == "country":
         model = Country
@@ -196,13 +180,8 @@ def get_objlist(request: HttpRequest, field_name: str) -> JsonResponse:
         model = Genre
 
     queryset = model.objects.all().order_by(field_name)
-    objlist = []
-    for obj in queryset:
-        objlist.append({
-            "id": getattr(obj, "id"),
-            "name": getattr(obj, field_name)
-        })
-    return JsonResponse({
-        "success": True,
-        "objlist": objlist
-    })
+    objlist = [{
+        "id": obj.id,
+        "name": getattr(obj, field_name)
+    } for obj in queryset]
+    return JsonResponse({"success": True, "objlist": objlist})

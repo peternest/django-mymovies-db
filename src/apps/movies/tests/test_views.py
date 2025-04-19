@@ -1,15 +1,17 @@
 import json
 
-from django.contrib.auth.models import AnonymousUser
 import pytest
+from django.contrib.auth.models import AnonymousUser
+from django.test import RequestFactory
 
 from apps.movies.models import Country, Director, Genre, Movie
-from apps.movies.views import add_movie, add_country, add_director, add_genre, get_objlist
+from apps.movies.views import add_country, add_director, add_genre, add_movie, get_objlist
+
 
 pytestmark = [pytest.mark.django_db]
 
 
-def test_add_country(rf):
+def test_add_country(rf: RequestFactory) -> None:
     request = rf.post("/movies/add_country/", {"country": "BrandNewCountry"})
     request.user = AnonymousUser()
     count_before = Country.objects.count()
@@ -22,7 +24,7 @@ def test_add_country(rf):
     assert c.country == "BrandNewCountry"
 
 
-def test_add_director(rf):
+def test_add_director(rf: RequestFactory) -> None:
     request = rf.post("/movies/add_director/", {"director": "DDD"})
     request.user = AnonymousUser()
     count_before = Director.objects.count()
@@ -35,7 +37,7 @@ def test_add_director(rf):
     assert d.director == "DDD"
 
 
-def test_add_genre(rf):
+def test_add_genre(rf: RequestFactory) -> None:
     request = rf.post("/movies/add_genre/", {"genre": "GGG"})
     request.user = AnonymousUser()
     count_before = Genre.objects.count()
@@ -48,7 +50,7 @@ def test_add_genre(rf):
     assert g.genre == "GGG"
 
 
-def test_add_dublicate_country_not_allowed(rf):
+def test_add_dublicate_country_not_allowed(rf: RequestFactory) -> None:
     request = rf.post("/movies/add_country/", {"country": "BrandNewCountry"})
     request.user = AnonymousUser()
     count_before = Country.objects.count()
@@ -62,7 +64,7 @@ def test_add_dublicate_country_not_allowed(rf):
     assert cnt == 1
 
 
-def test_get_countries_as_json(rf):
+def test_get_countries_as_json(rf: RequestFactory) -> None:
     request = rf.get("/movies/get_countries/")
     request.user = AnonymousUser()
 
@@ -74,7 +76,7 @@ def test_get_countries_as_json(rf):
     assert Country.objects.count() == len(dic["objlist"])
 
 
-def test_add_movie(rf):
+def test_add_movie(rf: RequestFactory) -> None:
     country = Country.objects.create(country="Новая страна")
     director = Director.objects.create(director="Миклухо Маклай")
     genre = Genre.objects.create(genre="Новый жанр")
@@ -87,6 +89,7 @@ def test_add_movie(rf):
         "directors": [director.id],
         "genres": [genre.id],
         "description": "Обалденный фильм!",
+        "my_rating": 7,
         "kp_rating": 7
     })
     request.user = AnonymousUser()
@@ -98,6 +101,7 @@ def test_add_movie(rf):
     assert response.status_code == 302
     assert Movie.objects.count() == count_before + 1
     assert m.release_year == 2012
+    assert m.my_rating == 7
     assert m.kp_rating == 7
     assert m.description == "Обалденный фильм!"
     assert m.countries.all()[0].country == "Новая страна"

@@ -30,8 +30,8 @@ ruff = "^0.11.6"
 
 [tool.ruff]
 fix = true
-# unsafe-fixes = true
 line-length = 120
+target-version = "py311"
 
 [tool.ruff.format]
 docstring-code-format = true
@@ -39,6 +39,7 @@ docstring-code-format = true
 [tool.ruff.lint]
 select = ["ALL"]
 ignore = [
+    "ANN401",  # dynamically typed expressions (typing.Any) are disallowed in `{}`
     "COM812",  # trailing comma missing
     "D1",  # missing docstring in ...
     "D203",  # 1 blank line required before class docstring
@@ -68,9 +69,11 @@ no-lines-before = ["standard-library", "local-folder"]
     "Q000",  # double quotes are prefferable
     "RUF012"  # mutable class atributes should be annotated with `typing.ClassVar`
 ]
-
-[tool.ruff.lint.extend-per-file-ignores]
-"tests/*.py" = ["S101", "S311"]
+"*/tests/*.py" = [
+    "PLR2004",  # magic value used in comparison, consider replacing {} with constant variable
+    "S101",  # use of `assert` detected 
+    "S311"  # standard pseudo-random generators are not suitable for cryptographic purposes
+]
 
 [tool.coverage.report]
 exclude_also = ["if typing.TYPE_CHECKING:"]
