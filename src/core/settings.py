@@ -2,6 +2,7 @@ from pathlib import Path
 
 import environ
 
+
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
@@ -9,7 +10,6 @@ env = environ.Env(
 
 # Points to 'src' folder
 BASE_DIR = Path(__file__).resolve().parent.parent
-# print(f"BASE_DIR = {BASE_DIR}")
 
 envpath = BASE_DIR / ".env"
 if envpath.exists():
@@ -45,7 +45,6 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly",
     ),
-    # "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.IsAuthenticated",),
 
     # "DEFAULT_AUTHENTICATION_CLASSES": [
     #    "rest_framework.authentication.TokenAuthentication",

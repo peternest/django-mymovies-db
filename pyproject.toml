@@ -1,8 +1,12 @@
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
 [project]
 authors = [
     {name = "Peter Huggy",email = "peter.huggy@gmail.com"}
 ]
-description = ""
+description = "This is my pet project to keep track of my favorite movies and series. Powered by the Django web framework."
 dynamic = [ "dependencies" ]
 name = "django-mymovies-db"
 readme = "README.md"
@@ -19,10 +23,54 @@ django-environ = "^0.12.0"
 djangorestframework = "^3.15.2"
 pillow = "^11.1.0"
 psycopg2-binary = "^2.9.10"
-flake8 = "^7.2.0"
 pytest = "^8.3.5"
 pytest-django = "^4.11.1"
+ruff = "^0.11.6"
 
-[build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+fix = true
+# unsafe-fixes = true
+line-length = 120
+
+[tool.ruff.format]
+docstring-code-format = true
+
+[tool.ruff.lint]
+select = ["ALL"]
+ignore = [
+    "COM812",  # trailing comma missing
+    "D1",  # missing docstring in ...
+    "D203",  # 1 blank line required before class docstring
+    "D213",  # multi-line docstring summary should start at the second line
+    "DJ007",  # do not use `__all__` with `ModelForm`, use `fields` instead
+    "DTZ001",  # the use of `datetime.datetime()` without `tzinfo` argument is not allowed
+    "EM",  # exception must not use a ...
+    "FA",  # required future annotation
+    "FBT",  # boolean type position ...
+    "G004",  # using of f-strings to format logging messages
+    "ISC001",  # implicitly concatenated string literals on one line
+    "TRY003"  # avoid specifying long messages outside the exception class
+]
+
+[tool.ruff.lint.isort]
+lines-after-imports = 2
+known-local-folder = ["apps", "core"]
+known-third-party = []
+no-lines-before = ["standard-library", "local-folder"]
+
+[tool.ruff.lint.per-file-ignores]
+"*/management/*" = [
+    "ANN",  # flake8-annotations
+]
+"*/migrations/*" = [
+    "ANN",  # flake8-annotations
+    "Q000",  # double quotes are prefferable
+    "RUF012"  # mutable class atributes should be annotated with `typing.ClassVar`
+]
+
+[tool.ruff.lint.extend-per-file-ignores]
+"tests/*.py" = ["S101", "S311"]
+
+[tool.coverage.report]
+exclude_also = ["if typing.TYPE_CHECKING:"]

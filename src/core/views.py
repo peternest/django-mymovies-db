@@ -1,10 +1,6 @@
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
-# from django.views.generic import RedirectView
 
 
-# class HomePageView(RedirectView):
-#     url = "/movies/top100/"
-
-
-def index(request):
+def index(request: HttpRequest) -> HttpResponse:
     return render(request, "core/index.html")

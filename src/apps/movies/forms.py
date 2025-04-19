@@ -1,7 +1,16 @@
+from typing import ClassVar
+
 from django.forms import (
-    ModelForm, ModelMultipleChoiceField,
-    NumberInput, SelectMultiple, Textarea, TextInput, URLField, URLInput
+    ModelForm,
+    ModelMultipleChoiceField,
+    NumberInput,
+    SelectMultiple,
+    Textarea,
+    TextInput,
+    URLField,
+    URLInput,
 )
+from django.forms.widgets import Input
 from django.utils.translation import gettext_lazy as _
 
 from apps.movies.models import Country, Director, Genre, Movie
@@ -10,11 +19,11 @@ from apps.movies.models import Country, Director, Genre, Movie
 class CountryForm(ModelForm):
     class Meta:
         model = Country
-        fields = ["country"]
-        labels = {
+        fields: ClassVar[list[str]] = ["country"]
+        labels: ClassVar[dict[str, str]] = {
             "country": _("Country name")
         }
-        widgets = {
+        widgets: ClassVar[dict[str, Input]] = {
             "country": TextInput(attrs={"class": "text-field"})
         }
 
@@ -22,11 +31,11 @@ class CountryForm(ModelForm):
 class DirectorForm(ModelForm):
     class Meta:
         model = Director
-        fields = ["director"]
-        labels = {
+        fields: ClassVar[list[str]] = ["director"]
+        labels: ClassVar[dict[str, str]] = {
             "director": _("Director name")
         }
-        widgets = {
+        widgets: ClassVar[dict[str, Input]] = {
             "director": TextInput(attrs={"class": "text-field"})
         }
 
@@ -34,18 +43,17 @@ class DirectorForm(ModelForm):
 class GenreForm(ModelForm):
     class Meta:
         model = Genre
-        fields = ["genre"]
-        labels = {
+        fields: ClassVar[list[str]] = ["genre"]
+        labels: ClassVar[dict[str, str]] = {
             "genre": _("Genre name")
         }
-        widgets = {
+        widgets: ClassVar[dict[str, Input]] = {
             "genre": TextInput(attrs={"class": "text-field"})
         }
 
 
 class MovieForm(ModelForm):
     required_css_class = "required"
-    # error_css_class = "error"
 
     # M2M fields are placed here to set ordering.
     countries = ModelMultipleChoiceField(
@@ -73,7 +81,7 @@ class MovieForm(ModelForm):
     class Meta:
         model = Movie
         fields = "__all__"
-        labels = {
+        labels: ClassVar[dict[str, str]] = {
             "title": _("Title"),
             "title_orig": _("Title orig"),
             "is_series": _("Is series"),
@@ -86,7 +94,7 @@ class MovieForm(ModelForm):
             "kp_rating": _("KP rating"),
             "poster": _("Poster"),
         }
-        widgets = {
+        widgets: ClassVar[dict[str, Input]] = {
             "title": TextInput(attrs={"class": "text-field"}),
             "title_orig": TextInput(attrs={"class": "text-field"}),
             "release_year": NumberInput(attrs={"class": "release-field"}),
@@ -96,9 +104,8 @@ class MovieForm(ModelForm):
             "description": Textarea(attrs={"cols": 80, "rows": 5}),
             "my_rating": NumberInput(attrs={"class": "float-field"}),
             "kp_rating": NumberInput(attrs={"class": "float-field"}),
-            # "poster": ImageField(),
         }
-        error_messages = {
+        error_messages: ClassVar[dict[str, dict[str, str]]] = {
             "title": {
                 "max_length": _("This title is too long.")
             },

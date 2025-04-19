@@ -1,29 +1,32 @@
-from apps.movies.models import Country, Genre, Director, Movie
+from typing import ClassVar
+
 from rest_framework import serializers
+
+from apps.movies.models import Country, Director, Genre, Movie
 
 
 class CountrySerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Country
-        fields = ["url", "country"]
+        fields: ClassVar[list[str]] = ["url", "country"]
 
 
 class GenreSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Genre
-        fields = ["url", "genre"]
+        fields: ClassVar[list[str]] = ["url", "genre"]
 
 
 class DirectorSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Director
-        fields = ["url", "director"]
+        fields: ClassVar[list[str]] = ["url", "director"]
 
 
 class MovieSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Movie
-        fields = [
+        fields: ClassVar[list[str]] = [
             "title",
             "title_orig",
             "is_series",
