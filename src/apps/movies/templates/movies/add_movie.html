@@ -15,7 +15,6 @@
         {% csrf_token %}
         <fieldset class="my-fieldset aligned">
             {{ form.non_field_errors }}
-
             {% for field in form %}
             <div class="form-row">
                 {{ field.label_tag }} {{ field }}
@@ -31,6 +30,13 @@
                     <button type="button" class="add-btn" onclick="openPopup('genre')">
                         <img src="{% static 'movies/plus-icon.png' %}" alt="Добавить жанр">
                     </button>
+                {% elif field.name == 'poster' %}
+                    {% if form.instance.poster %}
+                    <div class="current-poster">
+                        <p>Текущий постер:</p>
+                        <img src="{{ form.instance.poster.url }}" alt="Текущий постер" style="max-width: 200px; max-height: 300px;">
+                    </div>
+                    {% endif %}
                 {% endif %}
             </div>
             <div class="form-row-errors">{{ field.errors }}</div>

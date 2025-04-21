@@ -93,6 +93,9 @@ ADD MOVIE
 .url-field {
     width: 20em;
 }
+.current-poster {
+    margin-top: -10px;
+}
 .submit-row {
     display: flex;
     flex-wrap: wrap;
