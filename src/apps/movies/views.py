@@ -4,7 +4,7 @@ from typing import Any, ClassVar, Final, LiteralString
 from django.db.models import Model, Q
 from django.db.models.manager import BaseManager
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect, JsonResponse
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.utils.translation import gettext_lazy as _
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import DetailView, ListView, RedirectView
@@ -130,7 +130,19 @@ def add_movie(request: HttpRequest) -> HttpResponse:
             return HttpResponseRedirect("/movies/")
     else:
         form = MovieForm()
-    return render(request, "movies/add_movie.html", {"form": form})
+    return render(request, "movies/add_movie.html", {"form": form, "is_edit": False})
+
+
+def change_movie(request: HttpRequest, pk: int) -> HttpResponse:
+    movie_instance = get_object_or_404(Movie, pk=pk)
+    if request.method == "POST":
+        form = MovieForm(request.POST, request.FILES, instance=movie_instance)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(f"/movies/{pk}/")
+    else:
+        form = MovieForm(instance=movie_instance)
+    return render(request, "movies/add_movie.html", {"form": form, "is_edit": True})
 
 
 @csrf_exempt

@@ -2,15 +2,16 @@
 <html lang="ru-RU">
 <head>
     <meta charset="utf-8" />
-    <title>Добавить фильм</title>
+    <title>{% if is_edit %}Редактировать{% else %}Добавить{% endif %} фильм</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'movies/style.css' %}">
 </head>
 <body>
     <div class="wrapper" style="max-width: 800px;">
-    <h1 class="big-header" style="text-align: center;">Добавить новый фильм</h1>
+    <h1 class="big-header" style="text-align: center;">
+        {% if is_edit %}Редактировать{% else %}Добавить новый{% endif %} фильм</h1>
 
-    <form id="movie-form" action="/movies/add/" method="post" enctype="multipart/form-data">
+    <form id="movie-form" action="" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <fieldset class="my-fieldset aligned">
             {{ form.non_field_errors }}

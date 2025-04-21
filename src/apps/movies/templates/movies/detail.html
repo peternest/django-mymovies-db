@@ -7,72 +7,81 @@
     <link rel="stylesheet" href="{% static 'movies/style.css' %}">
 </head>
 <body>
-    <div class="wrapper">
+<div class="wrapper">
     <br>
     <table class="big-table">
     <tr valign="top" >
-    <td class="movie-poster">
-        {% if movie.poster %}
-        <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" style="width:300px; height:450px;">
-        {% endif %}
-    </td>
-    <td class="movie-delim"></td>
-    <td class="movie-card">
-        <table class="movie-card-table">
-        <tr>
-            <td colspan="2" class="movie-title-big">{{ movie.title }} 
-                ({% if movie.is_series %}сериал {{ movie.range_of_years }}{% else %}{{ movie.release_year }}{% endif %})</td>
-        </tr>
-        <tr>
-            <td colspan="2" class="movie-title-orig">{{ movie.title_orig }}</td>
-        </tr>
-        <tr height="25px">
-            <!-- To make a gap between Header and other table -->
-        </tr>
-        <tr>
-            <td class="movie-key">Год выпуска</td>
-            <td class="movie-value">{{ movie.release_year }}{% if movie.is_series %} (сезонов {{ movie.num_of_seasons }}){% endif %}</td>
-        </tr>
-        <tr>
-            <td class="movie-key">Страна</td>
-            <td class="movie-value">{{ movie.get_countries }}</td>
-        </tr>
-        <tr>
-            <td class="movie-key">Жанр</td>
-            <td class="movie-value">{{ movie.get_genres }}</td>
-        </tr>
-        <tr>
-            <td class="movie-key">Режиссер</td>
-            <td class="movie-value">{{ movie.get_directors }}</td>
-        </tr>
-        <tr>
-            <td class="movie-key">Слоган</td>
-            <td class="movie-value">{{ movie.slogan }}</td>
-        </tr>
-        <tr>
-            <td class="movie-key">Описание</td>
-            <td class="movie-description">{{ movie.description }}</td>
-        </tr>
-        <tr>
-            <td class="movie-key">Мой рейтинг</td>
-            <td class="movie-rating">{{ movie.my_rating }}</td>
-        </tr>
-        <tr>
-            <td class="movie-key">Рейтинг КП</td>
-            <td class="movie-rating">{{ movie.kp_rating }}</td>
-        </tr>
-        <tr>
-            <td class="movie-key">Карточка на КП</td>
-            <td class="movie-value">
-                <a href="{{ movie.kinopoisk_url }}" target="_blank">Внешняя ссылка
-                    <img src="{% static 'movies/external-link.png' %}">
-                </a>
-            </td>
-        </tr>        
-        </table>
-    </td>
+        <td class="movie-poster">
+            {% if movie.poster %}
+            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}" style="width:300px; height:450px;">
+            {% endif %}
+        </td>
+        <td class="movie-delim"></td>
+        <td class="movie-card">
+            <table class="movie-card-table">
+            <tr>
+                <td colspan="2" class="movie-title-big">{{ movie.title }} 
+                    ({% if movie.is_series %}сериал {{ movie.range_of_years }}{% else %}{{ movie.release_year }}{% endif %})</td>
+            </tr>
+            <tr>
+                <td colspan="2" class="movie-title-orig">{{ movie.title_orig }}</td>
+            </tr>
+            <tr height="25px">
+                <!-- To make a gap between Header and other table -->
+            </tr>
+            <tr>
+                <td class="movie-key">Год выпуска</td>
+                <td class="movie-value">{{ movie.release_year }}{% if movie.is_series %} (сезонов {{ movie.num_of_seasons }}){% endif %}</td>
+            </tr>
+            <tr>
+                <td class="movie-key">Страна</td>
+                <td class="movie-value">{{ movie.get_countries }}</td>
+            </tr>
+            <tr>
+                <td class="movie-key">Жанр</td>
+                <td class="movie-value">{{ movie.get_genres }}</td>
+            </tr>
+            <tr>
+                <td class="movie-key">Режиссер</td>
+                <td class="movie-value">{{ movie.get_directors }}</td>
+            </tr>
+            <tr>
+                <td class="movie-key">Слоган</td>
+                <td class="movie-value">{{ movie.slogan }}</td>
+            </tr>
+            <tr>
+                <td class="movie-key">Описание</td>
+                <td class="movie-description">{{ movie.description }}</td>
+            </tr>
+            <tr>
+                <td class="movie-key">Мой рейтинг</td>
+                <td class="movie-rating">{{ movie.my_rating }}</td>
+            </tr>
+            <tr>
+                <td class="movie-key">Рейтинг КП</td>
+                <td class="movie-rating">{{ movie.kp_rating }}</td>
+            </tr>
+            <tr>
+                <td class="movie-key">Карточка на КП</td>
+                <td class="movie-value">
+                    <a href="{{ movie.kinopoisk_url }}" target="_blank">Внешняя ссылка
+                        <img src="{% static 'movies/external-link.png' %}">
+                    </a>
+                </td>
+            </tr>
+            <tr height="25px">
+                <!-- To make a gap -->
+            </tr>
+            <tr>
+                <td class="movie-key"></td>
+                <td class="movie-value">
+                    <a href="/movies/{{ movie.id }}/change/" class="universal-button">Редактировать фильм</a>
+                </td>
+            </tr>
+            </table>
+        </td>
     </tr>
     </table>
-    </div>
+</div>
 </body>
 </html>

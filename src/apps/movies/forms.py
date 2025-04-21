@@ -1,6 +1,7 @@
 from typing import ClassVar
 
 from django.forms import (
+    FileInput,
     ModelForm,
     ModelMultipleChoiceField,
     NumberInput,
@@ -104,6 +105,7 @@ class MovieForm(ModelForm):
             "description": Textarea(attrs={"cols": 80, "rows": 5}),
             "my_rating": NumberInput(attrs={"class": "float-field"}),
             "kp_rating": NumberInput(attrs={"class": "float-field"}),
+            "poster": FileInput(attrs={"class": "text-field"})
         }
         error_messages: ClassVar[dict[str, dict[str, str]]] = {
             "title": {
