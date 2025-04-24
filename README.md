@@ -29,18 +29,21 @@ poetry shell
 poetry install --no-root
 ```
 
-**Configure database**. 
-Use can use docker-compose to run PostgreSQL in the container or use any supported DBMS on a local machine.
-Copy `src/.env.sample` to `src/.env` and edit the latter according to your configuration.
+**Configure database**. Use can use docker-compose to run PostgreSQL in the container or use any supported DBMS on a local machine (SQLite for example).
 
-If you prefere to use docker-compose, run:
+If you prefer to use docker, run:
 ```
 docker compose up -d
 ```
 
-In the poetry shell change to the `src` folder and run the following commands to make initial setup:
+In the `poetry shell` change to the `src` folder, copy `.env.sample` to `.env` and edit the latter according to your configuration.
 ```
 cd src
+cp .env.sample .env
+```
+
+Run the following commands to make initial setup:
+```
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py collectstatic
