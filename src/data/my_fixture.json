@@ -658,6 +658,41 @@
   }
 },
 {
+  "model": "movies.director",
+  "pk": 63,
+  "fields": {
+    "director": "Питер Фаррелли"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 64,
+  "fields": {
+    "director": "Вики Дженсон"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 65,
+  "fields": {
+    "director": "Эндрю Адамсон"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 66,
+  "fields": {
+    "director": "Люк Бессон"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 67,
+  "fields": {
+    "director": "Крис Коламбус"
+  }
+},
+{
   "model": "movies.movie",
   "pk": 1,
   "fields": {
@@ -2452,6 +2487,161 @@
     "directors": [
       62,
       61
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 81,
+  "fields": {
+    "title": "Оппенгеймер",
+    "title_orig": "Oppenheimer",
+    "is_series": false,
+    "release_year": 2023,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "История жизни американского физика-теоретика Роберта Оппенгеймера, который во времена Второй мировой войны руководил Манхэттенским проектом — секретными разработками ядерного оружия.",
+    "kp_rating": 8.1,
+    "my_rating": 7.0,
+    "poster": "images/Oppenheimer_gX9Jh1H.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/4664634/",
+    "countries": [
+      1,
+      5
+    ],
+    "genres": [
+      14,
+      2,
+      10
+    ],
+    "directors": [
+      20
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 82,
+  "fields": {
+    "title": "Зеленая книга",
+    "title_orig": "Green Book",
+    "is_series": false,
+    "release_year": 2018,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Inspired by a True Friendship»",
+    "description": "1960-е годы. После закрытия нью-йоркского ночного клуба на ремонт вышибала Тони по прозвищу Болтун ищет подработку на пару месяцев. Как раз в это время Дон Ширли — утонченный светский лев, богатый и талантливый чернокожий музыкант, исполняющий классическую музыку — собирается в турне по южным штатам, где ещё сильны расистские убеждения и царит сегрегация. Он нанимает Тони в качестве водителя, телохранителя и человека, способного решать текущие проблемы. У этих двоих так мало общего, и эта поездка навсегда изменит жизнь обоих.",
+    "kp_rating": 8.5,
+    "my_rating": 7.7,
+    "poster": "images/Green_Book_UiX7tRX.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1108577/",
+    "countries": [
+      10,
+      5
+    ],
+    "genres": [
+      14,
+      2,
+      1
+    ],
+    "directors": [
+      63
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 83,
+  "fields": {
+    "title": "Шрэк",
+    "title_orig": "Shrek",
+    "is_series": false,
+    "release_year": 2001,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Its Big!»",
+    "description": "Жил да был в сказочном государстве большой зеленый великан по имени Шрэк. Жил он в гордом одиночестве в лесу, на болоте, которое считал своим. Но однажды злобный коротышка — лорд Фаркуад, правитель волшебного королевства, безжалостно согнал на Шрэково болото всех сказочных обитателей.\r\n\r\nИ беспечной жизни зеленого великана пришел конец. Но лорд Фаркуад пообещал вернуть Шрэку болото, если великан добудет ему прекрасную принцессу Фиону, которая томится в неприступной башне, охраняемой огнедышащим драконом.",
+    "kp_rating": 8.2,
+    "my_rating": 8.0,
+    "poster": "images/Shrek_DI3LYi4.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/430/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      1,
+      3,
+      16,
+      4,
+      17,
+      6
+    ],
+    "directors": [
+      64,
+      65
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 84,
+  "fields": {
+    "title": "Пятый элемент",
+    "title_orig": "The Fifth Element",
+    "is_series": false,
+    "release_year": 1997,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«It Mu5t Be Found»",
+    "description": "Каждые пять тысяч лет открываются двери между измерениями, и тёмные силы стремятся нарушить существующую гармонию.\r\n\r\nXXIII век. Нью-йоркский таксист Корбен Даллас пытался спокойно отработать очередную смену, когда к нему в машину прямо с неба свалилась диковатая красотка и попросила о помощи. Не устояв перед наивными голубыми глазами девушки, Корбен ввязывается в неприятности.",
+    "kp_rating": 8.2,
+    "my_rating": 7.8,
+    "poster": "images/The_Fifth_Element_yqqFhZK.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/2656/",
+    "countries": [
+      1,
+      5,
+      7
+    ],
+    "genres": [
+      12,
+      1,
+      3,
+      5
+    ],
+    "directors": [
+      66
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 85,
+  "fields": {
+    "title": "Гарри Поттер и философский камень",
+    "title_orig": "Harry Potter and the Sorcerer's Stone",
+    "is_series": false,
+    "release_year": 2001,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Путешествие в твою мечту»",
+    "description": "Жизнь десятилетнего Гарри Поттера нельзя назвать сладкой: родители умерли, едва ему исполнился год, а от дяди и тёти, взявших сироту на воспитание, достаются лишь тычки да подзатыльники. Но в одиннадцатый день рождения Гарри всё меняется. Странный гость, неожиданно появившийся на пороге, приносит письмо, из которого мальчик узнаёт, что на самом деле он - волшебник и зачислен в школу магии под названием Хогвартс. А уже через пару недель Гарри будет мчаться в поезде Хогвартс-экспресс навстречу новой жизни, где его ждут невероятные приключения, верные друзья и самое главное — ключ к разгадке тайны смерти его родителей.",
+    "kp_rating": 8.3,
+    "my_rating": 8.0,
+    "poster": "images/Harry_Potter_1_Q27wflY.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/689/",
+    "countries": [
+      1,
+      5
+    ],
+    "genres": [
+      4,
+      17,
+      6
+    ],
+    "directors": [
+      67
     ]
   }
 }
