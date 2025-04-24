@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-14 14:33+0300\n"
+"POT-Creation-Date: 2025-04-24 20:18+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,129 +20,149 @@ msgstr ""
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\apps\movies\forms.py:15
+#: .\apps\movies\forms.py:25
 #, fuzzy
 #| msgid "Country"
 msgid "Country name"
 msgstr "Страна"
 
-#: .\apps\movies\forms.py:27
+#: .\apps\movies\forms.py:37
 #, fuzzy
 #| msgid "Director"
 msgid "Director name"
 msgstr "Режиссер"
 
-#: .\apps\movies\forms.py:39
+#: .\apps\movies\forms.py:49
 #, fuzzy
 #| msgid "Genre"
 msgid "Genre name"
 msgstr "Жанр"
 
-#: .\apps\movies\forms.py:53 .\apps\movies\models.py:18
-#: .\apps\movies\models.py:26 .\apps\movies\models.py:95
+#: .\apps\movies\forms.py:62 .\apps\movies\models.py:9
+#: .\apps\movies\models.py:14 .\apps\movies\models.py:86
 msgid "Country"
 msgstr "Страна"
 
-#: .\apps\movies\forms.py:58 .\apps\movies\models.py:34
-#: .\apps\movies\models.py:42 .\apps\movies\models.py:100
+#: .\apps\movies\forms.py:67 .\apps\movies\models.py:25
+#: .\apps\movies\models.py:30 .\apps\movies\models.py:91
 msgid "Genre"
 msgstr "Жанр"
 
-#: .\apps\movies\forms.py:63 .\apps\movies\models.py:50
-#: .\apps\movies\models.py:58 .\apps\movies\models.py:105
+#: .\apps\movies\forms.py:72 .\apps\movies\models.py:41
+#: .\apps\movies\models.py:46 .\apps\movies\models.py:96
 msgid "Director"
 msgstr "Режиссер"
 
-#: .\apps\movies\forms.py:71 .\apps\movies\models.py:66
-msgid "Title"
-msgstr "Название"
-
-#: .\apps\movies\forms.py:72 .\apps\movies\models.py:70
-msgid "Title orig"
-msgstr "Оригинальное название"
-
-#: .\apps\movies\forms.py:73 .\apps\movies\models.py:74
-msgid "Is series"
-msgstr "Сериал?"
-
-#: .\apps\movies\forms.py:74 .\apps\movies\models.py:78
-msgid "Release year"
-msgstr "Год выпуска"
-
-#: .\apps\movies\forms.py:75 .\apps\movies\models.py:83
-msgid "Series last year"
-msgstr "Последний год выпуска"
-
-#: .\apps\movies\forms.py:76 .\apps\movies\models.py:89
-msgid "Number of seasons"
-msgstr "Число сезонов"
-
-#: .\apps\movies\forms.py:77 .\apps\movies\models.py:110
-msgid "Slogan"
-msgstr "Слоган"
-
-#: .\apps\movies\forms.py:78 .\apps\movies\models.py:116
-msgid "Description"
-msgstr "Описание"
-
-#: .\apps\movies\forms.py:79 .\apps\movies\models.py:119
-msgid "KP rating"
-msgstr "Рейтинг КП"
-
-#: .\apps\movies\forms.py:80 .\apps\movies\models.py:123
-msgid "My rating"
-msgstr "Мой рейтинг"
-
-#: .\apps\movies\forms.py:81 .\apps\movies\models.py:130
-msgid "Poster"
-msgstr "Постер"
-
-#: .\apps\movies\forms.py:82 .\apps\movies\models.py:134
+#: .\apps\movies\forms.py:76 .\apps\movies\models.py:124
 msgid "Kinopoisk url"
 msgstr "Страница на КП"
 
-#: .\apps\movies\forms.py:99
+#: .\apps\movies\forms.py:86 .\apps\movies\models.py:57
+msgid "Title"
+msgstr "Название"
+
+#: .\apps\movies\forms.py:87 .\apps\movies\models.py:61
+msgid "Title orig"
+msgstr "Оригинальное название"
+
+#: .\apps\movies\forms.py:88 .\apps\movies\models.py:65
+msgid "Is series"
+msgstr "Сериал?"
+
+#: .\apps\movies\forms.py:89 .\apps\movies\models.py:69
+msgid "Release year"
+msgstr "Год выпуска"
+
+#: .\apps\movies\forms.py:90 .\apps\movies\models.py:74
+msgid "Series last year"
+msgstr "Последний год выпуска"
+
+#: .\apps\movies\forms.py:91 .\apps\movies\models.py:80
+msgid "Number of seasons"
+msgstr "Число сезонов"
+
+#: .\apps\movies\forms.py:92 .\apps\movies\models.py:101
+msgid "Slogan"
+msgstr "Слоган"
+
+#: .\apps\movies\forms.py:93 .\apps\movies\models.py:107
+msgid "Description"
+msgstr "Описание"
+
+#: .\apps\movies\forms.py:94 .\apps\movies\models.py:114
+msgid "My rating"
+msgstr "Мой рейтинг"
+
+#: .\apps\movies\forms.py:95 .\apps\movies\models.py:110
+msgid "KP rating"
+msgstr "Рейтинг КП"
+
+#: .\apps\movies\forms.py:96 .\apps\movies\models.py:119
+msgid "Poster"
+msgstr "Постер"
+
+#: .\apps\movies\forms.py:112
 msgid "This title is too long."
 msgstr "Это название слишком длинное."
 
-#: .\apps\movies\forms.py:102
+#: .\apps\movies\forms.py:115
 msgid "Release year should be >= 1900."
 msgstr "Год выпуска должен быть >= 1900."
 
-#: .\apps\movies\models.py:27
+#: .\apps\movies\models.py:15
 msgid "Countries"
 msgstr "Страны"
 
-#: .\apps\movies\models.py:43
+#: .\apps\movies\models.py:31
 msgid "Genres"
 msgstr "Жанры"
 
-#: .\apps\movies\models.py:59
+#: .\apps\movies\models.py:47
 msgid "Directors"
 msgstr "Режиссеры"
 
-#: .\apps\movies\models.py:160
+#: .\apps\movies\models.py:129
 msgid "Movie"
 msgstr "Фильм"
 
-#: .\apps\movies\models.py:161
+#: .\apps\movies\models.py:130
 msgid "Movies"
 msgstr "Фильмы"
 
-#: .\apps\movies\views.py:129 .\apps\movies\views.py:144
-#: .\apps\movies\views.py:158
+#: .\apps\movies\views.py:28
+msgid "All"
+msgstr "Все"
+
+#: .\apps\movies\views.py:33
+msgid "by my rating"
+msgstr "моему рейтингу"
+
+#: .\apps\movies\views.py:34
+msgid "by kp rating"
+msgstr "рейтингу КП"
+
+#: .\apps\movies\views.py:35
+msgid "by release year"
+msgstr "году выпуска"
+
+#: .\apps\movies\views.py:36
+msgid "by title"
+msgstr "названию"
+
+#: .\apps\movies\views.py:154 .\apps\movies\views.py:166
+#: .\apps\movies\views.py:178
 msgid "Added"
 msgstr "Добавлен"
 
-#: .\apps\movies\views.py:131
+#: .\apps\movies\views.py:155
 msgid "Error: such country already exists!"
 msgstr "Ошибка: такая страна уже существует!"
 
-#: .\apps\movies\views.py:146
+#: .\apps\movies\views.py:167
 msgid "Error: such director already exists!"
 msgstr "Ошибка: такой режиссер уже существует!"
 
-#: .\apps\movies\views.py:160
+#: .\apps\movies\views.py:179
 msgid "Error: such genre already exists!"
 msgstr "Ошибка: такой жанр уже существует!"
 

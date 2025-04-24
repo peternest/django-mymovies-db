@@ -25,15 +25,15 @@ class MoviesListView(ListView):
     context_object_name = "top_100_movies"
     is_series = False
 
-    OPTION_ALL: Final[LiteralString] = "Все"  # noqa: RUF001
+    OPTION_ALL: Final[LiteralString] = _("All")
 
     EN_DASH: Final[LiteralString] = "–"  # noqa: RUF001
 
     sort_list: ClassVar[list[Option]] = [
-        Option("моему рейтингу", "-my_rating", False),
-        Option("рейтингу КП", "-kp_rating", False),
-        Option("году выпуска", "-release_year", False),
-        Option("алфавиту", "title", False)
+        Option(_("by my rating"), "-my_rating", False),
+        Option(_("by kp rating"), "-kp_rating", False),
+        Option(_("by release year"), "-release_year", False),
+        Option(_("by title"), "title", False)
     ]
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
