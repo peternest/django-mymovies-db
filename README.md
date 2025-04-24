@@ -12,13 +12,10 @@ Powered by the Django web framework.
 * To add a poster image to a movie/series.
 * To show/edit data using the REST api.
 
-## Configuration
-
-Configuration is stored in `src/.env`; for examples see `src/.env.sample`.
-
 ## How to install it on a local machine
 
-This project requires Python 3.11+. [Poetry](https://python-poetry.org/) is used to manage dependencies and should be installed also.
+This project requires Python 3.11. 
+[Poetry](https://python-poetry.org/) is used to manage dependencies and should be installed also.
 
 Clone the repo into any folder:
 ```
@@ -26,32 +23,33 @@ git clone https://github.com/peternest/django-mymovies-db.git <any-folder>
 cd <any-folder>
 ```
 
-Create a virtual environment and install requirements:
+Create a virtual environment and install python requirements:
 ```
 poetry shell
 poetry install --no-root
 ```
 
-Change to the `src` folder, where `manage.py` lives:
+**Configure database**. 
+Use can use docker-compose to run PostgreSQL in the container or use any supported DBMS on a local machine.
+Copy `src/.env.sample` to `src/.env` and edit the latter according to your configuration.
+
+If you prefere to use docker-compose, run:
+```
+docker compose up -d
+```
+
+In the poetry shell change to the `src` folder and run the following commands to make initial setup:
 ```
 cd src
-```
-
-Copy `src/.env.sample` to `src/.env` and edit the latter according to your configuration.
-The movie database by default is stored in SQLite but you can use any supported DBMS; see `DATABASE_URL` parameter.
-
-Run the following commands to make initial database setup:
-```
-python manage.py makemigrations
 python manage.py migrate
+python manage.py createsuperuser
 python manage.py collectstatic
-python manage.py createsuperuser  # Necessary to use admin possibilities
+python manage.py compilemessages
 ```
 
-If you want to load some initial data in RUSSIAN (about 100 movies) and localization texts, execute:
+If you want to load some initial data in RUSSIAN (about 100 movies), execute:
 ```
 python manage.py loaddata data/my_fixture.json
-python manage.py compilemessages
 ```
 
 Run the development server:
