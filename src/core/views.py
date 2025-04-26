@@ -1,6 +1,5 @@
-from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.views.generic import RedirectView
 
 
-def index(request: HttpRequest) -> HttpResponse:
-    return render(request, "core/index.html")
+class MoviesRedirectView(RedirectView):
+    url = "/movies/"

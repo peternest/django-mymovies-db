@@ -1,20 +1,18 @@
 body {
     background-color: #f4f4f4;
     font-family: Roboto, Helvetica, Arial, sans-serif;
-	font-size: 14px;
+	font-size: 16px;
 	line-height: 1;
     margin: 0;
     padding: 0;
 }
 
-.wrapper {
-    max-width: 1200px;
-    margin: auto;
-    padding: 20px;
+.container-shadow {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
+
 .universal-button {
     background: #f2f2f2;
     border: 1px inset rgb(118, 118, 118);
@@ -50,6 +48,39 @@ body {
     font-weight: bold;
 }
 
+
+/*
+-----------------------------------------
+INDEX
+-----------------------------------------
+*/
+
+.index-page-style {
+    min-width: 600px; 
+    width: 600px; 
+    margin-top: 30px;
+    padding: 40px; 
+}
+.text-size {
+    font-size: 16px;
+	line-height: 1.3;
+}
+.vibe-header {
+    font-size: 32px;
+    text-align: center;
+    color: #5a3e85;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 30px;
+}
+.list-item {
+    margin-top: 6px;
+    color: blue;
+}
 
 
 /*
@@ -133,7 +164,7 @@ ADD MOVIE
 
 /*
 -----------------------------------------
-INDEX PAGE 
+MOVIE LIST
 -----------------------------------------
 */
 
@@ -247,7 +278,7 @@ INDEX PAGE
 
 /* 
 -----------------------------------------
-DETAIL PAGE 
+MOVIE DETAIL 
 -----------------------------------------
 */
 .big-table {
@@ -258,7 +289,7 @@ DETAIL PAGE
 .movie-poster {
     width: 300px;
     min-width: 300px;
-    border: 1px solid lightgray;
+    /*border: 1px solid lightgray;*/
 }
 .movie-delim {
     width: 40px;

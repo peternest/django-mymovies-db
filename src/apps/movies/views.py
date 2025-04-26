@@ -20,8 +20,18 @@ class Option:
     is_selected: bool
 
 
+def index(request: HttpRequest) -> HttpResponse:
+    num_movies: Final = Movie.objects.filter(is_series=False).count()
+    num_series: Final = Movie.objects.filter(is_series=True).count()
+    context = {
+        "num_movies": num_movies,
+        "num_series": num_series,
+    }
+    return render(request, "index.html", context=context)
+
+
 class MoviesListView(ListView):
-    template_name = "movies/index.html"
+    template_name = "movies/movie_list.html"
     context_object_name = "top_100_movies"
     is_series = False
 
@@ -111,7 +121,7 @@ class MoviesListView(ListView):
 
 class MoviesDetailView(DetailView):
     model = Movie
-    template_name = "movies/detail.html"
+    template_name = "movies/movie_detail.html"
 
 
 class MoviesRedirectView(RedirectView):

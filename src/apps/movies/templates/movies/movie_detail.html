@@ -1,14 +1,13 @@
-<!doctype html>
-<html lang="ru-RU">
-<head>
-    <meta charset="utf-8" />
-    <title>{{ movie.title }} ({{ movie.range_of_years }})</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'movies/style.css' %}">
-</head>
-<body>
-<div class="wrapper">
-    <br>
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block title %}
+<title>{{ movie.title }} ({{ movie.range_of_years }})</title>
+{% endblock %}
+
+{% block content %}
+<div class="col">
+
     <table class="big-table">
     <tr valign="top" >
         <td class="movie-poster">
@@ -65,7 +64,7 @@
                 <td class="movie-key">Карточка на КП</td>
                 <td class="movie-value">
                     <a href="{{ movie.kinopoisk_url }}" target="_blank">Внешняя ссылка
-                        <img src="{% static 'movies/external-link.png' %}">
+                        <img src="{% static 'movies/images/external-link.png' %}">
                     </a>
                 </td>
             </tr>
@@ -83,5 +82,4 @@
     </tr>
     </table>
 </div>
-</body>
-</html>
+{% endblock %}

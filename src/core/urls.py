@@ -3,11 +3,11 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 
-from core.views import index
+from core.views import MoviesRedirectView
 
 
 urlpatterns = [
-    path("", index),
+    path("", MoviesRedirectView.as_view()),
     path("admin/", admin.site.urls),
     path("movies/", include("apps.movies.urls")),
     path("api/", include("apps.movies.urls_api")),

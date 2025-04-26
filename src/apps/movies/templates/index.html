@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  {% block title %}<title>MyMovies DB</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'movies/css/style.css' %}">
+  <link rel="icon" href="{% static 'movies/images/favicon.png' %}"/>
+</head>
+<body>
+
+<div class="container container-shadow index-page-style">
+<div class="row">
+
+{% block content %}
+<div class="col text-size">
+
+    <h1 class="vibe-header">MyMovies DB</h1>
+    <p class="subtitle">Краткий ультимативный гид по миру кино</p>
+    
+    <p>Навигация:</p>
+    <ul>
+        <li class="list-item"><a href="/movies/top100/">100 лучших фильмов</a></li>
+        <li class="list-item"><a href="/movies/series-top50/">50 лучших сериалов</a></li>
+        <li class="list-item"><a href="/movies/add/">Добавить новый фильм</a></li>
+        <li class="list-item"><a href="/admin/">Админка Django</a></li>
+        <li class="list-item"><a href="/api/">Корень API</a></li>
+        <!--li class="list-item"><a href="/api/movies/">/api/movies/</a> - Список фильмов и сериалов (json)</li>
+        <li class="list-item"><a href="/api/countries/">/api/countries/</a> - Список стран (json)</li>
+        <li class="list-item"><a href="/api/directors/">/api/directors/</a> - Список режиссеров (json)</li>
+        <li class="list-item"><a href="/api/genres/">/api/genres/</a> - Список жанров (json)</li-->
+    </ul>
+
+    <br>
+    <p>Статистика:</p>  
+    <ul>
+        <li>Фильмов: {{ num_movies }}</li>
+        <li>Сериалов: {{ num_series }}</li>
+    </ul>
+</div>
+{% endblock %}
+
+</div>
+</div>
+</body>
+</html>

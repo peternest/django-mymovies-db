@@ -1,13 +1,14 @@
-<!doctype html>
-<html lang="ru-RU">
-<head>
-    <meta charset="utf-8" />
-    <title>{% if is_series %}50 лучших сериалов{% else %}100 лучших фильмов{% endif %}</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'movies/style.css' %}">
-</head>
-<body>
-<div class="wrapper">
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block title %}
+<title>{% if is_series %}50 лучших сериалов{% else %}100 лучших фильмов{% endif %}</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="col">
+
 <table class="main-table">
 <tr>
     <td class="main-table-left">
@@ -105,12 +106,12 @@
     </td>
 
     <td class="main-table-right">
-        <div class="sticky-sidebar-right">
+        <!--div class="sticky-sidebar-right">
             <a href="/movies/add/" class="universal-button">Добавить фильм</a>
-        </div>
+        </div-->
     </td>
 </tr>
 </table>
 </div>
-</body>
-</html>
+
+{% endblock %}

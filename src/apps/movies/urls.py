@@ -4,7 +4,7 @@ from apps.movies import views
 
 
 urlpatterns = [
-    path("", views.MoviesRedirectView.as_view()),
+    path("", views.index),
     path("top100/", views.MoviesListView.as_view(is_series=False)),
     path("series-top50/", views.MoviesListView.as_view(is_series=True)),
     path("<int:pk>/", views.MoviesDetailView.as_view()),

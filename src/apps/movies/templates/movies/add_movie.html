@@ -1,13 +1,16 @@
-<!doctype html>
-<html lang="ru-RU">
-<head>
-    <meta charset="utf-8" />
-    <title>{% if is_edit %}Редактировать{% else %}Добавить{% endif %} фильм</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'movies/style.css' %}">
-</head>
-<body>
-    <div class="wrapper" style="max-width: 800px;">
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block title %}
+<title>{% if is_edit %}Редактировать{% else %}Добавить{% endif %} фильм</title>
+{% endblock %}
+
+
+{% block content %}
+<div class="col-2"></div>
+
+<div class="col-8">
+
     <h1 class="big-header" style="text-align: center;">
         {% if is_edit %}Редактировать{% else %}Добавить новый{% endif %} фильм</h1>
 
@@ -20,15 +23,15 @@
                 {{ field.label_tag }} {{ field }}
                 {% if field.name == 'countries' %}
                     <button type="button" class="add-btn" onclick="openPopup('country')">
-                        <img src="{% static 'movies/plus-icon.png' %}" alt="Добавить страну">
+                        <img src="{% static 'movies/images/plus-icon.png' %}" alt="Добавить страну">
                     </button>
                 {% elif field.name == 'directors' %}
                     <button type="button" class="add-btn" onclick="openPopup('director')">
-                        <img src="{% static 'movies/plus-icon.png' %}" alt="Добавить директора">
+                        <img src="{% static 'movies/images/plus-icon.png' %}" alt="Добавить директора">
                     </button>
                 {% elif field.name == 'genres' %}
                     <button type="button" class="add-btn" onclick="openPopup('genre')">
-                        <img src="{% static 'movies/plus-icon.png' %}" alt="Добавить жанр">
+                        <img src="{% static 'movies/images/plus-icon.png' %}" alt="Добавить жанр">
                     </button>
                 {% elif field.name == 'poster' %}
                     {% if form.instance.poster %}
@@ -97,5 +100,5 @@
             });
         }
     </script>
-</body>
-</html>
+</div>
+{% endblock %}

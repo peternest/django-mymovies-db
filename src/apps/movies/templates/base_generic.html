@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  {% block title %}<title>MyMovies DB</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'movies/css/style.css' %}">
+  <link rel="icon" href="{% static 'movies/images/favicon.png' %}"/>
+</head>
+<body>
+
+<div class="container container-shadow" style="min-width: 1000px; width: 1000px;">
+
+<!-- Top navigation bar -->
+<div class="row">
+  <div class="col">
+    <div class="p-3">
+      <span><a href="/movies/">Начало</a></span> *
+      <span><a href="/movies/top100/">Топ 100 фильмов</a></span> *
+      <span><a href="/movies/series-top50/">Топ 50 сериалов</a></span> *
+      <span><a href="/movies/add/">Добавить фильм</a></span> *
+      <span><a href="/api/">Корень API</a></span> *
+      <span><a href="/admin/">Админка</a></span>
+    </div>
+  </div>
+  <div class="col-auto">
+    <div class="p-3">
+    {% if user.is_authenticated %}
+      <span>User: {{ user.get_username }}</span>
+    {% else %}
+      <span>Login</span>
+    {% endif %}
+    </div>
+  </div>
+</div>
+
+<hr style="margin: 0 0 1rem 0;">
+
+<!-- Main content -->
+<div class="row">
+  <!-- Every content block should start with [div class="col"] -->
+  {% block content %}{% endblock %}
+</div>
+
+</div>
+</body>
+</html>
