@@ -38,6 +38,7 @@ class MoviesListView(ListView):
     template_name = "movies/movie_list.html"
     context_object_name = "top_100_movies"
     is_series = False
+    paginate_by = 25
 
     OPTION_ALL: Final[LiteralString] = _("All")
 

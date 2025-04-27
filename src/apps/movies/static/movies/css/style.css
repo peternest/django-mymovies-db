@@ -56,6 +56,10 @@ body {
     font-weight: bold;
 }
 
+.page-links {
+    font-size: 16px;
+}
+
 
 /*
 -----------------------------------------
@@ -178,7 +182,7 @@ MOVIE LIST
 */
 
 .main-table {
-    width: 1200px;
+    width: 100%;
     margin-left: auto;
     margin-right: auto;
 }
@@ -187,12 +191,8 @@ MOVIE LIST
     vertical-align: top;
 }
 .main-table-center {
-    width: 600px;
-    min-width: 600px;
-}
-.main-table-right {
-    width: 25%;
-    vertical-align: top;
+    min-width: 500px;
+    width: 70%;
 }
 .sticky-sidebar-left {
     position: sticky;
@@ -207,6 +207,9 @@ MOVIE LIST
 .form-direction {
     display: flex;
     flex-direction: column;
+}
+.paginator-block {
+    text-align: right;
 }
 
 .big-header {
