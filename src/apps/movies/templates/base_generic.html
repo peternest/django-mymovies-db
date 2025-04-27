@@ -15,23 +15,29 @@
 <div class="container container-shadow" style="min-width: 1000px; width: 1000px;">
 
 <!-- Top navigation bar -->
-<div class="row">
+<div class="row align-items-center">
   <div class="col">
     <div class="p-3">
-      <span><a href="/movies/">Начало</a></span> *
-      <span><a href="/movies/top100/">Топ 100 фильмов</a></span> *
-      <span><a href="/movies/series-top50/">Топ 50 сериалов</a></span> *
-      <span><a href="/movies/add/">Добавить фильм</a></span> *
-      <span><a href="/api/">Корень API</a></span> *
-      <span><a href="/admin/">Админка</a></span>
+      <span><a href="/movies/">Начало</a></span>
+      * <span><a href="/movies/top100/">Топ 100 фильмов</a></span>
+      * <span><a href="/movies/series-top50/">Топ 50 сериалов</a></span>
+      * <span><a href="/movies/add/">Добавить фильм</a></span>
+      * <span><a href="/api/">API</a></span>
+      {% if user.is_authenticated %}
+      * <span><a href="/admin/">Админка</a></span>
+      {% endif %}
     </div>
   </div>
   <div class="col-auto">
     <div class="p-3">
     {% if user.is_authenticated %}
-      <span>User: {{ user.get_username }}</span>
+      Пользователь: <strong>{{ user.get_username }}</strong>
+      <form id="logout-form" action="/admin/logout/?next={{ request.path }}" method="post" class="inline-form">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-link btn-font-size">Выйти</button>
+      </form>
     {% else %}
-      <span>Login</span>
+      <a href="/admin/login/?next={{ request.path }}">Войти</a>
     {% endif %}
     </div>
   </div>

@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import Any, ClassVar, Final, LiteralString
 
+from django.contrib.auth.models import User
 from django.db.models import Model, Q
 from django.db.models.manager import BaseManager
 from django.http import HttpRequest, HttpResponse, HttpResponseRedirect, JsonResponse
@@ -23,9 +24,11 @@ class Option:
 def index(request: HttpRequest) -> HttpResponse:
     num_movies: Final = Movie.objects.filter(is_series=False).count()
     num_series: Final = Movie.objects.filter(is_series=True).count()
+    num_users: Final = User.objects.filter(is_active=True).count()
     context = {
         "num_movies": num_movies,
         "num_series": num_series,
+        "num_users": num_users,
     }
     return render(request, "index.html", context=context)
 
