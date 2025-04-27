@@ -27,14 +27,12 @@
     <ul>
         <li class="list-item"><a href="/movies/top100/">100 лучших фильмов</a></li>
         <li class="list-item"><a href="/movies/series-top50/">50 лучших сериалов</a></li>
+        {% if user.is_authenticated %}
         <li class="list-item"><a href="/movies/add/">Добавить новый фильм</a></li>
+        {% endif %}
         <li class="list-item"><a href="/admin/">Админка Django</a></li>
         <li class="list-item"><a href="/api/">Корень API</a></li>
-        <!--li class="list-item"><a href="/api/movies/">/api/movies/</a> - Список фильмов и сериалов (json)</li>
-        <li class="list-item"><a href="/api/countries/">/api/countries/</a> - Список стран (json)</li>
-        <li class="list-item"><a href="/api/directors/">/api/directors/</a> - Список режиссеров (json)</li>
-        <li class="list-item"><a href="/api/genres/">/api/genres/</a> - Список жанров (json)</li-->
-    </ul>
+     </ul>
 
     <br>
     <p>Статистика:</p>  

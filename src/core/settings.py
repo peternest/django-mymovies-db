@@ -138,3 +138,5 @@ STATIC_ROOT = BASE_DIR / "static/"
 
 MEDIA_URL = env("MEDIA_URL", default="media/")   # Было /media/
 MEDIA_ROOT = BASE_DIR / "media/"
+
+LOGIN_URL = "/admin/login/"

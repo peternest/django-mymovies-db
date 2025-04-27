@@ -72,10 +72,15 @@
                 <!-- To make a gap -->
             </tr>
             <tr>
+                {% if user.is_authenticated %}
                 <td class="movie-key"></td>
                 <td class="movie-value">
                     <a href="/movies/{{ movie.id }}/change/" class="universal-button">Редактировать фильм</a>
                 </td>
+                {% endif %}
+            </tr>
+            <tr height="25px">
+                <!-- To make a gap -->
             </tr>
             </table>
         </td>

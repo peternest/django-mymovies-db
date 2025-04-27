@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from typing import Any, ClassVar, Final, LiteralString
 
+from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db.models import Model, Q
 from django.db.models.manager import BaseManager
@@ -135,6 +136,7 @@ class APIMoviesRedirectView(RedirectView):
     url = "/api/movies/top100/"
 
 
+@login_required
 def add_movie(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = MovieForm(request.POST, request.FILES)
@@ -146,6 +148,7 @@ def add_movie(request: HttpRequest) -> HttpResponse:
     return render(request, "movies/add_movie.html", {"form": form, "is_edit": False})
 
 
+@login_required
 def change_movie(request: HttpRequest, pk: int) -> HttpResponse:
     movie_instance = get_object_or_404(Movie, pk=pk)
     if request.method == "POST":
