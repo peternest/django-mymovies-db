@@ -4,7 +4,7 @@ from django.contrib import admin
 from django.forms import ModelForm, Textarea
 from django.forms.widgets import Input
 
-from apps.movies.models import Country, Director, Genre, Movie
+from apps.movies.models import Country, Director, Genre, Movie, MovieRating
 
 
 admin.site.register(Country)
@@ -45,3 +45,15 @@ class MovieAdmin(admin.ModelAdmin):
         "kinopoisk_url"
     )
 
+
+@admin.register(MovieRating)
+class MovieRatingAdmin(admin.ModelAdmin):
+    list_display = ("user", "movie", "rating")
+    list_filter = ("user",)
+
+    fields = (
+        "user",
+        "movie",
+        "rating",
+        "review"
+    )

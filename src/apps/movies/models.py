@@ -1,4 +1,5 @@
-from django.core.validators import MinValueValidator
+from django.contrib.auth.models import User
+from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
@@ -108,11 +109,19 @@ class Movie(models.Model):
     )
     kp_rating = models.FloatField(
         verbose_name=_("KP rating"),
-        default=0.0
+        default=0.0,
+        validators=[
+            MinValueValidator(0.0),
+            MaxValueValidator(10.0)
+        ]
     )
     my_rating = models.FloatField(
         verbose_name=_("My rating"),
-        default=0.0
+        default=0.0,
+        validators=[
+            MinValueValidator(0.0),
+            MaxValueValidator(10.0)
+        ]
     )
     poster = models.ImageField(   # 600x900, relative to MEDIA_ROOT
         upload_to="images/",
@@ -155,3 +164,40 @@ class Movie(models.Model):
             last_year: str = f"{self.series_last_year}" if self.series_last_year else "..."
             return f"{self.release_year}—{last_year}"
         return f"{self.release_year}"
+
+
+class MovieRating(models.Model):
+    user = models.ForeignKey(
+        User,
+        verbose_name=_("User"),
+        on_delete=models.CASCADE
+    )
+    movie = models.ForeignKey(
+        Movie,
+        verbose_name=_("Movie"),
+        on_delete=models.CASCADE
+    )
+    rating = models.FloatField(
+        verbose_name=_("Rating"),
+        default=0.0,
+        validators=[
+            MinValueValidator(0.0),
+            MaxValueValidator(10.0)
+        ]
+    )
+    review = models.TextField(
+        max_length=1000,
+        verbose_name=_("Review"),
+        blank=True
+    )
+
+    class Meta:
+        verbose_name = _("MovieRating")
+        verbose_name_plural = _("MovieRatings")
+        ordering = ("user", "movie")
+        constraints = (
+            models.UniqueConstraint(fields=["user", "movie"], name="unique_rating"),
+        )
+
+    def __str__(self) -> str:
+        return f"{self.user} - {self.movie} ({self.rating})"
