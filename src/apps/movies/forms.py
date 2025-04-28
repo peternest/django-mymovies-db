@@ -81,7 +81,23 @@ class MovieForm(ModelForm):
 
     class Meta:
         model = Movie
-        fields = "__all__"
+        fields: ClassVar[str] = [
+            "title",
+            "title_orig",
+            "is_series",
+            "release_year",
+            "series_last_year",
+            "num_of_seasons",
+            "countries",
+            "genres",
+            "directors",
+            "slogan",
+            "description",
+            "kp_rating",
+            # "my_rating",
+            "poster",
+            "kinopoisk_url",
+        ]
         labels: ClassVar[dict[str, str]] = {
             "title": _("Title"),
             "title_orig": _("Title orig"),
@@ -91,7 +107,7 @@ class MovieForm(ModelForm):
             "num_of_seasons": _("Number of seasons"),
             "slogan": _("Slogan"),
             "description": _("Description"),
-            "my_rating": _("My rating"),
+            # "my_rating": _("My rating"),
             "kp_rating": _("KP rating"),
             "poster": _("Poster"),
         }
@@ -103,7 +119,7 @@ class MovieForm(ModelForm):
             "num_of_seasons": NumberInput(attrs={"class": "release-field"}),
             "slogan": TextInput(attrs={"class": "text-field"}),
             "description": Textarea(attrs={"cols": 80, "rows": 5}),
-            "my_rating": NumberInput(attrs={"class": "float-field"}),
+            # "my_rating": NumberInput(attrs={"class": "float-field"}),
             "kp_rating": NumberInput(attrs={"class": "float-field"}),
             "poster": FileInput(attrs={"class": "text-field"})
         }
