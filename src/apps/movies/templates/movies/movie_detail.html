@@ -53,13 +53,15 @@
                 <td class="movie-description">{{ movie.description }}</td>
             </tr>
             <tr>
-                <td class="movie-key">Мой рейтинг</td>
-                <td class="movie-rating">{{ movie.my_rating }}</td>
-            </tr>
-            <tr>
                 <td class="movie-key">Рейтинг КП</td>
                 <td class="movie-rating">{{ movie.kp_rating }}</td>
             </tr>
+            {% if user.is_authenticated %}
+            <tr>
+                <td class="movie-user-key">Мой рейтинг</td>
+                <td class="movie-user-rating">{% if user_rating %}{{ user_rating }}{% else %}&mdash;{% endif %}</td>
+            </tr>
+            {% endif %}
             <tr>
                 <td class="movie-key">Карточка на КП</td>
                 <td class="movie-value">

@@ -182,40 +182,30 @@ MOVIE LIST
 */
 
 .main-table {
-    width: 100%;
+    width: 95%;
     margin-left: auto;
     margin-right: auto;
 }
 .main-table-left {
-    width: 25%;
+    width: 23%;
     vertical-align: top;
 }
 .main-table-center {
-    min-width: 500px;
-    width: 70%;
+    width: 77%;
 }
 .sticky-sidebar-left {
     position: sticky;
     top: 90px;
-    margin-left: 30px;
-}
-.sticky-sidebar-right {
-    position: sticky;
-    top: 110px;
-    text-align: center;
 }
 .form-direction {
     display: flex;
     flex-direction: column;
 }
-.paginator-block {
-    text-align: right;
-}
 
 .big-header {
     font-size: 32px;
     font-weight: bold;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 .medium-header {
     font-size: 24px;
@@ -228,30 +218,15 @@ MOVIE LIST
     width: 10em;
 }
 
-.movie-list {
-    margin: 0px;
-    padding: 0px;
-    /* custom li-counter */
-    counter-reset: li; 
-    list-style: none; 
-}
-/* custom li-counter */
-.movie-list div.flex-container:before {
-    content: counter(li);
-    counter-increment: li;
-    position: relative;
-    left: -1.3em;
-    text-align: center;
-    font-size: 20px;
-}
-.movie-list-item {
-    width: 100%;
-    margin-top: 6px;
-}
 .flex-container {
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-bottom: 10px;
+}
+.list-number {
+    width: 40px;
+    font-size: 20px;
 }
 .mv-poster {
     width: 72px;
@@ -272,7 +247,7 @@ MOVIE LIST
     font-size: 14px;
 }
 .mv-rating1 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     color: goldenrod;
     text-align: center;
@@ -280,10 +255,15 @@ MOVIE LIST
     margin-right: 10px;
 }
 .mv-rating2 {
-    font-size: 20px;
+    font-size: 22px;
     font-weight: 600;
     color: grey;
     text-align: center;
+}
+
+.paginator-block {
+    text-align: right;
+    padding-bottom: 20px;
 }
 
 
@@ -344,4 +324,14 @@ MOVIE DETAIL
 .movie-rating {
     width: 80%;
     font-size: 20px;
+}
+.movie-user-key {
+    width: 20%;
+    color: goldenrod; 
+}
+.movie-user-rating {
+    width: 80%;
+    font-size: 20px;
+    font-weight: 600;
+    color: goldenrod;
 }

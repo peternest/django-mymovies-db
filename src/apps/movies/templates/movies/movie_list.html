@@ -60,6 +60,7 @@
                 <input type="submit" value="Фильтровать" class="compact-button" style="width: 10em;"/>
             </form>
         </div>
+        <br><br>
     </td>
 
     <td class="main-table-center">
@@ -79,33 +80,32 @@
         <br><br><br>
 
         {% if top_100_movies %}
-            <ol class="movie-list">
             {% for mov in top_100_movies %}
-                <li class="movie-list-item">
-                    <div class="flex-container">
-                        <div class="mv-poster">
-                            {% if mov.poster %}
-                            <a href="/movies/{{ mov.id }}/">
-                            <img src="{{ mov.poster.url }}" alt="{{ mov.title }}" style="width:72px; height:108px;">
-                            </a>
-                            {% endif %}
-                        </div>
-                        <a href="/movies/{{ mov.id }}/" class="mv-link">
-                            <div class="mv-title">{{ mov.title }}</div>
-                            <div class="mv-title-orig">{% if mov.title_orig %}{{ mov.title_orig }}, {% endif %}{{ mov.range_of_years }}</div> 
-                        </a>
-                        <div>
-                            <div class="mv-rating1">({{ mov.my_rating }})</div>
-                            <div class="mv-rating2">{{ mov.kp_rating }}</div>
-                        </div>
+                <div class="flex-container">
+                    <div class="list-number">
+                        {{ forloop.counter }}
                     </div>
-                </li>
+                    <div class="mv-poster">
+                        {% if mov.poster %}
+                        <a href="/movies/{{ mov.id }}/">
+                        <img src="{{ mov.poster.url }}" alt="{{ mov.title }}" style="width:72px; height:108px;">
+                        </a>
+                        {% endif %}
+                    </div>
+                    <a href="/movies/{{ mov.id }}/" class="mv-link">
+                        <div class="mv-title">{{ mov.title }}</div>
+                        <div class="mv-title-orig">{% if mov.title_orig %}{{ mov.title_orig }}, {% endif %}{{ mov.range_of_years }}</div> 
+                    </a>
+                    <div>
+                        <!--div class="mv-rating1">({{ mov.my_rating }})</div-->
+                        <div class="mv-rating2">{{ mov.kp_rating }}</div>
+                    </div>
+                </div>
             {% endfor %}
-            </ol>
         {% endif %}
 
         {% if is_paginated %}
-        <div class="paginator-block p-3">
+        <div class="paginator-block">
             <span class="page-links">
                 {% if page_obj.has_previous %}
                     <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">[ &lt;&lt; ]</a>

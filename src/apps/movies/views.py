@@ -5,11 +5,11 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.db.models import Model, Q
 from django.db.models.manager import BaseManager
-from django.http import HttpRequest, HttpResponse, HttpResponseRedirect, JsonResponse
+from django.http import Http404, HttpRequest, HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.utils.translation import gettext_lazy as _
 from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import DetailView, ListView, RedirectView
+from django.views.generic import ListView, RedirectView
 
 from apps.movies.forms import CountryForm, DirectorForm, GenreForm, MovieForm
 from apps.movies.models import Country, Director, Genre, Movie
@@ -45,8 +45,8 @@ class MoviesListView(ListView):
     EN_DASH: Final[LiteralString] = "–"  # noqa: RUF001
 
     sort_list: ClassVar[list[Option]] = [
-        Option(_("by my rating"), "-my_rating", False),
         Option(_("by kp rating"), "-kp_rating", False),
+        # Option(_("by my rating"), "-my_rating", False),  # noqa: ERA001
         Option(_("by release year"), "-release_year", False),
         Option(_("by title"), "title", False)
     ]
@@ -86,10 +86,10 @@ class MoviesListView(ListView):
         return queryset.order_by(self.get_ordering())
 
     def get_ordering(self) -> str:
-        return self.request.GET.get("sort", "-my_rating")
+        return self.request.GET.get("sort", "-kp_rating")
 
     def _make_sort_list(self) -> list[Option]:
-        sort_value = self.request.GET.get("sort", "-my_rating")
+        sort_value = self.request.GET.get("sort", "-kp_rating")
         for item in self.sort_list:
             item.is_selected = (item.value == sort_value)
         return self.sort_list
@@ -124,9 +124,18 @@ class MoviesListView(ListView):
         return new_list
 
 
-class MoviesDetailView(DetailView):
-    model = Movie
-    template_name = "movies/movie_detail.html"
+def movie_detail(request: HttpRequest, pk: int) -> HttpResponse:
+    try:
+        movie = get_object_or_404(Movie, pk=pk)
+    except Http404:
+        return HttpResponseRedirect("/movies/")
+
+    user_rating = None
+    if request.user.is_authenticated:
+        record = movie.movierating_set.filter(user=request.user).first()
+        if record:
+            user_rating = record.rating
+    return render(request, "movies/movie_detail.html", {"movie": movie, "user_rating": user_rating})
 
 
 class MoviesRedirectView(RedirectView):
