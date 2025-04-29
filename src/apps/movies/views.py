@@ -12,7 +12,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView, RedirectView
 
 from apps.movies.forms import CountryForm, DirectorForm, GenreForm, MovieForm
-from apps.movies.models import Country, Director, Genre, Movie
+from apps.movies.models import Country, Director, Genre, Movie, MovieRating
 
 
 @dataclass
@@ -151,8 +151,15 @@ def add_movie(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = MovieForm(request.POST, request.FILES)
         if form.is_valid():
-            form.save()
-            return HttpResponseRedirect("/movies/")
+            movie_instance = form.save()
+            if "rating" in form.cleaned_data or "review" in form.changed_data:
+                MovieRating.objects.create(
+                    user=request.user,
+                    movie=movie_instance,
+                    rating=form.cleaned_data.get("rating", 0.0),
+                    review=form.cleaned_data.get("review", "")
+                )
+            return HttpResponseRedirect("/movies/top100/")
     else:
         form = MovieForm()
     return render(request, "movies/add_movie.html", {"form": form, "is_edit": False})
@@ -161,13 +168,29 @@ def add_movie(request: HttpRequest) -> HttpResponse:
 @login_required
 def change_movie(request: HttpRequest, pk: int) -> HttpResponse:
     movie_instance = get_object_or_404(Movie, pk=pk)
+    rating_instance = MovieRating.objects.filter(user=request.user, movie=movie_instance).first()
+
     if request.method == "POST":
-        form = MovieForm(request.POST, request.FILES, instance=movie_instance)
+        form = MovieForm(request.POST, request.FILES, instance=movie_instance, user=request.user)
         if form.is_valid():
             form.save()
+            if "rating" in form.cleaned_data or "review" in form.changed_data:
+                if rating_instance:
+                    if "rating" in form.cleaned_data:
+                        rating_instance.rating = form.cleaned_data["rating"]
+                    if "review" in form.changed_data:
+                        rating_instance.review = form.cleaned_data["review"]
+                    rating_instance.save()
+                else:
+                    MovieRating.objects.create(
+                        user=request.user,
+                        movie=movie_instance,
+                        rating=form.cleaned_data.get("rating", 0.0),
+                        review=form.cleaned_data.get("review", "")
+                    )
             return HttpResponseRedirect(f"/movies/{pk}/")
     else:
-        form = MovieForm(instance=movie_instance)
+        form = MovieForm(instance=movie_instance, user=request.user)
     return render(request, "movies/add_movie.html", {"form": form, "is_edit": True})
 
 

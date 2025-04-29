@@ -18,9 +18,11 @@
         {% csrf_token %}
         <fieldset class="my-fieldset aligned">
             {{ form.non_field_errors }}
+
             {% for field in form %}
             <div class="form-row">
                 {{ field.label_tag }} {{ field }}
+
                 {% if field.name == 'countries' %}
                     <button type="button" class="add-btn" onclick="openPopup('country')">
                         <img src="{% static 'movies/images/plus-icon.png' %}" alt="Добавить страну">
@@ -40,6 +42,8 @@
                         <img src="{{ form.instance.poster.url }}" alt="Текущий постер" style="max-width: 200px; max-height: 300px;">
                     </div>
                     {% endif %}
+                {% elif field.name == 'rating' %}
+                    <!-- To be customized -->
                 {% endif %}
             </div>
             <div class="form-row-errors">{{ field.errors }}</div>

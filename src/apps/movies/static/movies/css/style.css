@@ -134,6 +134,13 @@ ADD MOVIE
 .float-field {
     width: 5em;
 }
+.my-float-field {
+    width: 5em;
+    background-color: lightcyan;
+}
+.my-textarea {
+    background-color: lightcyan;
+}
 .url-field {
     width: 20em;
 }

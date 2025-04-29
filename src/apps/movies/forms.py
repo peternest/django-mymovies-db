@@ -1,7 +1,10 @@
-from typing import ClassVar
+from typing import Any, ClassVar
 
+from django.contrib.auth.models import User
 from django.forms import (
+    CharField,
     FileInput,
+    FloatField,
     ModelForm,
     ModelMultipleChoiceField,
     NumberInput,
@@ -14,7 +17,7 @@ from django.forms import (
 from django.forms.widgets import Input
 from django.utils.translation import gettext_lazy as _
 
-from apps.movies.models import Country, Director, Genre, Movie
+from apps.movies.models import Country, Director, Genre, Movie, MovieRating
 
 
 class CountryForm(ModelForm):
@@ -79,6 +82,22 @@ class MovieForm(ModelForm):
         assume_scheme="https"  # supress warning
     )
 
+    # Fields from MovieRating
+    rating = FloatField(
+        label=_("My rating"),
+        min_value=0.0,
+        max_value=10.0,
+        initial=0.0,
+        required=False,
+        widget=NumberInput(attrs={"class": "my-float-field"})
+    )
+    review = CharField(
+        label=_("My review"),
+        max_length=1000,
+        required=False,
+        widget=Textarea(attrs={"cols": 80, "rows": 6, "class": "my-textarea"})
+    )
+
     class Meta:
         model = Movie
         fields: ClassVar[str] = [
@@ -94,9 +113,7 @@ class MovieForm(ModelForm):
             "slogan",
             "description",
             "kp_rating",
-            # "my_rating",
             "poster",
-            "kinopoisk_url",
         ]
         labels: ClassVar[dict[str, str]] = {
             "title": _("Title"),
@@ -107,7 +124,6 @@ class MovieForm(ModelForm):
             "num_of_seasons": _("Number of seasons"),
             "slogan": _("Slogan"),
             "description": _("Description"),
-            # "my_rating": _("My rating"),
             "kp_rating": _("KP rating"),
             "poster": _("Poster"),
         }
@@ -118,8 +134,7 @@ class MovieForm(ModelForm):
             "series_last_year": NumberInput(attrs={"class": "release-field"}),
             "num_of_seasons": NumberInput(attrs={"class": "release-field"}),
             "slogan": TextInput(attrs={"class": "text-field"}),
-            "description": Textarea(attrs={"cols": 80, "rows": 5}),
-            # "my_rating": NumberInput(attrs={"class": "float-field"}),
+            "description": Textarea(attrs={"cols": 80, "rows": 6}),
             "kp_rating": NumberInput(attrs={"class": "float-field"}),
             "poster": FileInput(attrs={"class": "text-field"})
         }
@@ -131,3 +146,11 @@ class MovieForm(ModelForm):
                 "CHANGE_ME": _("Release year should be >= 1900.")
             }
         }
+
+    def __init__(self, *args: Any, user: User | None = None, **kwargs: Any) -> None:
+        super().__init__(*args, **kwargs)
+        if self.instance and user:
+            rating_instance = MovieRating.objects.filter(movie=self.instance, user=user).first()
+            if rating_instance:
+                self.initial["rating"] = rating_instance.rating
+                self.initial["review"] = rating_instance.review
