@@ -200,4 +200,4 @@ class MovieRating(models.Model):
         )
 
     def __str__(self) -> str:
-        return f"{self.user} - {self.movie} ({self.rating})"
+        return f"{self.user} - {self.movie}"
