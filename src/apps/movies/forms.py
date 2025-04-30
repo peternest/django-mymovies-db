@@ -82,22 +82,6 @@ class MovieForm(ModelForm):
         assume_scheme="https"  # supress warning
     )
 
-    # Fields from MovieRating
-    rating = FloatField(
-        label=_("My rating"),
-        min_value=0.0,
-        max_value=10.0,
-        initial=0.0,
-        required=False,
-        widget=NumberInput(attrs={"class": "my-float-field"})
-    )
-    review = CharField(
-        label=_("My review"),
-        max_length=1000,
-        required=False,
-        widget=Textarea(attrs={"cols": 80, "rows": 6, "class": "my-textarea"})
-    )
-
     class Meta:
         model = Movie
         fields: ClassVar[str] = [
@@ -146,6 +130,24 @@ class MovieForm(ModelForm):
                 "CHANGE_ME": _("Release year should be >= 1900.")
             }
         }
+
+
+class MovieRatingForm(MovieForm):
+    # Added fields from a MovieRating model
+    rating = FloatField(
+        label=_("My rating"),
+        min_value=0.0,
+        max_value=10.0,
+        initial=0.0,
+        required=False,
+        widget=NumberInput(attrs={"class": "my-float-field"})
+    )
+    review = CharField(
+        label=_("My review"),
+        max_length=1000,
+        required=False,
+        widget=Textarea(attrs={"cols": 80, "rows": 6, "class": "my-textarea"})
+    )
 
     def __init__(self, *args: Any, user: User | None = None, **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
