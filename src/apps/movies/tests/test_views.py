@@ -1,11 +1,12 @@
 import json
+from typing import Final
 
 import pytest
-from django.contrib.auth.models import AnonymousUser
+from django.contrib.auth.models import AnonymousUser, User
 from django.test import RequestFactory
 
-from apps.movies.models import Country, Director, Genre, Movie
-from apps.movies.views import add_country, add_director, add_genre, add_movie, get_objlist
+from apps.movies.models import Country, Director, Genre, Movie, MovieRating
+from apps.movies.views import add_country, add_director, add_genre, add_movie, get_objlist, movie_detail
 
 
 pytestmark = [pytest.mark.django_db]
@@ -83,33 +84,56 @@ def test_get_countries_as_json(rf: RequestFactory) -> None:
 
 
 def test_add_movie_with_related_fields(rf: RequestFactory) -> None:
-    country = Country.objects.create(country="TestCountry")
-    director = Director.objects.create(director="TestDirector")
-    genre = Genre.objects.create(genre="TestGenre")
+    user: Final = User.objects.create(username="TestUser", password="pass")  # noqa: S106
+    country: Final = Country.objects.create(country="TestCountry")
+    director: Final = Director.objects.create(director="TestDirector")
+    genre: Final = Genre.objects.create(genre="TestGenre")
 
     request = rf.post("/movies/add_movie/", {
         "title": "Test Movie",
+        "is_series": False,
         "release_year": 2023,
         "num_of_seasons": 1,
         "countries": [country.id],
         "directors": [director.id],
         "genres": [genre.id],
         "description": "A test movie description.",
-        "my_rating": 8,
-        "kp_rating": 7.5
+        "kp_rating": 7.5,
+        "rating": 6,  # Without this rating test fails
+        "review": "Good movie!"
     })
-    request.user = AnonymousUser()
+    request.user = user
     count_before = Movie.objects.count()
 
     response = add_movie(request)
-    movie = Movie.objects.get(title="Test Movie")
+    movie = Movie.objects.filter(title="Test Movie").first()
+    mr = MovieRating.objects.filter(movie=movie, user=user).first()
 
     assert response.status_code == 302
     assert Movie.objects.count() == count_before + 1
     assert movie.release_year == 2023
-    assert movie.my_rating == 8
     assert movie.kp_rating == 7.5
     assert movie.description == "A test movie description."
     assert movie.countries.first().country == "TestCountry"
     assert movie.directors.first().director == "TestDirector"
     assert movie.genres.first().genre == "TestGenre"
+    assert mr.rating == 6
+    assert mr.review == "Good movie!"
+
+
+def test_movie_detail_found(rf: RequestFactory) -> None:
+    movie = Movie.objects.create(title="Test Movie")
+
+    request = rf.get(f"/movies/{movie.id}/")
+    request.user = AnonymousUser()
+    response = movie_detail(request, pk=movie.id)
+
+    assert response.status_code == 200
+
+
+def test_movie_detail_not_found(rf: RequestFactory) -> None:
+    request = rf.get("/movies/999/")
+    request.user = AnonymousUser()
+    response = movie_detail(request, pk=999)
+
+    assert response.status_code == 302
