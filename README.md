@@ -10,6 +10,7 @@ Powered by the Django web framework.
 * To filter the list of movies by countries, genres, directors or release years.
 * To add a new movie/series into the database or modify an existing one.
 * To add a poster image to a movie/series.
+* To add a user rating or review to a movie/series.
 * To show/edit data using the REST api.
 
 ## How to install it on a local machine
