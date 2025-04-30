@@ -65,9 +65,11 @@
             <tr>
                 <td class="movie-key">Карточка на КП</td>
                 <td class="movie-value">
+                    {% if movie.kinopoisk_url %}
                     <a href="{{ movie.kinopoisk_url }}" target="_blank">Внешняя ссылка
                         <img src="{% static 'movies/images/external-link.png' %}">
                     </a>
+                    {% endif %}
                 </td>
             </tr>
             <tr height="25px">
