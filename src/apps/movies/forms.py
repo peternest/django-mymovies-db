@@ -75,12 +75,6 @@ class MovieForm(ModelForm):
         label=_("Director"),
         widget=SelectMultiple(attrs={"size": 8})
     )
-    kinopoisk_url = URLField(
-        label=_("Kinopoisk url"),
-        required=False,
-        widget=URLInput(attrs={"class": "url-field"}),
-        assume_scheme="https"  # supress warning
-    )
 
     class Meta:
         model = Movie
@@ -98,6 +92,7 @@ class MovieForm(ModelForm):
             "description",
             "kp_rating",
             "poster",
+            "kinopoisk_url"
         ]
         labels: ClassVar[dict[str, str]] = {
             "title": _("Title"),
@@ -110,6 +105,7 @@ class MovieForm(ModelForm):
             "description": _("Description"),
             "kp_rating": _("KP rating"),
             "poster": _("Poster"),
+            "kinopoisk_url": _("Kinopoisk url")
         }
         widgets: ClassVar[dict[str, Input]] = {
             "title": TextInput(attrs={"class": "text-field"}),
@@ -120,7 +116,8 @@ class MovieForm(ModelForm):
             "slogan": TextInput(attrs={"class": "text-field"}),
             "description": Textarea(attrs={"cols": 80, "rows": 6}),
             "kp_rating": NumberInput(attrs={"class": "float-field"}),
-            "poster": FileInput(attrs={"class": "text-field"})
+            "poster": FileInput(attrs={"class": "text-field"}),
+            "kinopoisk_url": URLInput(attrs={"class": "url-field"})
         }
         error_messages: ClassVar[dict[str, dict[str, str]]] = {
             "title": {
