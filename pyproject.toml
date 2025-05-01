@@ -74,7 +74,8 @@ no-lines-before = ["standard-library", "local-folder"]
 ]
 "*/tests/*.py" = [
     "PLR2004",  # magic value used in comparison, consider replacing {} with constant variable
-    "S101",  # use of `assert` detected 
+    "S101",  # use of `assert` detected
+    "S106",  # hardcoded-password-func-arg
     "S311"  # standard pseudo-random generators are not suitable for cryptographic purposes
 ]
 
