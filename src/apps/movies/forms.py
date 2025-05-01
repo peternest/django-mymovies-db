@@ -148,8 +148,26 @@ class MovieRatingForm(MovieForm):
 
     def __init__(self, *args: Any, user: User | None = None, **kwargs: Any) -> None:
         super().__init__(*args, **kwargs)
+
+        self.fields["rating"].initial = 0.0
+        self.fields["review"].initial = ""
         if self.instance and user:
             rating_instance = MovieRating.objects.filter(movie=self.instance, user=user).first()
             if rating_instance:
-                self.initial["rating"] = rating_instance.rating
-                self.initial["review"] = rating_instance.review
+                self.fields["rating"].initial = rating_instance.rating
+                self.fields["review"].initial = rating_instance.review
+
+    """
+    def clean(self) -> dict[str, Any]:
+        cleaned_data = super().clean()
+        print("CLEANED DATA")
+        print(cleaned_data)
+
+        if cleaned_data["rating"] is None:
+            print("Fix rating: None -> 0")
+            cleaned_data["rating"] = 0.0
+
+        print("CLEANED DATA")
+        print(cleaned_data)
+        return cleaned_data
+    """

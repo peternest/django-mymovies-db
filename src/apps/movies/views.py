@@ -152,7 +152,7 @@ def add_movie(request: HttpRequest) -> HttpResponse:
         form = MovieRatingForm(request.POST, request.FILES)
         if form.is_valid():
             movie_instance = form.save()
-            if "rating" in form.cleaned_data or "review" in form.changed_data:
+            if "rating" in form.cleaned_data or "review" in form.cleaned_data:
                 MovieRating.objects.create(
                     user=request.user,
                     movie=movie_instance,
@@ -174,11 +174,11 @@ def change_movie(request: HttpRequest, pk: int) -> HttpResponse:
         form = MovieRatingForm(request.POST, request.FILES, instance=movie_instance, user=request.user)
         if form.is_valid():
             form.save()
-            if "rating" in form.cleaned_data or "review" in form.changed_data:
+            if "rating" in form.cleaned_data or "review" in form.cleaned_data:
                 if rating_instance:
                     if "rating" in form.cleaned_data:
                         rating_instance.rating = form.cleaned_data["rating"]
-                    if "review" in form.changed_data:
+                    if "review" in form.cleaned_data:
                         rating_instance.review = form.cleaned_data["review"]
                     rating_instance.save()
                 else:
