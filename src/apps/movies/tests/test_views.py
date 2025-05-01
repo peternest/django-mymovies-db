@@ -6,7 +6,15 @@ from django.contrib.auth.models import AnonymousUser, User
 from django.test import RequestFactory
 
 from apps.movies.models import Country, Director, Genre, Movie, MovieRating
-from apps.movies.views import add_country, add_director, add_genre, add_movie, get_objlist, movie_detail
+from apps.movies.views import (
+    add_country,
+    add_director,
+    add_genre,
+    add_movie,
+    change_movie,
+    get_objlist,
+    movie_detail,
+)
 
 
 pytestmark = [pytest.mark.django_db]
@@ -83,8 +91,26 @@ def test_get_countries_as_json(rf: RequestFactory) -> None:
     assert {"id": Country.objects.get(country="Country2").id, "name": "Country2"} in data["objlist"]
 
 
+def test_movie_detail_found(rf: RequestFactory) -> None:
+    movie = Movie.objects.create(title="Test Movie")
+
+    request = rf.get(f"/movies/{movie.id}/")
+    request.user = AnonymousUser()
+    response = movie_detail(request, pk=movie.id)
+
+    assert response.status_code == 200
+
+
+def test_movie_detail_not_found(rf: RequestFactory) -> None:
+    request = rf.get("/movies/999/")
+    request.user = AnonymousUser()
+    response = movie_detail(request, pk=999)
+
+    assert response.status_code == 302
+
+
 def test_add_movie_with_related_fields(rf: RequestFactory) -> None:
-    user: Final = User.objects.create(username="TestUser", password="pass")  # noqa: S106
+    user: Final = User.objects.create(username="TestUser", password="pass")
     country: Final = Country.objects.create(country="TestCountry")
     director: Final = Director.objects.create(director="TestDirector")
     genre: Final = Genre.objects.create(genre="TestGenre")
@@ -99,7 +125,7 @@ def test_add_movie_with_related_fields(rf: RequestFactory) -> None:
         "genres": [genre.id],
         "description": "A test movie description.",
         "kp_rating": 7.5,
-        "rating": 6,  # Without this rating test fails
+        "rating": 6,
         "review": "Good movie!"
     })
     request.user = user
@@ -121,19 +147,49 @@ def test_add_movie_with_related_fields(rf: RequestFactory) -> None:
     assert mr.review == "Good movie!"
 
 
-def test_movie_detail_found(rf: RequestFactory) -> None:
-    movie = Movie.objects.create(title="Test Movie")
+def test_change_movie_with_related_fields(rf: RequestFactory) -> None:
+    user: Final = User.objects.create(username="TestUser", password="pass")
+    country: Final = Country.objects.create(country="TestCountry")
+    director: Final = Director.objects.create(director="TestDirector")
+    genre: Final = Genre.objects.create(genre="TestGenre")
 
-    request = rf.get(f"/movies/{movie.id}/")
-    request.user = AnonymousUser()
-    response = movie_detail(request, pk=movie.id)
+    movie: Final = Movie.objects.create(
+        title="Old Title",
+        is_series=False,
+        release_year=2020,
+        description="Old description",
+        kp_rating=5.0,
+    )
+    movie.countries.add(country)
+    movie.directors.add(director)
+    movie.genres.add(genre)
+    MovieRating.objects.create(user=user, movie=movie, rating=5.0, review="Old review")
 
-    assert response.status_code == 200
+    request = rf.post(f"/movies/{movie.id}/change/", {
+        "title": "New Title",
+        "is_series": True,
+        "release_year": 2023,
+        "num_of_seasons": 2,
+        "countries": [country.id],
+        "directors": [director.id],
+        "genres": [genre.id],
+        "description": "New description",
+        "kp_rating": 8.0,
+        "rating": 9.0,
+        "review": "New review"
+    })
+    request.user = user
 
-
-def test_movie_detail_not_found(rf: RequestFactory) -> None:
-    request = rf.get("/movies/999/")
-    request.user = AnonymousUser()
-    response = movie_detail(request, pk=999)
+    response = change_movie(request, pk=movie.id)
+    movie.refresh_from_db()
+    rating = MovieRating.objects.get(movie=movie, user=user)
 
     assert response.status_code == 302
+    assert movie.title == "New Title"
+    assert movie.is_series is True
+    assert movie.release_year == 2023
+    assert movie.num_of_seasons == 2
+    assert movie.description == "New description"
+    assert movie.kp_rating == 8.0
+    assert rating.rating == 9.0
+    assert rating.review == "New review"
