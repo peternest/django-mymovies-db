@@ -1,40 +1,41 @@
 [build-system]
-requires = ["poetry-core>=2.0.0,<3.0.0"]
-build-backend = "poetry.core.masonry.api"
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [project]
-authors = [
-    {name = "Peter Huggy",email = "peter.huggy@gmail.com"}
-]
-description = "This is my pet project to keep track of my favorite movies and series. Powered by the Django web framework."
-dynamic = [ "dependencies" ]
 name = "django-mymovies-db"
-readme = "README.md"
-requires-python = "~=3.11"
 version = "0.1.0"
+description = "This is my pet project to keep track of my favorite movies and series. Powered by the Django web framework."
+authors = [{ name = "Peter Huggy", email = "peter.huggy@gmail.com" }]
+requires-python = ">=3.13"
+readme = "README.md"
+dependencies = [
+    "django~=5.2",
+    "django-debug-toolbar>=5.0.1,<6",
+    "django-environ>=0.12.0,<0.13",
+    "djangorestframework>=3.15.2,<4",
+    "pillow>=11.1.0,<12",
+    "psycopg2-binary>=2.9.10,<3",
 
-[tool.poetry]
-package-mode = false
+    "pytest>=8.3.5,<9",
+    "pytest-django>=4.11.1,<5",
+    "django-stubs>=5.2,<5.3",
+    "mypy>=1.15.0,<2",
+    "ruff>=0.11.8,<0.12",
+]
 
-[tool.poetry.dependencies]
-django = "^5.2"
-django-debug-toolbar = "^5.0.1"
-django-environ = "^0.12.0"
-djangorestframework = "^3.15.2"
-pillow = "^11.1.0"
-psycopg2-binary = "^2.9.10"
-pytest = "^8.3.5"
-pytest-django = "^4.11.1"
-ruff = "^0.11.7"
+[tool.mypy]
+plugins = ["mypy_django_plugin.main"]
 
-[tool.poetry.requires-plugins]
-poetry-plugin-export = "^1.9.0"
-poetry-plugin-shell = "^1.0.1"
+[tool.django-stubs]
+django_settings_module = "core.settings"
+
+[tool.uv]
+package = false
 
 [tool.ruff]
 fix = true
 line-length = 120
-target-version = "py311"
 
 [tool.ruff.format]
 docstring-code-format = true
@@ -49,6 +50,7 @@ ignore = [
     "D213",  # multi-line docstring summary should start at the second line
     "DJ007",  # do not use `__all__` with `ModelForm`, use `fields` instead
     "DTZ001",  # the use of `datetime.datetime()` without `tzinfo` argument is not allowed
+    "E501",  # line too long ({} > {})
     "EM",  # exception must not use a ...
     "FA",  # required future annotation
     "FBT",  # boolean type position ...
