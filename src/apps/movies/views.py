@@ -48,7 +48,7 @@ class MoviesListView(ListView):
         Option(_("by kp rating"), "-kp_rating", False),
         # Option(_("by my rating"), "-my_rating", False),  # noqa: ERA001
         Option(_("by release year"), "-release_year", False),
-        Option(_("by title"), "title", False)
+        Option(_("by title"), "title", False),
     ]
 
     def get_context_data(self, **kwargs: Any) -> dict[str, Any]:
@@ -91,7 +91,7 @@ class MoviesListView(ListView):
     def _make_sort_list(self) -> list[Option]:
         sort_value = self.request.GET.get("sort", "-kp_rating")
         for item in self.sort_list:
-            item.is_selected = (item.value == sort_value)
+            item.is_selected = item.value == sort_value
         return self.sort_list
 
     def _make_years_list(self) -> list[Option]:
@@ -105,22 +105,18 @@ class MoviesListView(ListView):
 
         years_value = self.request.GET.get("years", "")
         for item in new_list:
-            item.is_selected = (item.value == years_value)
+            item.is_selected = item.value == years_value
         return new_list
 
     def _make_option_list(self, model: Model, field_name: str) -> list[Option]:
         queryset = model.objects.all().order_by(field_name)
 
-        new_list: list[Option] = [
-            Option(self.OPTION_ALL, self.OPTION_ALL, False)
-        ]
-        new_list.extend(
-            Option(getattr(obj, field_name), getattr(obj, field_name), False) for obj in queryset
-        )
+        new_list: list[Option] = [Option(self.OPTION_ALL, self.OPTION_ALL, False)]
+        new_list.extend(Option(getattr(obj, field_name), getattr(obj, field_name), False) for obj in queryset)
 
         sel_value = self.request.GET.get(field_name, "")
         for item in new_list:
-            item.is_selected = (item.value == sel_value)
+            item.is_selected = item.value == sel_value
         return new_list
 
 
@@ -157,7 +153,7 @@ def add_movie(request: HttpRequest) -> HttpResponse:
                     user=request.user,
                     movie=movie_instance,
                     rating=form.cleaned_data.get("rating", 0.0),
-                    review=form.cleaned_data.get("review", "")
+                    review=form.cleaned_data.get("review", ""),
                 )
             return HttpResponseRedirect("/movies/top100/")
     else:
@@ -186,7 +182,7 @@ def change_movie(request: HttpRequest, pk: int) -> HttpResponse:
                         user=request.user,
                         movie=movie_instance,
                         rating=form.cleaned_data.get("rating", 0.0),
-                        review=form.cleaned_data.get("review", "")
+                        review=form.cleaned_data.get("review", ""),
                     )
             return HttpResponseRedirect(f"/movies/{pk}/")
     else:
@@ -241,8 +237,5 @@ def get_objlist(request: HttpRequest, field_name: str) -> JsonResponse:  # noqa:
         model = Genre
 
     queryset = model.objects.all().order_by(field_name)
-    objlist = [{
-        "id": obj.id,
-        "name": getattr(obj, field_name)
-    } for obj in queryset]
+    objlist = [{"id": obj.id, "name": getattr(obj, field_name)} for obj in queryset]
     return JsonResponse({"success": True, "objlist": objlist})

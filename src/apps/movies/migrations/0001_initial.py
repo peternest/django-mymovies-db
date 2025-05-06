@@ -5,69 +5,89 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Country',
+            name="Country",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('country', models.CharField(max_length=30, unique=True, verbose_name='Country')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("country", models.CharField(max_length=30, unique=True, verbose_name="Country")),
             ],
             options={
-                'verbose_name': 'Country',
-                'verbose_name_plural': 'Countries',
+                "verbose_name": "Country",
+                "verbose_name_plural": "Countries",
             },
         ),
         migrations.CreateModel(
-            name='Director',
+            name="Director",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('director', models.CharField(max_length=30, unique=True, verbose_name='Director')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("director", models.CharField(max_length=30, unique=True, verbose_name="Director")),
             ],
             options={
-                'verbose_name': 'Director',
-                'verbose_name_plural': 'Directors',
+                "verbose_name": "Director",
+                "verbose_name_plural": "Directors",
             },
         ),
         migrations.CreateModel(
-            name='Genre',
+            name="Genre",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('genre', models.CharField(max_length=30, unique=True, verbose_name='Genre')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("genre", models.CharField(max_length=30, unique=True, verbose_name="Genre")),
             ],
             options={
-                'verbose_name': 'Genre',
-                'verbose_name_plural': 'Genres',
+                "verbose_name": "Genre",
+                "verbose_name_plural": "Genres",
             },
         ),
         migrations.CreateModel(
-            name='Movie',
+            name="Movie",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200, verbose_name='Title')),
-                ('title_orig', models.CharField(blank=True, max_length=200, verbose_name='Title orig')),
-                ('is_series', models.BooleanField(default=False, verbose_name='Is series')),
-                ('release_year', models.IntegerField(default=2000, validators=[django.core.validators.MinValueValidator(1900)], verbose_name='Release year')),
-                ('series_last_year', models.IntegerField(blank=True, null=True, validators=[django.core.validators.MinValueValidator(1900)], verbose_name='Series last year')),
-                ('num_of_seasons', models.IntegerField(default=1, validators=[django.core.validators.MinValueValidator(1)], verbose_name='Number of seasons')),
-                ('slogan', models.CharField(blank=True, default='-', max_length=200, verbose_name='Slogan')),
-                ('description', models.CharField(max_length=2000, verbose_name='Description')),
-                ('kp_rating', models.FloatField(verbose_name='KP rating')),
-                ('my_rating', models.FloatField(blank=True, null=True, verbose_name='My rating')),
-                ('poster', models.ImageField(blank=True, upload_to='images/', verbose_name='Poster')),
-                ('kinopoisk_url', models.URLField(blank=True, verbose_name='Kinopoisk url')),
-                ('countries', models.ManyToManyField(to='movies.country', verbose_name='Country')),
-                ('directors', models.ManyToManyField(to='movies.director', verbose_name='Director')),
-                ('genres', models.ManyToManyField(to='movies.genre', verbose_name='Genre')),
+                ("id", models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name="ID")),
+                ("title", models.CharField(max_length=200, verbose_name="Title")),
+                ("title_orig", models.CharField(blank=True, max_length=200, verbose_name="Title orig")),
+                ("is_series", models.BooleanField(default=False, verbose_name="Is series")),
+                (
+                    "release_year",
+                    models.IntegerField(
+                        default=2000,
+                        validators=[django.core.validators.MinValueValidator(1900)],
+                        verbose_name="Release year",
+                    ),
+                ),
+                (
+                    "series_last_year",
+                    models.IntegerField(
+                        blank=True,
+                        null=True,
+                        validators=[django.core.validators.MinValueValidator(1900)],
+                        verbose_name="Series last year",
+                    ),
+                ),
+                (
+                    "num_of_seasons",
+                    models.IntegerField(
+                        default=1,
+                        validators=[django.core.validators.MinValueValidator(1)],
+                        verbose_name="Number of seasons",
+                    ),
+                ),
+                ("slogan", models.CharField(blank=True, default="-", max_length=200, verbose_name="Slogan")),
+                ("description", models.CharField(max_length=2000, verbose_name="Description")),
+                ("kp_rating", models.FloatField(verbose_name="KP rating")),
+                ("my_rating", models.FloatField(blank=True, null=True, verbose_name="My rating")),
+                ("poster", models.ImageField(blank=True, upload_to="images/", verbose_name="Poster")),
+                ("kinopoisk_url", models.URLField(blank=True, verbose_name="Kinopoisk url")),
+                ("countries", models.ManyToManyField(to="movies.country", verbose_name="Country")),
+                ("directors", models.ManyToManyField(to="movies.director", verbose_name="Director")),
+                ("genres", models.ManyToManyField(to="movies.genre", verbose_name="Genre")),
             ],
             options={
-                'verbose_name': 'Movie',
-                'verbose_name_plural': 'Movies',
+                "verbose_name": "Movie",
+                "verbose_name_plural": "Movies",
             },
         ),
     ]

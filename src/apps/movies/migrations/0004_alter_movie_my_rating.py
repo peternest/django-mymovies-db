@@ -4,15 +4,14 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('movies', '0003_alter_country_options_alter_director_options_and_more'),
+        ("movies", "0003_alter_country_options_alter_director_options_and_more"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='movie',
-            name='my_rating',
-            field=models.FloatField(default=0.0, verbose_name='My rating'),
+            model_name="movie",
+            name="my_rating",
+            field=models.FloatField(default=0.0, verbose_name="My rating"),
         ),
     ]

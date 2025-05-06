@@ -1,5 +1,4 @@
 import pytest
-from django.contrib.auth.models import AnonymousUser, User
 
 from apps.movies.models import Country, Director, Genre, Movie
 
@@ -39,4 +38,3 @@ def test_create_movie_with_defaults() -> None:
     assert movie.kp_rating == 0.0
     assert movie.poster == "images/_PosterPlaceholder.jpg"
     assert movie.kinopoisk_url == ""
-

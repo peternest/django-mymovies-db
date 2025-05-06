@@ -5,11 +5,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Country(models.Model):
-    country = models.CharField(
-        max_length=30,
-        verbose_name=_("Country"),
-        unique=True
-    )
+    country = models.CharField(max_length=30, verbose_name=_("Country"), unique=True)
 
     class Meta:
         verbose_name = _("Country")
@@ -21,11 +17,7 @@ class Country(models.Model):
 
 
 class Genre(models.Model):
-    genre = models.CharField(
-        max_length=30,
-        verbose_name=_("Genre"),
-        unique=True
-    )
+    genre = models.CharField(max_length=30, verbose_name=_("Genre"), unique=True)
 
     class Meta:
         verbose_name = _("Genre")
@@ -37,11 +29,7 @@ class Genre(models.Model):
 
 
 class Director(models.Model):
-    director = models.CharField(
-        max_length=30,
-        verbose_name=_("Director"),
-        unique=True
-    )
+    director = models.CharField(max_length=30, verbose_name=_("Director"), unique=True)
 
     class Meta:
         verbose_name = _("Director")
@@ -53,6 +41,7 @@ class Director(models.Model):
 
 
 class Movie(models.Model):
+    # fmt: off
     title = models.CharField(
         max_length=200,
         verbose_name=_("Title"),
@@ -133,6 +122,7 @@ class Movie(models.Model):
         verbose_name=_("Kinopoisk url"),
         blank=True
     )
+    # fmt: on
 
     class Meta:
         verbose_name = _("Movie")
@@ -141,7 +131,7 @@ class Movie(models.Model):
         constraints = (
             models.CheckConstraint(
                 condition=models.Q(series_last_year__gte=models.F("release_year")),
-                name="series_last_year_gte_release_year"
+                name="series_last_year_gte_release_year",
             ),
         )
 
@@ -167,6 +157,7 @@ class Movie(models.Model):
 
 
 class MovieRating(models.Model):
+    # fmt: off
     user = models.ForeignKey(
         User,
         verbose_name=_("User"),
@@ -190,14 +181,13 @@ class MovieRating(models.Model):
         verbose_name=_("Review"),
         blank=True
     )
+    # fmt: on
 
     class Meta:
         verbose_name = _("MovieRating")
         verbose_name_plural = _("MovieRatings")
         ordering = ("user", "movie")
-        constraints = (
-            models.UniqueConstraint(fields=["user", "movie"], name="unique_rating"),
-        )
+        constraints = (models.UniqueConstraint(fields=["user", "movie"], name="unique_rating"),)
 
     def __str__(self) -> str:
         return f"{self.user} - {self.movie}"

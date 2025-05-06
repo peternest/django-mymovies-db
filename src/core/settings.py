@@ -33,23 +33,18 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-
     "rest_framework",
     "apps.movies.apps.MoviesConfig",
-    "core"
+    "core",
 ]
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions,
     # or allow read-only access for unauthenticated users.
-    "DEFAULT_PERMISSION_CLASSES": (
-        "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly",
-    ),
-
+    "DEFAULT_PERMISSION_CLASSES": ("rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly",),
     # "DEFAULT_AUTHENTICATION_CLASSES": [
     #    "rest_framework.authentication.TokenAuthentication",
     # ],
-
     "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
     "PAGE_SIZE": 20,
     "DEFAULT_VERSIONING_CLASS": "rest_framework.versioning.URLPathVersioning",
@@ -90,9 +85,7 @@ TEMPLATES = [
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    "default": env.db()
-}
+DATABASES = {"default": env.db()}
 
 
 # Password validation
@@ -136,7 +129,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 STATIC_URL = env("STATIC_URL", default="static/")
 STATIC_ROOT = BASE_DIR / "static/"
 
-MEDIA_URL = env("MEDIA_URL", default="media/")   # Было /media/
+MEDIA_URL = env("MEDIA_URL", default="media/")  # Было /media/
 MEDIA_ROOT = BASE_DIR / "media/"
 
 LOGIN_URL = "/admin/login/"

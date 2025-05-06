@@ -4,24 +4,26 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('movies', '0001_initial'),
+        ("movies", "0001_initial"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='movie',
-            name='kp_rating',
-            field=models.FloatField(default=0.0, verbose_name='KP rating'),
+            model_name="movie",
+            name="kp_rating",
+            field=models.FloatField(default=0.0, verbose_name="KP rating"),
         ),
         migrations.AlterField(
-            model_name='movie',
-            name='my_rating',
-            field=models.FloatField(blank=True, default=None, null=True, verbose_name='My rating'),
+            model_name="movie",
+            name="my_rating",
+            field=models.FloatField(blank=True, default=None, null=True, verbose_name="My rating"),
         ),
         migrations.AddConstraint(
-            model_name='movie',
-            constraint=models.CheckConstraint(condition=models.Q(('series_last_year__gte', models.F('release_year'))), name='series_last_year_gte_release_year'),
+            model_name="movie",
+            constraint=models.CheckConstraint(
+                condition=models.Q(("series_last_year__gte", models.F("release_year"))),
+                name="series_last_year_gte_release_year",
+            ),
         ),
     ]

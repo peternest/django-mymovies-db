@@ -7,26 +7,36 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('movies', '0007_alter_movie_kp_rating_alter_movie_my_rating_and_more'),
+        ("movies", "0007_alter_movie_kp_rating_alter_movie_my_rating_and_more"),
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='movierating',
-            name='movie',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='movies.movie', verbose_name='Movie'),
+            model_name="movierating",
+            name="movie",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to="movies.movie", verbose_name="Movie"
+            ),
         ),
         migrations.AlterField(
-            model_name='movierating',
-            name='rating',
-            field=models.FloatField(default=0.0, validators=[django.core.validators.MinValueValidator(0.0), django.core.validators.MaxValueValidator(10.0)], verbose_name='Rating'),
+            model_name="movierating",
+            name="rating",
+            field=models.FloatField(
+                default=0.0,
+                validators=[
+                    django.core.validators.MinValueValidator(0.0),
+                    django.core.validators.MaxValueValidator(10.0),
+                ],
+                verbose_name="Rating",
+            ),
         ),
         migrations.AlterField(
-            model_name='movierating',
-            name='user',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name='User'),
+            model_name="movierating",
+            name="user",
+            field=models.ForeignKey(
+                on_delete=django.db.models.deletion.CASCADE, to=settings.AUTH_USER_MODEL, verbose_name="User"
+            ),
         ),
     ]

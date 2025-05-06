@@ -115,19 +115,22 @@ def test_add_movie_with_related_fields(rf: RequestFactory) -> None:
     director: Final = Director.objects.create(director="TestDirector")
     genre: Final = Genre.objects.create(genre="TestGenre")
 
-    request = rf.post("/movies/add_movie/", {
-        "title": "Test Movie",
-        "is_series": False,
-        "release_year": 2023,
-        "num_of_seasons": 1,
-        "countries": [country.id],
-        "directors": [director.id],
-        "genres": [genre.id],
-        "description": "A test movie description.",
-        "kp_rating": 7.5,
-        "rating": 6,
-        "review": "Good movie!"
-    })
+    request = rf.post(
+        "/movies/add_movie/",
+        {
+            "title": "Test Movie",
+            "is_series": False,
+            "release_year": 2023,
+            "num_of_seasons": 1,
+            "countries": [country.id],
+            "directors": [director.id],
+            "genres": [genre.id],
+            "description": "A test movie description.",
+            "kp_rating": 7.5,
+            "rating": 6,
+            "review": "Good movie!",
+        },
+    )
     request.user = user
     count_before = Movie.objects.count()
 
@@ -165,19 +168,22 @@ def test_change_movie_with_related_fields(rf: RequestFactory) -> None:
     movie.genres.add(genre)
     MovieRating.objects.create(user=user, movie=movie, rating=5.0, review="Old review")
 
-    request = rf.post(f"/movies/{movie.id}/change/", {
-        "title": "New Title",
-        "is_series": True,
-        "release_year": 2023,
-        "num_of_seasons": 2,
-        "countries": [country.id],
-        "directors": [director.id],
-        "genres": [genre.id],
-        "description": "New description",
-        "kp_rating": 8.0,
-        "rating": 9.0,
-        "review": "New review"
-    })
+    request = rf.post(
+        f"/movies/{movie.id}/change/",
+        {
+            "title": "New Title",
+            "is_series": True,
+            "release_year": 2023,
+            "num_of_seasons": 2,
+            "countries": [country.id],
+            "directors": [director.id],
+            "genres": [genre.id],
+            "description": "New description",
+            "kp_rating": 8.0,
+            "rating": 9.0,
+            "review": "New review",
+        },
+    )
     request.user = user
 
     response = change_movie(request, pk=movie.id)

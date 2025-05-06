@@ -1,9 +1,10 @@
-from typing import ClassVar
+from typing import Any, ClassVar
 
 from django.contrib import admin
 from django.db import models
-from django.forms import ModelForm, Textarea
+from django.forms import ModelChoiceField, ModelForm, Textarea
 from django.forms.widgets import Input, NumberInput
+from django.http import HttpRequest
 
 from apps.movies.models import Country, Director, Genre, Movie, MovieRating
 
@@ -44,13 +45,11 @@ class MovieAdmin(admin.ModelAdmin):
         "kp_rating",
         "my_rating",
         "poster",
-        "kinopoisk_url"
+        "kinopoisk_url",
     )
 
     formfield_overrides: ClassVar[dict[models.Field, dict[str, Input]]] = {
-        models.FloatField: {
-            "widget": NumberInput(attrs={"style": "width: 60px;"})
-        }
+        models.FloatField: {"widget": NumberInput(attrs={"style": "width: 60px;"})}
     }
 
 
@@ -62,24 +61,19 @@ class MovieRatingAdmin(admin.ModelAdmin):
     list_filter = ("user",)
     list_select_related = ("user", "movie")
 
-    fields = (
-        "user",
-        "movie",
-        "rating",
-        "review"
-    )
+    fields = ("user", "movie", "rating", "review")
 
     formfield_overrides: ClassVar[dict[models.Field, dict[str, Input]]] = {
-        models.FloatField: {
-            "widget": NumberInput(attrs={"style": "width: 60px;"})
-        }
+        models.FloatField: {"widget": NumberInput(attrs={"style": "width: 60px;"})}
     }
 
     # https://docs.djangoproject.com/en/5.2/ref/contrib/admin/#django.contrib.admin.ModelAdmin.formfield_for_foreignkey
 
-    # TODO: Remove these buttons!
+    # TODO(peter): #001 - Remove these buttons!  # noqa: FIX002
 
-    def formfield_for_foreignkey(self, db_field, request, **kwargs):  # noqa: ANN201
+    def formfield_for_foreignkey(
+        self, db_field: models.ForeignKey, request: HttpRequest, **kwargs: Any
+    ) -> ModelChoiceField | None:
         if db_field.name in ["user", "movie"]:
             kwargs["widget"] = admin.widgets.RelatedFieldWidgetWrapper(
                 widget=db_field.formfield(**kwargs).widget,
@@ -87,6 +81,6 @@ class MovieRatingAdmin(admin.ModelAdmin):
                 admin_site=self.admin_site,
                 can_add_related=False,
                 can_change_related=False,
-                can_view_related=False
+                can_view_related=False,
             )
         return super().formfield_for_foreignkey(db_field, request, **kwargs)

@@ -41,5 +41,5 @@ class MovieSerializer(serializers.HyperlinkedModelSerializer):
             "kp_rating",
             "my_rating",
             "poster",
-            "kinopoisk_url"
+            "kinopoisk_url",
         ]

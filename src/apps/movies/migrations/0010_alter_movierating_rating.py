@@ -5,15 +5,21 @@ from django.db import migrations, models
 
 
 class Migration(migrations.Migration):
-
     dependencies = [
-        ('movies', '0009_alter_movierating_rating'),
+        ("movies", "0009_alter_movierating_rating"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='movierating',
-            name='rating',
-            field=models.FloatField(default=0.0, validators=[django.core.validators.MinValueValidator(0.0), django.core.validators.MaxValueValidator(10.0)], verbose_name='Rating'),
+            model_name="movierating",
+            name="rating",
+            field=models.FloatField(
+                default=0.0,
+                validators=[
+                    django.core.validators.MinValueValidator(0.0),
+                    django.core.validators.MaxValueValidator(10.0),
+                ],
+                verbose_name="Rating",
+            ),
         ),
     ]

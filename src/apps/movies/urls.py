@@ -10,7 +10,7 @@ urlpatterns = [
     path("<int:pk>/", views.movie_detail),
     path("add/", views.add_movie),
     path("<int:pk>/change/", views.change_movie),
-
+    # ---
     path("add_country/", views.add_country),
     path("add_director/", views.add_director),
     path("add_genre/", views.add_genre),
