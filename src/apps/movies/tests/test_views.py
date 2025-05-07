@@ -20,9 +20,21 @@ from apps.movies.views import (
 pytestmark = [pytest.mark.django_db]
 
 
-def test_add_country(rf: RequestFactory) -> None:
-    request = rf.post("/movies/add_country/", {"country": "BrandNewCountry"})
+def test_add_country_anon_user(rf: RequestFactory) -> None:
+    request = rf.post("/movies/add_country/", {"country": "NewCountry"})
     request.user = AnonymousUser()
+    count_before = Country.objects.count()
+
+    response = add_country(request)
+
+    assert response.status_code == 200
+    assert Country.objects.count() == count_before + 1
+    assert Country.objects.get(country="NewCountry").country == "NewCountry"
+
+
+def test_add_country_regular_user(rf: RequestFactory) -> None:
+    request = rf.post("/movies/add_country/", {"country": "BrandNewCountry"})
+    request.user = User.objects.create(username="TestUser", password="pass")
     count_before = Country.objects.count()
 
     response = add_country(request)
@@ -131,21 +143,26 @@ def test_add_movie_with_related_fields(rf: RequestFactory) -> None:
             "review": "Good movie!",
         },
     )
+
     request.user = user
     count_before = Movie.objects.count()
 
     response = add_movie(request)
-    movie = Movie.objects.filter(title="Test Movie").first()
-    mr = MovieRating.objects.filter(movie=movie, user=user).first()
 
     assert response.status_code == 302
     assert Movie.objects.count() == count_before + 1
+
+    movie: Final = Movie.objects.filter(title="Test Movie").first()
+    assert movie is not None
     assert movie.release_year == 2023
     assert movie.kp_rating == 7.5
     assert movie.description == "A test movie description."
-    assert movie.countries.first().country == "TestCountry"
-    assert movie.directors.first().director == "TestDirector"
-    assert movie.genres.first().genre == "TestGenre"
+    assert movie.countries.get(id=country.id).country == "TestCountry"
+    assert movie.directors.get(id=director.id).director == "TestDirector"
+    assert movie.genres.get(id=genre.id).genre == "TestGenre"
+
+    mr: Final = MovieRating.objects.filter(movie=movie, user=user).first()
+    assert mr is not None
     assert mr.rating == 6
     assert mr.review == "Good movie!"
 
@@ -188,14 +205,18 @@ def test_change_movie_with_related_fields(rf: RequestFactory) -> None:
 
     response = change_movie(request, pk=movie.id)
     movie.refresh_from_db()
-    rating = MovieRating.objects.get(movie=movie, user=user)
+    rating: Final = MovieRating.objects.get(movie=movie, user=user)
 
     assert response.status_code == 302
+
+    assert movie is not None
     assert movie.title == "New Title"
     assert movie.is_series is True
     assert movie.release_year == 2023
     assert movie.num_of_seasons == 2
     assert movie.description == "New description"
     assert movie.kp_rating == 8.0
+
+    assert rating is not None
     assert rating.rating == 9.0
     assert rating.review == "New review"

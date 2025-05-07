@@ -2,12 +2,13 @@ from django.contrib.auth.models import User
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
+from django_stubs_ext.db.models import TypedModelMeta
 
 
 class Country(models.Model):
     country = models.CharField(max_length=30, verbose_name=_("Country"), unique=True)
 
-    class Meta:
+    class Meta(TypedModelMeta):
         verbose_name = _("Country")
         verbose_name_plural = _("Countries")
         ordering = ("country",)
@@ -19,7 +20,7 @@ class Country(models.Model):
 class Genre(models.Model):
     genre = models.CharField(max_length=30, verbose_name=_("Genre"), unique=True)
 
-    class Meta:
+    class Meta(TypedModelMeta):
         verbose_name = _("Genre")
         verbose_name_plural = _("Genres")
         ordering = ("genre",)
@@ -31,7 +32,7 @@ class Genre(models.Model):
 class Director(models.Model):
     director = models.CharField(max_length=30, verbose_name=_("Director"), unique=True)
 
-    class Meta:
+    class Meta(TypedModelMeta):
         verbose_name = _("Director")
         verbose_name_plural = _("Directors")
         ordering = ("director",)
@@ -124,7 +125,7 @@ class Movie(models.Model):
     )
     # fmt: on
 
-    class Meta:
+    class Meta(TypedModelMeta):
         verbose_name = _("Movie")
         verbose_name_plural = _("Movies")
         ordering = ("title",)
@@ -183,7 +184,7 @@ class MovieRating(models.Model):
     )
     # fmt: on
 
-    class Meta:
+    class Meta(TypedModelMeta):
         verbose_name = _("MovieRating")
         verbose_name_plural = _("MovieRatings")
         ordering = ("user", "movie")

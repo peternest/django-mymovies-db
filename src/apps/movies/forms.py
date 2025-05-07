@@ -1,19 +1,20 @@
 from typing import Any, ClassVar
 
 from django.contrib.auth.models import User
-from django.forms import (
+from django.forms.fields import (
     CharField,
-    FileInput,
     FloatField,
-    ModelForm,
-    ModelMultipleChoiceField,
+)
+from django.forms.models import ModelForm, ModelMultipleChoiceField
+from django.forms.widgets import (
+    FileInput,
     NumberInput,
     SelectMultiple,
     Textarea,
     TextInput,
     URLInput,
+    Widget,
 )
-from django.forms.widgets import Input
 from django.utils.translation import gettext_lazy as _
 from django_stubs_ext import StrPromise
 
@@ -25,7 +26,7 @@ class CountryForm(ModelForm):
         model = Country
         fields: ClassVar[list[str]] = ["country"]
         labels: ClassVar[dict[str, StrPromise]] = {"country": _("Country name")}
-        widgets: ClassVar[dict[str, Input]] = {"country": TextInput(attrs={"class": "text-field"})}
+        widgets: ClassVar[dict[str, Widget]] = {"country": TextInput(attrs={"class": "text-field"})}
 
 
 class DirectorForm(ModelForm):
@@ -33,7 +34,7 @@ class DirectorForm(ModelForm):
         model = Director
         fields: ClassVar[list[str]] = ["director"]
         labels: ClassVar[dict[str, StrPromise]] = {"director": _("Director name")}
-        widgets: ClassVar[dict[str, Input]] = {"director": TextInput(attrs={"class": "text-field"})}
+        widgets: ClassVar[dict[str, Widget]] = {"director": TextInput(attrs={"class": "text-field"})}
 
 
 class GenreForm(ModelForm):
@@ -41,7 +42,7 @@ class GenreForm(ModelForm):
         model = Genre
         fields: ClassVar[list[str]] = ["genre"]
         labels: ClassVar[dict[str, StrPromise]] = {"genre": _("Genre name")}
-        widgets: ClassVar[dict[str, Input]] = {"genre": TextInput(attrs={"class": "text-field"})}
+        widgets: ClassVar[dict[str, Widget]] = {"genre": TextInput(attrs={"class": "text-field"})}
 
 
 class MovieForm(ModelForm):
@@ -97,7 +98,7 @@ class MovieForm(ModelForm):
             "poster": _("Poster"),
             "kinopoisk_url": _("Kinopoisk url"),
         }
-        widgets: ClassVar[dict[str, Input]] = {
+        widgets: ClassVar[dict[str, Widget]] = {
             "title": TextInput(attrs={"class": "text-field"}),
             "title_orig": TextInput(attrs={"class": "text-field"}),
             "release_year": NumberInput(attrs={"class": "release-field"}),
@@ -109,7 +110,7 @@ class MovieForm(ModelForm):
             "poster": FileInput(attrs={"class": "text-field"}),
             "kinopoisk_url": URLInput(attrs={"class": "url-field"}),
         }
-        error_messages: ClassVar[dict[str, dict[str, str]]] = {
+        error_messages: ClassVar[dict[str, dict[str, StrPromise]]] = {
             "title": {"max_length": _("This title is too long.")},
             "release_year": {"CHANGE_ME": _("Release year should be >= 1900.")},
         }

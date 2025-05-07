@@ -20,15 +20,10 @@ dependencies = [
     "pytest>=8.3.5,<9",
     "pytest-django>=4.11.1,<5",
     "django-stubs>=5.2,<5.3",
+    "djangorestframework-stubs>=3.16,<4",
     "mypy>=1.15.0,<2",
     "ruff>=0.11.8,<0.12",
 ]
-
-[tool.mypy]
-plugins = ["mypy_django_plugin.main"]
-
-[tool.django-stubs]
-django_settings_module = "core.settings"
 
 [tool.uv]
 package = false

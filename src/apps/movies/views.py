@@ -1,24 +1,27 @@
 from dataclasses import dataclass
-from typing import Any, ClassVar, Final, LiteralString
+from typing import Any, ClassVar, Final, LiteralString, cast
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.db.models import Model, Q
-from django.db.models.manager import BaseManager
+from django.db.models import Q, QuerySet
 from django.http import Http404, HttpRequest, HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.utils.translation import gettext_lazy as _
 from django.views.decorators.csrf import csrf_exempt
 from django.views.generic import ListView, RedirectView
+from django_stubs_ext import StrOrPromise
 
 from apps.movies.forms import CountryForm, DirectorForm, GenreForm, MovieRatingForm
 from apps.movies.models import Country, Director, Genre, Movie, MovieRating
 
 
+type MyModelClass = type[Country | Director | Genre]
+
+
 @dataclass
 class Option:
-    name: str
-    value: str
+    name: StrOrPromise
+    value: StrOrPromise
     is_selected: bool
 
 
@@ -40,7 +43,7 @@ class MoviesListView(ListView):
     is_series = False
     paginate_by = 25
 
-    OPTION_ALL: Final[LiteralString] = _("All")
+    OPTION_ALL: Final[StrOrPromise] = _("All")
 
     EN_DASH: Final[LiteralString] = "–"  # noqa: RUF001
 
@@ -61,7 +64,7 @@ class MoviesListView(ListView):
         context["is_series"] = self.is_series
         return context
 
-    def get_queryset(self) -> BaseManager[Movie]:
+    def get_queryset(self) -> QuerySet[Any, Any]:
         country_value = self.request.GET.get("country", "")
         genre_value = self.request.GET.get("genre", "")
         director_value = self.request.GET.get("director", "")
@@ -108,7 +111,7 @@ class MoviesListView(ListView):
             item.is_selected = item.value == years_value
         return new_list
 
-    def _make_option_list(self, model: Model, field_name: str) -> list[Option]:
+    def _make_option_list(self, model: MyModelClass, field_name: str) -> list[Option]:
         queryset = model.objects.all().order_by(field_name)
 
         new_list: list[Option] = [Option(self.OPTION_ALL, self.OPTION_ALL, False)]
@@ -144,13 +147,14 @@ class APIMoviesRedirectView(RedirectView):
 
 @login_required
 def add_movie(request: HttpRequest) -> HttpResponse:
+    user = cast("User", request.user)
     if request.method == "POST":
         form = MovieRatingForm(request.POST, request.FILES)
         if form.is_valid():
             movie_instance = form.save()
             if "rating" in form.cleaned_data or "review" in form.cleaned_data:
                 MovieRating.objects.create(
-                    user=request.user,
+                    user=user,
                     movie=movie_instance,
                     rating=form.cleaned_data.get("rating", 0.0),
                     review=form.cleaned_data.get("review", ""),
@@ -163,11 +167,12 @@ def add_movie(request: HttpRequest) -> HttpResponse:
 
 @login_required
 def change_movie(request: HttpRequest, pk: int) -> HttpResponse:
+    user = cast("User", request.user)
     movie_instance = get_object_or_404(Movie, pk=pk)
-    rating_instance = MovieRating.objects.filter(user=request.user, movie=movie_instance).first()
+    rating_instance = MovieRating.objects.filter(user=user, movie=movie_instance).first()
 
     if request.method == "POST":
-        form = MovieRatingForm(request.POST, request.FILES, instance=movie_instance, user=request.user)
+        form = MovieRatingForm(request.POST, request.FILES, instance=movie_instance, user=user)
         if form.is_valid():
             form.save()
             if "rating" in form.cleaned_data or "review" in form.cleaned_data:
@@ -179,14 +184,14 @@ def change_movie(request: HttpRequest, pk: int) -> HttpResponse:
                     rating_instance.save()
                 else:
                     MovieRating.objects.create(
-                        user=request.user,
+                        user=user,
                         movie=movie_instance,
                         rating=form.cleaned_data.get("rating", 0.0),
                         review=form.cleaned_data.get("review", ""),
                     )
             return HttpResponseRedirect(f"/movies/{pk}/")
     else:
-        form = MovieRatingForm(instance=movie_instance, user=request.user)
+        form = MovieRatingForm(instance=movie_instance, user=user)
     return render(request, "movies/add_movie.html", {"form": form, "is_edit": True})
 
 
@@ -228,7 +233,7 @@ def add_genre(request: HttpRequest) -> HttpResponse:
 
 def get_objlist(request: HttpRequest, field_name: str) -> JsonResponse:  # noqa: ARG001
     """Retrieve the list of values for a model (used by JS)."""
-    model: Model = ""
+    model: MyModelClass
     if field_name == "country":
         model = Country
     elif field_name == "director":
@@ -236,6 +241,8 @@ def get_objlist(request: HttpRequest, field_name: str) -> JsonResponse:  # noqa:
     elif field_name == "genre":
         model = Genre
 
-    queryset = model.objects.all().order_by(field_name)
-    objlist = [{"id": obj.id, "name": getattr(obj, field_name)} for obj in queryset]
-    return JsonResponse({"success": True, "objlist": objlist})
+    if model:
+        queryset = model.objects.all().order_by(field_name)
+        objlist = [{"id": obj.id, "name": getattr(obj, field_name)} for obj in queryset]
+        return JsonResponse({"success": True, "objlist": objlist})
+    return JsonResponse({"success": False, "objlist": []})

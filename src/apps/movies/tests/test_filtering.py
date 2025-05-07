@@ -1,4 +1,5 @@
 import pytest
+from django.contrib.auth.models import AnonymousUser
 from django.test import RequestFactory
 
 from apps.movies.models import Country, Movie
@@ -9,7 +10,6 @@ pytestmark = [pytest.mark.django_db]
 
 
 def test_filter_movies_by_country(rf: RequestFactory) -> None:
-    # Create test data
     country_russia = Country.objects.create(country="Russia")
     country_usa = Country.objects.create(country="USA")
 
@@ -21,13 +21,13 @@ def test_filter_movies_by_country(rf: RequestFactory) -> None:
 
     # Simulate a GET request with the 'country' filter
     request = rf.get("/movies/index.html", {"country": "Russia"})
+    request.user = AnonymousUser()
     view = MoviesListView()
     view.request = request
 
     # Get the filtered queryset
     queryset = view.get_queryset()
 
-    # Assertions
     assert queryset.count() == 1
     assert queryset.first() == movie1
-    assert queryset.first().countries.first().country == "Russia"
+    assert movie1.countries.get(id=country_russia.id).country == "Russia"
