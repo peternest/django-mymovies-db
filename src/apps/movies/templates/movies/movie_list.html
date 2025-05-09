@@ -96,8 +96,8 @@
                         <div class="mv-title">{{ mov.title }}</div>
                         <div class="mv-title-orig">{% if mov.title_orig %}{{ mov.title_orig }}, {% endif %}{{ mov.range_of_years }}</div> 
                     </a>
-                    <div>
-                        <!--div class="mv-rating1">({{ mov.my_rating }})</div-->
+                    <div style="width: 75px;">
+                        <div class="mv-rating1">{% if mov.user_rating > 0 %}({{ mov.user_rating }}){% else %}{% endif %}</div>
                         <div class="mv-rating2">{{ mov.kp_rating }}</div>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ from typing import Any, ClassVar, Final, LiteralString, cast
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.db.models import Q, QuerySet
+from django.db import models
 from django.http import Http404, HttpRequest, HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import get_object_or_404, render
 from django.utils.translation import gettext_lazy as _
@@ -64,13 +64,25 @@ class MoviesListView(ListView):
         context["is_series"] = self.is_series
         return context
 
-    def get_queryset(self) -> QuerySet[Any, Any]:
+    def get_queryset(self) -> models.QuerySet[Any, Any]:
         country_value = self.request.GET.get("country", "")
         genre_value = self.request.GET.get("genre", "")
         director_value = self.request.GET.get("director", "")
         years_value = self.request.GET.get("years", "")
 
         queryset = Movie.objects.filter(is_series=self.is_series)
+
+        if self.request.user.is_authenticated:
+            queryset = queryset.annotate(
+                user_rating=models.Case(
+                    models.When(movierating__user=self.request.user, then=models.F("movierating__rating")),
+                    default=models.Value(0.0),
+                    output_field=models.FloatField(),
+                )
+            )
+        else:
+            queryset = queryset.annotate(user_rating=models.Value(0.0, output_field=models.FloatField()))
+
         if country_value and country_value != self.OPTION_ALL:
             queryset = queryset.filter(countries__country=country_value)
 
@@ -84,7 +96,7 @@ class MoviesListView(ListView):
             years_list = years_value.split(self.EN_DASH)
             year_from = years_list[0]
             year_to = years_list[1]
-            queryset = queryset.filter(Q(release_year__gte=year_from, release_year__lte=year_to))
+            queryset = queryset.filter(models.Q(release_year__gte=year_from, release_year__lte=year_to))
 
         return queryset.order_by(self.get_ordering())
 
