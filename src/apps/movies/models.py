@@ -105,14 +105,6 @@ class Movie(models.Model):
             MaxValueValidator(10.0)
         ]
     )
-    my_rating = models.FloatField(
-        verbose_name=_("My rating"),
-        default=0.0,
-        validators=[
-            MinValueValidator(0.0),
-            MaxValueValidator(10.0)
-        ]
-    )
     poster = models.ImageField(   # 600x900, relative to MEDIA_ROOT
         upload_to="images/",
         verbose_name=_("Poster"),

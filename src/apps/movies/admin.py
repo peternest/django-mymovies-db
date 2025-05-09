@@ -47,7 +47,6 @@ class MovieAdmin(admin.ModelAdmin):
         "slogan",
         "description",
         "kp_rating",
-        "my_rating",
         "poster",
         "kinopoisk_url",
     )
