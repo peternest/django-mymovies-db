@@ -2,6 +2,9 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 
+[tool.uv]
+package = false
+
 [project]
 name = "django-mymovies-db"
 version = "0.1.0"
@@ -11,22 +14,23 @@ requires-python = ">=3.13"
 readme = "README.md"
 dependencies = [
     "django~=5.2",
-    "django-debug-toolbar>=5.0.1,<6",
-    "django-environ>=0.12.0,<0.13",
-    "djangorestframework>=3.15.2,<4",
-    "pillow>=11.1.0,<12",
-    "psycopg2-binary>=2.9.10,<3",
-
-    "pytest>=8.3.5,<9",
-    "pytest-django>=4.11.1,<5",
-    "django-stubs>=5.2,<5.3",
-    "djangorestframework-stubs>=3.16,<4",
-    "mypy>=1.15.0,<2",
-    "ruff>=0.11.8,<0.12",
+    "django-debug-toolbar>=5.0.1",
+    "django-environ>=0.12.0",
+    "djangorestframework>=3.15.2",
+    "pillow>=11.1.0",
+    "psycopg2-binary>=2.9.10",
 ]
 
-[tool.uv]
-package = false
+[dependency-groups]
+dev = [
+    "django-stubs>=5.2.0",
+    "djangorestframework-stubs>=3.16.0",
+    "mypy>=1.15.0",
+    "pytest>=8.3.5",
+    "pytest-cov>=6.1.1",
+    "pytest-django>=4.11.1",
+    "ruff>=0.11.9",
+]
 
 [tool.ruff]
 fix = true
@@ -78,3 +82,12 @@ no-lines-before = ["standard-library", "local-folder"]
 
 [tool.coverage.report]
 exclude_also = ["if typing.TYPE_CHECKING:"]
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "core.settings"
+addopts = [
+    "--color=no",
+    "--import-mode=importlib", # both modes work
+    # "--reuse-db --nomigrations"
+]
+python_files = "test*.py"
