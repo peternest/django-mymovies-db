@@ -1,29 +1,30 @@
 from typing import ClassVar
 
-from rest_framework import serializers
+from django.contrib.auth.models import User
+from rest_framework.serializers import HyperlinkedModelSerializer
 
-from apps.movies.models import Country, Director, Genre, Movie
+from apps.movies.models import Country, Director, Genre, Movie, MovieRating
 
 
-class CountrySerializer(serializers.HyperlinkedModelSerializer):
+class CountrySerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Country
         fields: ClassVar[list[str]] = ["url", "country"]
 
 
-class GenreSerializer(serializers.HyperlinkedModelSerializer):
+class GenreSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Genre
         fields: ClassVar[list[str]] = ["url", "genre"]
 
 
-class DirectorSerializer(serializers.HyperlinkedModelSerializer):
+class DirectorSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Director
         fields: ClassVar[list[str]] = ["url", "director"]
 
 
-class MovieSerializer(serializers.HyperlinkedModelSerializer):
+class MovieSerializer(HyperlinkedModelSerializer):
     class Meta:
         model = Movie
         fields: ClassVar[list[str]] = [
@@ -42,3 +43,20 @@ class MovieSerializer(serializers.HyperlinkedModelSerializer):
             "poster",
             "kinopoisk_url",
         ]
+
+
+class MovieRatingSerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = MovieRating
+        fields: ClassVar[list[str]] = [
+            "user",
+            "movie",
+            "rating",
+            "review",
+        ]
+
+
+class UserSerializer(HyperlinkedModelSerializer):
+    class Meta:
+        model = User
+        fields: ClassVar[list[str]] = ["url", "username", "email", "is_staff"]

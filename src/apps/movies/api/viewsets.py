@@ -1,7 +1,18 @@
-from rest_framework import viewsets
+from typing import ClassVar
 
-from .serializers import CountrySerializer, DirectorSerializer, GenreSerializer, MovieSerializer
-from apps.movies.models import Country, Director, Genre, Movie
+from django.contrib.auth.models import User
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+
+from apps.movies.api.serializers import (
+    CountrySerializer,
+    DirectorSerializer,
+    GenreSerializer,
+    MovieRatingSerializer,
+    MovieSerializer,
+    UserSerializer,
+)
+from apps.movies.models import Country, Director, Genre, Movie, MovieRating
 
 
 class CountryViewSet(viewsets.ModelViewSet):
@@ -30,3 +41,18 @@ class MovieViewSet(viewsets.ModelViewSet):
 
     queryset = Movie.objects.all().order_by("-kp_rating")
     serializer_class = MovieSerializer
+
+
+class MovieRatingViewSet(viewsets.ModelViewSet):
+    """API endpoint that allows movie ratings to be viewed or edited."""
+
+    queryset = MovieRating.objects.all().order_by("rating")
+    serializer_class = MovieRatingSerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    """API endpoint that allows users to be viewed or edited."""
+
+    queryset = User.objects.all().order_by("username")
+    serializer_class = UserSerializer
+    permission_classes: ClassVar[list] = [IsAuthenticatedOrReadOnly]
