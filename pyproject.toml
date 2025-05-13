@@ -51,7 +51,6 @@ ignore = [
     "DTZ001",  # the use of `datetime.datetime()` without `tzinfo` argument is not allowed
     "E501",  # line too long ({} > {})
     "EM",  # exception must not use a ...
-    "FA",  # required future annotation
     "FBT",  # boolean type position ...
     "G004",  # using of f-strings to format logging messages
     "ISC001",  # implicitly concatenated string literals on one line

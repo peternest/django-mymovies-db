@@ -20,8 +20,10 @@ uv run ruff format src
 goto end
 
 :check
-echo Running checks...
+echo Running Ruff checks...
 uv run ruff check src
+echo(
+echo Running Mypy checks...
 uv run mypy src --show-error-context --pretty
 goto end
 
@@ -45,11 +47,13 @@ uv sync -q
 goto end
 
 :clean
+if exist .mypy_cache rmdir /s /q .mypy_cache
+if exist .ruff_cache rmdir /s /q .ruff_cache
 if exist .pytest_cache rmdir /s /q .pytest_cache
 goto end
 
 :help
-echo Usage: .\make [format^|check^|test^|update-deps^|clean^|help]
+echo Usage: .\make [format^|check^|test^|run^|update-deps^|clean^|help]
 goto end
 
 :end
