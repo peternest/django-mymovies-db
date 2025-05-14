@@ -13,9 +13,13 @@ Powered by the Django web framework.
 * To add a user rating or review to a movie/series.
 * To show/edit data using the REST api.
 
+## Important
+
+This project currently displays the UI only in Russian!
+
 ## How to install it on a local machine
 
-This project requires Python 3.13. 
+Thе project requires Python 3.13. 
 [Uv](https://docs.astral.sh/uv/) is used to manage dependencies and should be installed as well.
 
 Clone the repo into any folder:
