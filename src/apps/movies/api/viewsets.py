@@ -1,5 +1,3 @@
-from typing import ClassVar
-
 from django.contrib.auth.models import User
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
@@ -55,4 +53,4 @@ class UserViewSet(viewsets.ModelViewSet):
 
     queryset = User.objects.all().order_by("username")
     serializer_class = UserSerializer
-    permission_classes: ClassVar[list] = [IsAuthenticatedOrReadOnly]
+    permission_classes = (IsAuthenticatedOrReadOnly,)
