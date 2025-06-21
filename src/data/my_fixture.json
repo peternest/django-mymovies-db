@@ -161,6 +161,13 @@
   }
 },
 {
+  "model": "movies.country",
+  "pk": 43,
+  "fields": {
+    "country": "Канада"
+  }
+},
+{
   "model": "movies.genre",
   "pk": 1,
   "fields": {
@@ -284,6 +291,13 @@
   "pk": 18,
   "fields": {
     "genre": "Мюзикл"
+  }
+},
+{
+  "model": "movies.genre",
+  "pk": 21,
+  "fields": {
+    "genre": "Музыка"
   }
 },
 {
@@ -690,6 +704,90 @@
   "pk": 67,
   "fields": {
     "director": "Крис Коламбус"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 70,
+  "fields": {
+    "director": "Тодд Филлипс"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 71,
+  "fields": {
+    "director": "Эдвард Бергер"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 72,
+  "fields": {
+    "director": "Дэн Шимпф"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 73,
+  "fields": {
+    "director": "Стив Бушеми"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 74,
+  "fields": {
+    "director": "Филлида Ллойд"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 75,
+  "fields": {
+    "director": "Джордж Нолфи"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 76,
+  "fields": {
+    "director": "Дмитрий Тюрин"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 77,
+  "fields": {
+    "director": "Роман Прыгунов"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 78,
+  "fields": {
+    "director": "Ольга Акатьева"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 79,
+  "fields": {
+    "director": "Майкл Кампус"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 80,
+  "fields": {
+    "director": "Владимир Котт"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 81,
+  "fields": {
+    "director": "Люк Жаке"
   }
 },
 {
@@ -1300,7 +1398,7 @@
     "num_of_seasons": 1,
     "slogan": "-",
     "description": "Пушкин молод, дерзок и любим публикой: он — звезда любого бала, поклонники носят его на руках, а девушки мечтают о его внимании. Но ни высокие покровители, ни верные друзья, ни известность не могут отвести от него злой рок — ссылки, дуэли, безденежье. Пока однажды он не встречает ту самую, единственную, кто осветит его жизнь и станет его судьбой.",
-    "kp_rating": 7.0,
+    "kp_rating": 7.1,
     "poster": "images/Пророк_lyvjG2p.webp",
     "kinopoisk_url": "https://www.kinopoisk.ru/film/1346361/",
     "countries": [
@@ -2580,6 +2678,309 @@
   }
 },
 {
+  "model": "movies.movie",
+  "pk": 105,
+  "fields": {
+    "title": "Мальчишник в Вегасе",
+    "title_orig": "The Hangover",
+    "is_series": false,
+    "release_year": 2009,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Некоторым Вегас просто не по зубам»",
+    "description": "Они мечтали устроить незабываемый мальчишник в Вегасе. Но теперь им необходимо вспомнить, что именно произошло: что за ребенок сидит в шкафу номера отеля? Как в ванную попал тигр? Почему у одного из них нет зуба? И, самое главное, куда делся жених? То, что парни вытворяли на вечеринке, не идет ни в какое сравнение с тем, что им придется сделать на трезвую голову, когда они будут шаг за шагом восстанавливать события прошлой ночи.",
+    "kp_rating": 7.9,
+    "poster": "images/The_Hangover_0t0D2fZ.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/426004/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      1
+    ],
+    "directors": [
+      70
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 106,
+  "fields": {
+    "title": "Конклав",
+    "title_orig": "Conclave",
+    "is_series": false,
+    "release_year": 2024,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«За стенами Ватикана вершится судьба мира»",
+    "description": "После внезапной смерти Папы кардиналы готовятся к конклаву — выборам нового главы католической церкви. Руководство и организацию процедуры поручают кардиналу Лоуренсу. Вскоре он узнаёт несколько не самых приятных тайн о главных кандидатах на место Папы, а это может кардинально повлиять на результат выборов и пошатнуть основы церкви.",
+    "kp_rating": 7.3,
+    "poster": "images/Conclave_Q1TmqEz.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/4987361/",
+    "countries": [
+      1,
+      5
+    ],
+    "genres": [
+      7,
+      2,
+      13
+    ],
+    "directors": [
+      71
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 107,
+  "fields": {
+    "title": "Чудотворцы",
+    "title_orig": "Miracle Workers",
+    "is_series": true,
+    "release_year": 2019,
+    "series_last_year": 2023,
+    "num_of_seasons": 4,
+    "slogan": "«On the Trillionth Day...God Quit»",
+    "description": "Небесная канцелярия Бога — масштабный офис с множеством отделов и сотрудников, работающих в атмосфере цейтнота и многозадачности. Есть даже HR и напоминающий службу технической поддержки отдел обработки молитв. Именно его служащие, ангелы Элиза и Крэйг, берутся за спасение Земли, когда приунывший Господь вдруг решает её погубить.\r\n\r\nТеперь у ангелов есть две недели, чтобы соединить несоединимое — двух одиноких людей в пару — и доказать, что человечество вовсе не безнадежно и достойно существования.",
+    "kp_rating": 7.6,
+    "poster": "images/Miracle_Workers_bjwVXZP.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/1111018/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      1,
+      6
+    ],
+    "directors": [
+      72
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 108,
+  "fields": {
+    "title": "Мамма MIA!",
+    "title_orig": "Mamma Mia!",
+    "is_series": false,
+    "release_year": 2008,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Добро пожаловать под венец»",
+    "description": "Софи собирается замуж и мечтает, чтобы церемония прошла по всем правилам. Она хочет пригласить на свадьбу отца, чтобы он провёл её к алтарю, но не знает, кто он, так как мать никогда не рассказывала о нём. Софи находит дневник матери, в котором та описывает отношения с тремя мужчинами. Софи решает отправить приглашения всем троим.",
+    "kp_rating": 7.2,
+    "poster": "images/Mamma_Mia_os16raN.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/276478/",
+    "countries": [
+      1,
+      2,
+      5
+    ],
+    "genres": [
+      1,
+      3,
+      18
+    ],
+    "directors": [
+      74
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 109,
+  "fields": {
+    "title": "Меняющие реальность",
+    "title_orig": "The Adjustment Bureau",
+    "is_series": false,
+    "release_year": 2011,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Ради нее он готов изменить мир»",
+    "description": "Волею случая конгрессмен Дэвид Норрис узнает, что мир движется по заранее написанному плану, за исполнением которого следят работающие в неком Бюро Корректировки люди в шляпах, обладающие сверхъестественными способностями. Как назло, план не предусматривает дальнейших пересечений с балериной Элизой, в которую политик влюблен. Дэвид заручается поддержкой одного из агентов Бюро и начинает неравную борьбу с остальными, отстаивая свободу выбора и личное счастье...",
+    "kp_rating": 7.4,
+    "poster": "images/Adjustment_Bureau_vMJcqSe.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/450765/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      3,
+      13,
+      5
+    ],
+    "directors": [
+      75
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 110,
+  "fields": {
+    "title": "Банкир",
+    "title_orig": "The Banker",
+    "is_series": false,
+    "release_year": 2019,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Don't Pay the Man. Be the Man»",
+    "description": "История афроамериканских бизнес-партнеров Джо Морриса и Бернарда Гарретта, которые в 1950-х годах основали успешное агентство недвижимости. Они нанимают подставного белого руководителя компании, а сами притворяются простыми дворником и водителем. На вершине успеха над ними нависает угроза разоблачения.",
+    "kp_rating": 7.3,
+    "poster": "images/The_Banker_jCyDTTI.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1199655/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      14,
+      2
+    ],
+    "directors": [
+      75
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 111,
+  "fields": {
+    "title": "Магомаев",
+    "title_orig": "",
+    "is_series": true,
+    "release_year": 2020,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Конец 1960-ых, разгар брежневской эпохи. Муслим Магомаев во время записи концертной программы знакомится с очаровательной оперной певицей, Тамарой Синявской. Между королём советской эстрады и восходящей звездой Большого театра с первого взгляда пробегает искра, которая становится началом большой любви. Однако Тамара замужем, да и Муслим не свободен... Но у настоящей любви нет преград, и судьба вновь сводит влюбленных. На этот раз в Париже.",
+    "kp_rating": 8.2,
+    "poster": "images/Магомаев_zL34Dux.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/1209244/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      14,
+      2,
+      21
+    ],
+    "directors": [
+      76,
+      77
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 112,
+  "fields": {
+    "title": "Я делаю шаг",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 2023,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Саша Макаров мечтает работать в Москве, в престижной школе, а вынужден, как он считает, «прозябать» в Пскове. Причем в той же школе, где когда-то учился сам. Ученики — наглецы, завуч Сашу ненавидит, а сам он никому не доверяет, кроме одного человека — подруги детства. Или уже больше, чем подруги? Любовь лечит любые раны, но она требует и честности. А Саше есть что скрывать от всего мира.",
+    "kp_rating": 7.8,
+    "poster": "images/Я_делаю_шаг_cm4lLhh.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/4886624/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      3
+    ],
+    "directors": [
+      78
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 113,
+  "fields": {
+    "title": "Рождественский коттедж",
+    "title_orig": "Christmas Cottage",
+    "is_series": false,
+    "release_year": 2008,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Love is the brightest light of all»",
+    "description": "Биографическая лента, посвященная одному из самых знаменитых американских художников современности Томасу Кинкейду. Будущему художнику добиться признания и всемирной известности помогло несчастье - его мать чуть было не лишилась собственного дома, и чтобы помочь ей расплатиться с долгами, молодой человек взялся за кисть и краски...",
+    "kp_rating": 7.1,
+    "poster": "images/Christmas_Cottage_NMP2m4N.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/290831/",
+    "countries": [
+      43,
+      5
+    ],
+    "genres": [
+      14,
+      2
+    ],
+    "directors": [
+      79
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 114,
+  "fields": {
+    "title": "Непослушник",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 2022,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Побойся блога!»",
+    "description": "Известный блогер-пранкер Дима в погоне за популярностью в сети устраивает жесткие розыгрыши. Один из пранков он снимает в стенах церкви, где служит его друг детства. Ролик провоцирует возмущение в среде верующих и на Диму заводят дело. Уходя от преследования полиции, Дима укрывается в месте, где его точно не будут искать — в маленьком провинциальном монастыре, выдавая себя за того самого друга-послушника.",
+    "kp_rating": 6.4,
+    "poster": "images/Непослушник_ui1MJmC.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/4290071/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      1
+    ],
+    "directors": [
+      80
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 115,
+  "fields": {
+    "title": "Девочка и лисенок",
+    "title_orig": "Le renard et l'enfant",
+    "is_series": false,
+    "release_year": 2007,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Gorgeous!»",
+    "description": "Одним прекрасным осенним утром на лесной тропинке девочка заметила лисичку. Она не испугалась зверька и подошла к нему. Так начинается самая удивительная история их дружбы. Благодаря своему новому другу, девочка открывает для себя таинственный мир дикой природы. Ребенка ждут невероятные приключения, которые изменят ее жизнь.",
+    "kp_rating": 7.6,
+    "poster": "images/Le_renard_et_lenfant_JeXTRNV.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/276429/",
+    "countries": [
+      7
+    ],
+    "genres": [
+      2,
+      17
+    ],
+    "directors": [
+      81
+    ]
+  }
+},
+{
   "model": "movies.movierating",
   "pk": 6,
   "fields": {
@@ -2637,6 +3038,146 @@
     "movie": 3,
     "rating": 9.1,
     "review": "Класс, Форрест!"
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 24,
+  "fields": {
+    "user": 1,
+    "movie": 50,
+    "rating": 9.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 25,
+  "fields": {
+    "user": 1,
+    "movie": 46,
+    "rating": 7.8,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 26,
+  "fields": {
+    "user": 1,
+    "movie": 105,
+    "rating": 7.7,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 27,
+  "fields": {
+    "user": 1,
+    "movie": 106,
+    "rating": 7.7,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 28,
+  "fields": {
+    "user": 1,
+    "movie": 107,
+    "rating": 7.5,
+    "review": "Начали за здравие, скатились, закончили трешем."
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 29,
+  "fields": {
+    "user": 1,
+    "movie": 108,
+    "rating": 8.0,
+    "review": "Наполненный жизнью и энергией красивый музыкальный фильм!"
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 30,
+  "fields": {
+    "user": 1,
+    "movie": 109,
+    "rating": 7.8,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 31,
+  "fields": {
+    "user": 1,
+    "movie": 110,
+    "rating": 7.7,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 32,
+  "fields": {
+    "user": 1,
+    "movie": 111,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 33,
+  "fields": {
+    "user": 1,
+    "movie": 112,
+    "rating": 7.7,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 34,
+  "fields": {
+    "user": 1,
+    "movie": 113,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 35,
+  "fields": {
+    "user": 1,
+    "movie": 114,
+    "rating": 6.5,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 36,
+  "fields": {
+    "user": 1,
+    "movie": 115,
+    "rating": 7.6,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 37,
+  "fields": {
+    "user": 1,
+    "movie": 31,
+    "rating": 0.0,
+    "review": ""
   }
 }
 ]
