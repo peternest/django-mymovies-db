@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any, ClassVar, Final, LiteralString, cast
+from typing import Any, ClassVar, Final, Literal, LiteralString, cast
 
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
@@ -62,9 +62,11 @@ class MoviesListView(ListView):
         context["director_list"] = self._make_option_list(Director, "director")
         context["years_list"] = self._make_years_list()
         context["is_series"] = self.is_series
+        context["text_value"] = self.request.GET.get("text", "")
         return context
 
     def get_queryset(self) -> models.QuerySet[Any, Any]:
+        text_value = self.request.GET.get("text", "")
         country_value = self.request.GET.get("country", "")
         genre_value = self.request.GET.get("genre", "")
         director_value = self.request.GET.get("director", "")
@@ -82,6 +84,9 @@ class MoviesListView(ListView):
             )
         else:
             queryset = queryset.annotate(user_rating=models.Value(0.0, output_field=models.FloatField()))
+
+        if text_value:
+            queryset = queryset.filter(title__icontains=text_value)
 
         if country_value and country_value != self.OPTION_ALL:
             queryset = queryset.filter(countries__country=country_value)
@@ -243,7 +248,7 @@ def add_genre(request: HttpRequest) -> HttpResponse:
     return render(request, "movies/add_genre.html", {"form": form})
 
 
-def get_objlist(request: HttpRequest, field_name: str) -> JsonResponse:  # noqa: ARG001
+def get_objlist(request: HttpRequest, field_name: Literal["country", "director", "genre"]) -> JsonResponse:  # noqa: ARG001
     """Retrieve the list of values for a model (used by JS)."""
     model: MyModelClass
     if field_name == "country":

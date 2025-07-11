@@ -67,6 +67,12 @@
         <h1 class="big-header">{% if is_series %}50 лучших сериалов{% else %}100 лучших фильмов{% endif %}</h1>
 
         <!-- Используем форму из контейнера 'main-table-left', см. атрибут form ниже -->
+        <label>Искать по названию&nbsp;</label>
+        <input name="text" type="input" value="{{ text_value }}" placeholder="Введите текст" form="filter-sort-form" class="compact-button"/>
+        &nbsp;
+        <input type="submit" value="Искать" form="filter-sort-form" class="compact-button" style="width: 6em;"/>
+        <br><br>
+
         <label>Сортировать по&nbsp;</label>
         <select name="sort" class="sort-selector" required form="filter-sort-form">
             {% for item in sort_list %}
