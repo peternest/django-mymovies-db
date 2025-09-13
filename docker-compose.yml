@@ -1,11 +1,15 @@
 services:
   postgres:
     image: postgres:15-alpine
+    restart: always
+    env_file:
+      - ./src/.env
     environment:
-      - POSTGRES_DB=moviesdb
-      - POSTGRES_PASSWORD=secret
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
     ports:
-     - 5432:5432
+     - ${DB_PORT}:5432
     volumes:
       - db-data:/var/lib/postgresql/data
 

@@ -1,7 +1,10 @@
-.git/
-.venv/
-.pytest_cache/
-.ruff_cache/
+.git
+.vscode
+**/__pycache__  
+*.pyc  
+.mypy_cache
+.pytest_cache
+.ruff_cache
+.venv
 src/.env
-*/tests/
-**/__pycache__/
+*/tests
