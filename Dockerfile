@@ -7,6 +7,10 @@ ENV PYTHONUNBUFFERED=1
 
 WORKDIR /app
 
+RUN apt-get update \
+  && apt-get --no-install-recommends install -y gettext locales-all tzdata \
+  && rm -rf /var/lib/apt/lists/*
+
 COPY requirements.txt ./
 COPY --chmod=755 wait-for-it.sh ./
 COPY ./src ./src
