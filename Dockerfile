@@ -8,6 +8,7 @@ ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 COPY requirements.txt ./
+COPY --chmod=755 wait-for-it.sh ./
 COPY ./src ./src
 
 RUN pip install --no-cache-dir --upgrade pip \
@@ -16,5 +17,5 @@ RUN pip install --no-cache-dir --upgrade pip \
 ENV PYTHONPATH=/app/src:$PYTHONPATH
 
 # Services are run from docker-compose.yaml
-EXPOSE 8000
-CMD ["python3", "./src/manage.py", "runserver", "0.0.0.0:8000"]
+# EXPOSE 8000
+# CMD ["python3", "./src/manage.py", "runserver", "0.0.0.0:8000"]
