@@ -11,7 +11,7 @@ env = environ.Env(
 # Points to 'src' folder
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-envpath = BASE_DIR / ".env"
+envpath = BASE_DIR / "../.env"
 if envpath.exists():
     env.read_env(envpath)
 
