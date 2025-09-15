@@ -105,8 +105,8 @@ node_modules/
 .postgres
 *.sqlite3
 
-data/*
-!data/my_fixture.json
+src/data/*
+!src/data/my_fixture.json
 
 # src/media/images/*
 # !src/media/images/_PosterPlaceholder.jpg

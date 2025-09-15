@@ -8,3 +8,6 @@
 .env
 .venv
 */tests
+src/data/dumpdata.json
+src/data/*.md
+
