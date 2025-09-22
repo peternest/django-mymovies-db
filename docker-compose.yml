@@ -13,12 +13,12 @@ services:
 
   web:
     build: .
-    command: [ "./wait-for-it.sh", "postgres:5432", "--", "python3", "./src/manage.py", "runserver", "0.0.0.0:8000"]
+    command: [ "./wait-for-it.sh", "postgres:5432", "--", "python3", "./src/manage.py", "runserver", "0.0.0.0:8001"]
     restart: always
     env_file:
       - .env
     ports:
-      - 8000:8000
+      - 8001:8001
     depends_on:
       - postgres
 
