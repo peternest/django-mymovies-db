@@ -301,6 +301,13 @@
   }
 },
 {
+  "model": "movies.genre",
+  "pk": 22,
+  "fields": {
+    "genre": "Ужасы"
+  }
+},
+{
   "model": "movies.director",
   "pk": 1,
   "fields": {
@@ -788,6 +795,69 @@
   "pk": 81,
   "fields": {
     "director": "Люк Жаке"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 82,
+  "fields": {
+    "director": "Роберт Лонго"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 83,
+  "fields": {
+    "director": "Габриэле Сальваторес"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 84,
+  "fields": {
+    "director": "Йозеф Руснак"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 85,
+  "fields": {
+    "director": "Дэвид Кроненберг"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 86,
+  "fields": {
+    "director": "Крис Сандерс"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 87,
+  "fields": {
+    "director": "Михаил Козаков"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 88,
+  "fields": {
+    "director": "Дмитрий Астрахан"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 89,
+  "fields": {
+    "director": "Иван Соснин"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 90,
+  "fields": {
+    "director": "Даниэль Коэн"
   }
 },
 {
@@ -2981,6 +3051,346 @@
   }
 },
 {
+  "model": "movies.movie",
+  "pk": 116,
+  "fields": {
+    "title": "Джонни Мнемоник",
+    "title_orig": "Johnny Mnemonic",
+    "is_series": false,
+    "release_year": 1995,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«The hottest data on earth. In the coolest head in town»",
+    "description": "2021 год. Самый ценный товар — информация, доставляемая курьерами в их собственном мозгу. Чтобы преуспеть в этом бизнесе, Джонни стёр воспоминания детства и расширил память, но этого всё равно оказалось мало для того объёма информации, который он взялся доставить. Если её вовремя не выгрузить, то Джонни погибнет. Ставки велики, и информацию желают получить вездесущие якудза, подключающие к делу убийцу по кличке Проповедник.",
+    "kp_rating": 6.8,
+    "poster": "images/Johnny_Mnemonic_jXxJ1wk.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/3800/",
+    "countries": [
+      43,
+      5
+    ],
+    "genres": [
+      12,
+      2,
+      13,
+      5
+    ],
+    "directors": [
+      82
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 117,
+  "fields": {
+    "title": "Нирвана",
+    "title_orig": "Nirvana",
+    "is_series": false,
+    "release_year": 1997,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Это всего лишь игра, но начав её, ты попадешь в ад, из которого нет выхода»",
+    "description": "2005 год. Компания Окосама Старр собирается выпустить к Рождеству новую виртуальную игру Нирвана, в которой возможно все. Но игра дает сбои и способна нанести вред разуму и здоровью игроков. Создатель Нирваны Джими решает уничтожить игру. Для этого он сам отправляется в Нирвану за три дня до Рождества...",
+    "kp_rating": 6.8,
+    "poster": "images/Nirvana_3AeKmjk.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/35545/",
+    "countries": [
+      3,
+      7
+    ],
+    "genres": [
+      7,
+      2,
+      5
+    ],
+    "directors": [
+      83
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 118,
+  "fields": {
+    "title": "Тринадцатый этаж",
+    "title_orig": "The Thirteenth Floor",
+    "is_series": false,
+    "release_year": 1999,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Question reality. You can go there even though it doesn't exist»",
+    "description": "На тринадцатом этаже компьютерной корпорации была разработана совершенная модель виртуальной реальности, создание которой повлекло за собой цепь загадочных убийств. Разгадать тайну можно, лишь погрузившись в иное измерение.",
+    "kp_rating": 7.6,
+    "poster": "images/The_Thirteenth_Floor_Iidd8MM.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1086/",
+    "countries": [
+      2,
+      5
+    ],
+    "genres": [
+      7,
+      13,
+      5
+    ],
+    "directors": [
+      84
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 119,
+  "fields": {
+    "title": "Экзистенция",
+    "title_orig": "eXistenZ",
+    "is_series": false,
+    "release_year": 1999,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Где кончается реальность... и начинается игра?»",
+    "description": "На закрытой презентации игры виртуальной реальности под названием «Экзистенция» на ее великолепную создательницу Аллегру Гелла совершает покушение сумасшедший убийца, который хочет уничтожить и ее игру! Вынужденная спасаться бегством, Аллегра подключает младшего сотрудника к тестированию поврежденной системы тем, что … убеждает его сыграть в Экзистенцию вместе с ней! События разворачиваются так, что угроза их реальной жизни пересекается с виртуальными событиями в игре.",
+    "kp_rating": 7.0,
+    "poster": "images/Existenz_ZJq4haJ.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/7569/",
+    "countries": [
+      1,
+      43,
+      7
+    ],
+    "genres": [
+      7,
+      13,
+      22,
+      5
+    ],
+    "directors": [
+      85
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 120,
+  "fields": {
+    "title": "Игра",
+    "title_orig": "The Game",
+    "is_series": false,
+    "release_year": 1997,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Вы готовы играть?»",
+    "description": "Николас Ван Ортон - само воплощение успеха. Он преуспевает, он невозмутим и спокоен, привык держать любую ситуацию под контролем. На день рождения Николас получает необычный подарок - билет для участия в «Игре».\r\nЕму обещают, что игра вернет яркие чувства, позволит ощутить вкус и остроту жизни. Вступив в игру, Николас начинает осознавать, что это игра всерьез, игра не на жизнь, а на смерть.",
+    "kp_rating": 8.3,
+    "poster": "images/The_Game_Z2X4niW.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/12198/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      7,
+      2,
+      4,
+      13
+    ],
+    "directors": [
+      16
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 121,
+  "fields": {
+    "title": "Дикий робот",
+    "title_orig": "The Wild Robot",
+    "is_series": false,
+    "release_year": 2024,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Посылка с роботом-помощником ROZZUM 7134 падает на необитаемый остров. Тщетно пытаясь найти задания, которые можно выполнить, робот выучивает язык животных и по наставлению опытной мамы-опоссума начинает заботиться о крохотном гусёнке, чью семью он случайно раздавил. В консультанты к нему набивается «специалист по гусям» хитрый лис Финк, с которым никто не хочет дружить.",
+    "kp_rating": 8.4,
+    "poster": "images/The_Wild_Robot_SKqXTNB.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/5457899/",
+    "countries": [
+      5,
+      9
+    ],
+    "genres": [
+      16,
+      4,
+      17,
+      5
+    ],
+    "directors": [
+      86
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 122,
+  "fields": {
+    "title": "Безымянная звезда",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1978,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Однажды в маленьком городе происходит невероятное происшествие: на вокзале останавливается поезд, всегда следовавший без остановок. Более того, на ночном перроне оказывается одинокая красавица — одна из тех, что никогда прежде не заезжали так далеко от Бухареста. Учитель Марин Мирою дает красавице Моне приют на ночь. Конечно же, молодые люди понимают, что влюблены, и решают не расставаться. Но наступает день, и за красавицей приезжает ее друг.",
+    "kp_rating": 8.1,
+    "poster": "images/Безымянная_звезда.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/77248/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      2,
+      1,
+      3
+    ],
+    "directors": [
+      87
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 123,
+  "fields": {
+    "title": "Ты у меня одна",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1993,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Бывший боксер Евгений Тимошин теперь женат и работает инженером в большом конструкторском бюро, с трудом зарабатывая на жизнь. Однажды на предприятие приезжает представитель из США, которому для проектной работы требуются двое сотрудников. Евгений становится одним из выбранных инженеров, которому предстоит уехать в США, а представителем оказывается со школы влюблённая в него Аня Колыванова.",
+    "kp_rating": 8.0,
+    "poster": "images/Ты_у_меня_одна.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/40804/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      2
+    ],
+    "directors": [
+      88
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 124,
+  "fields": {
+    "title": "Всё будет хорошо",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1995,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Главное, чтобы была мечта»",
+    "description": "Рабочее общежитие в российской провинции. В этом убогом месте появляется блистательная пара - эксцентричный миллионер Константин Смирнов и его сын, нобелевский лауреат Пётр. Пока Смирнов, встретив любимую женщину из времен «совка», готовит свадьбу её сына, Пётр влюбляется в красавицу-невесту и пытается украсть её прямо из-под венца.",
+    "kp_rating": 8.0,
+    "poster": "images/Всё_будет_хорошо.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/41455/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      2
+    ],
+    "directors": [
+      88
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 125,
+  "fields": {
+    "title": "Желтый карлик",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 2001,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Любовь прекрасна, если только избранница подходит вашим родителям. Но если Вы из обеспеченной семьи известного писателя бульварных романов, а ваша пассия — продавщица, то это точно не понравится вашей маме. Чтобы не допустить свадьбы родители готовы на все… абсолютно на все. Даже на роман папы с вашей невестой.",
+    "kp_rating": 6.8,
+    "poster": "images/Желтый_карлик.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/41353/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      1,
+      3
+    ],
+    "directors": [
+      88
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 126,
+  "fields": {
+    "title": "Пришелец",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 2024,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "В небольшой уральской деревне живут самые обычные люди. Не считая местного слабослышащего дурачка Лёши. Он живёт в самодельном доме из мусора, рисует странные круги на полях и сутками пытается поймать радиоволны в надежде, что ему удастся связаться с представителями внеземных цивилизаций. Жители деревни смеются над Лёшей и его странными увлечениями, но всё меняется, когда к нему наконец приходит тот, кого он так долго звал.",
+    "kp_rating": 6.5,
+    "poster": "images/Пришелец.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/5497855/",
+    "countries": [
+      4
+    ],
+    "genres": [
+      2,
+      5
+    ],
+    "directors": [
+      89
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 127,
+  "fields": {
+    "title": "Друзья на свою голову",
+    "title_orig": "Le bonheur des uns...",
+    "is_series": false,
+    "release_year": 2020,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«От дружбы до зависти – один шаг»",
+    "description": "Леа и Марк, Карин и Фрэнсис — две пары закадычных друзей. Но когда скромная тихоня Лея публикует роман и он в одно мгновение становится бестселлером, отношения между семьями дают сбой. Ревность, шок, зависть: только став успешным, можно узнать, кто твой настоящий друг.",
+    "kp_rating": 7.1,
+    "poster": "images/Друзья_на_свою_голову.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1309458/",
+    "countries": [
+      28,
+      7
+    ],
+    "genres": [
+      2,
+      1
+    ],
+    "directors": [
+      90
+    ]
+  }
+},
+{
   "model": "movies.movierating",
   "pk": 6,
   "fields": {
@@ -3176,6 +3586,126 @@
   "fields": {
     "user": 1,
     "movie": 31,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 38,
+  "fields": {
+    "user": 1,
+    "movie": 116,
+    "rating": 7.8,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 39,
+  "fields": {
+    "user": 1,
+    "movie": 117,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 40,
+  "fields": {
+    "user": 1,
+    "movie": 118,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 41,
+  "fields": {
+    "user": 1,
+    "movie": 119,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 42,
+  "fields": {
+    "user": 1,
+    "movie": 120,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 43,
+  "fields": {
+    "user": 1,
+    "movie": 121,
+    "rating": 8.5,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 44,
+  "fields": {
+    "user": 1,
+    "movie": 122,
+    "rating": 7.8,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 45,
+  "fields": {
+    "user": 1,
+    "movie": 123,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 46,
+  "fields": {
+    "user": 1,
+    "movie": 124,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 47,
+  "fields": {
+    "user": 1,
+    "movie": 125,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 48,
+  "fields": {
+    "user": 1,
+    "movie": 126,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 49,
+  "fields": {
+    "user": 1,
+    "movie": 127,
     "rating": 0.0,
     "review": ""
   }
