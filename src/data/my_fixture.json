@@ -168,6 +168,34 @@
   }
 },
 {
+  "model": "movies.country",
+  "pk": 44,
+  "fields": {
+    "country": "Бутан"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 45,
+  "fields": {
+    "country": "Непал"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 46,
+  "fields": {
+    "country": "Швейцария"
+  }
+},
+{
+  "model": "movies.country",
+  "pk": 47,
+  "fields": {
+    "country": "Южная Корея"
+  }
+},
+{
   "model": "movies.genre",
   "pk": 1,
   "fields": {
@@ -858,6 +886,62 @@
   "pk": 90,
   "fields": {
     "director": "Даниэль Коэн"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 91,
+  "fields": {
+    "director": "Адам Маккей"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 92,
+  "fields": {
+    "director": "Кхьенце Норбу"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 93,
+  "fields": {
+    "director": "Эрик Валли"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 94,
+  "fields": {
+    "director": "Мишель Деба"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 95,
+  "fields": {
+    "director": "Чон Су-иль"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 96,
+  "fields": {
+    "director": "Ким Ки Дук"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 97,
+  "fields": {
+    "director": "Жан-Жак Анно"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 98,
+  "fields": {
+    "director": "Якоб Вербрюгген"
   }
 },
 {
@@ -3391,6 +3475,261 @@
   }
 },
 {
+  "model": "movies.movie",
+  "pk": 128,
+  "fields": {
+    "title": "Игра на понижение",
+    "title_orig": "The Big Short",
+    "is_series": false,
+    "release_year": 2015,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Неправдоподобная, но правдивая история»",
+    "description": "2005 год. Изучая данные ипотек по стране, чудаковатый финансовый гений и управляющий хедж-фонда Scion Capital Майкл Бьюрри обращает внимание на одну деталь и приходит к выводу, что американский рынок ипотечных кредитов может скоро лопнуть. В связи с этим он страхует около миллиарда долларов своих клиентов через кредитный дефолтный своп. Клиенты фонда Бьюрри волнуются из-за возможных потерь, ведь рынок ипотечных кредитов представляется весьма стабильным, но Майкл твёрдо стоит на своём. Вскоре эту странную активность замечают несколько финансистов на Уолл-стрит. Изучив данные, они осознают, что опасения Бьюрри имеют под собой веские основания. Более того, сыграв на понижение, можно заработать миллионы.",
+    "kp_rating": 7.4,
+    "poster": "images/The_Big_Short_R1v92Zy.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/501333/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      14,
+      2,
+      10,
+      1
+    ],
+    "directors": [
+      91
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 129,
+  "fields": {
+    "title": "Не смотрите наверх",
+    "title_orig": "Don't Look Up",
+    "is_series": false,
+    "release_year": 2021,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Based on truly possible events»",
+    "description": "Астрономы открывают новую комету и, рассчитав её траекторию, узнают, что через полгода она столкнётся с Землёй, что положит конец существованию человечества и всего живого на планете. Двое учёных с трудом добиваются аудиенции у президента США, но там к их предупреждению относятся с недоверием, тогда они выступают в популярной телепередаче, но большинство всё равно не воспринимает угрозу всерьёз.",
+    "kp_rating": 7.5,
+    "poster": "images/Dont_Look_Up_ZpElW8w.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1338480/",
+    "countries": [
+      43,
+      5
+    ],
+    "genres": [
+      2,
+      1,
+      5
+    ],
+    "directors": [
+      91
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 130,
+  "fields": {
+    "title": "Кубок",
+    "title_orig": "Phörpa",
+    "is_series": false,
+    "release_year": 1999,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Buddhism is their philosophy. Soccer is their religion»",
+    "description": "Нешуточные страсти кипят не только на чемпионате мира по футболу, но и в буддистском монастыре, расположенном в живописных отрогах Гималаев. Не имея возможности следить за ходом чемпионата, трое юных послушников, одержимых футболом, тайком от ламы-настоятеля пробираются в ближайшую деревню, где есть телевизор.\r\n\r\nЗастигнутым прямо «на месте преступления», им грозит отчисление из монастыря. Но спасение приходит с самой неожиданной стороны. Кажется, что в эти безумные дни сам Будда стал тайным поклонником футбола.",
+    "kp_rating": 7.1,
+    "poster": "images/The_Cup_7oOECFZ.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/94933/",
+    "countries": [
+      6,
+      44
+    ],
+    "genres": [
+      1,
+      9
+    ],
+    "directors": [
+      92
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 131,
+  "fields": {
+    "title": "Маги и странники",
+    "title_orig": "Chang hub thengs gcig gi 'khrul snang",
+    "is_series": false,
+    "release_year": 2003,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«The bitter and the sweet of temporary things»",
+    "description": "Молодой человек по имени Дондуп, несмотря на свое университетское образование, решает, что лучше собирать яблоки в Соединенных Штатах, нежели работать государственным чиновником в далекой деревушке. На своем пути в поисках лучшей жизни он встречает нескольких странников — монаха, торговца яблоками, изготовителя бумаги и его очаровательную дочь. Монах рассказывает Дондупу историю парня по имени Таши, которая происходит как бы параллельно его собственному путешествию. Это история страсти, ревности, и ее трагическая развязка заставляет Дондупа задуматься - а действительно ли так замечательна жизнь вдали от родного дома.",
+    "kp_rating": 7.4,
+    "poster": "images/Travellers_and_Magicians_2JZGrcR.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/80662/",
+    "countries": [
+      44
+    ],
+    "genres": [
+      2,
+      4
+    ],
+    "directors": [
+      92
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 132,
+  "fields": {
+    "title": "Гималаи",
+    "title_orig": "Himalaya - l'enfance d'un chef",
+    "is_series": false,
+    "release_year": 1999,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«In a world of breathtaking beauty unfolds a classic tale of wisdom and adventure»",
+    "description": "В запретном непальском районе Долпо, расположенном на высоте пять тысяч метров, вождь Тинле и молодой погонщик Карма не могут прийти к согласию, кто из них поведет через горы караван вьючных яков с грузом соли, которую нужно обменять на зерно.\r\n\r\nКарма сам хочет стать вождем, но Тинле считает, что звание вождя должно перейти по наследству к его внуку. Каждый со своим караваном, соперники отправляются в смертельно опасный путь. Долгие недели им предстоит бросать вызов жестоким морозам, ураганным ветрам и всесокрушающим лавинам...",
+    "kp_rating": 7.4,
+    "poster": "images/Himalaya_nJ5w51V.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/51555/",
+    "countries": [
+      1,
+      45,
+      7,
+      46
+    ],
+    "genres": [
+      2
+    ],
+    "directors": [
+      94,
+      93
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 133,
+  "fields": {
+    "title": "Гималаи — там, где живёт ветер",
+    "title_orig": "Himallaya, barami meomuneun got",
+    "is_series": false,
+    "release_year": 2008,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Руководитель компании из Южной Кореи приезжает в Непал. Одетый в офисный костюм и туфли, он отправляется в путь в отдаленную деревушку, где остается на несколько дней в доме местной семьи. Маленький мальчик – единственный, с кем у него складывается общение на ломаном английском.\r\n\r\nНаходясь в полной изоляции от мира, он проводит несколько необычных для себя дней в окружении гор и ветра. Что привело его сюда, - желание отдохнуть от суетной городской жизни или некая тайная миссия?\r\n\r\nЗавораживающий медитативный ритм повседневности в Гималаях открывает для него много нового - в мироустройстве и в себе.",
+    "kp_rating": 6.7,
+    "poster": "images/Himalaya_Wind_pSbzslK.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/404396/",
+    "countries": [
+      7,
+      47
+    ],
+    "genres": [
+      2
+    ],
+    "directors": [
+      95
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 134,
+  "fields": {
+    "title": "Весна, лето, осень, зима... и снова весна",
+    "title_orig": "Bom yeoreum gaeul gyeoul geurigo bom",
+    "is_series": false,
+    "release_year": 2003,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Любовь - лекарство, от которого надо уметь отказаться»",
+    "description": "Никому не дано нарушить смену времён года, когда вначале все рождается, затем растёт, а потом угасает. Ход жизни неподвластен и двум монахам, живущим в плавучей хижине на горном озере. По мере наступления времени года их души наполняются энергией, что ведет как к чувству одухотворенности, так и к трагедии.",
+    "kp_rating": 7.9,
+    "poster": "images/Весна_лето_осень_зима_1Nuxx2B.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/47814/",
+    "countries": [
+      2,
+      47
+    ],
+    "genres": [
+      2
+    ],
+    "directors": [
+      96
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 135,
+  "fields": {
+    "title": "Семь лет в Тибете",
+    "title_orig": "Seven Years in Tibet",
+    "is_series": false,
+    "release_year": 1997,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Путешествие за границы цивилизации»",
+    "description": "Генрих Харрер, офицер Рейха, человек, у которого было все - успех, красота, известность. Но ему было мало земной славы. Оставив дома беременную жену, он отправляется на покорение самого неприступного пика в Гималаях. Этот подвиг должен увековечить его имя.\r\n\r\nОднако впереди его ждет не успешное восхождение, а смертельная опасность, вражеский плен, долгие скитания… Наконец он добирается до таинственного тибетского города Лхаса, где ему предстоит провести долгих семь лет, и где молодой Далай Лама делает его своим приближенным. И здесь, в стране, лежащей за границами цивилизации, ему придется пережить события, которые навсегда изменят его жизнь...",
+    "kp_rating": 7.8,
+    "poster": "images/Seven_Years_in_Tibet_3F0weFv.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/5423/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      14,
+      11,
+      2,
+      10,
+      4
+    ],
+    "directors": [
+      97
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 136,
+  "fields": {
+    "title": "Тёмная материя",
+    "title_orig": "Dark Matter",
+    "is_series": true,
+    "release_year": 2024,
+    "series_last_year": 2025,
+    "num_of_seasons": 2,
+    "slogan": "-",
+    "description": "Физик Джейсон Дессен из Чикаго оказывается в альтернативной версии своей жизни. Чтобы вернуться к семье, он должен будет пройти через ряд параллельных реальностей и столкнуться с альтернативной версией самого себя.",
+    "kp_rating": 7.7,
+    "poster": "images/Dark_Matter_WH24mls.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/5024113/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      2,
+      13,
+      5
+    ],
+    "directors": [
+      98
+    ]
+  }
+},
+{
   "model": "movies.movierating",
   "pk": 6,
   "fields": {
@@ -3707,6 +4046,96 @@
     "user": 1,
     "movie": 127,
     "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 50,
+  "fields": {
+    "user": 1,
+    "movie": 128,
+    "rating": 7.6,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 51,
+  "fields": {
+    "user": 1,
+    "movie": 129,
+    "rating": 7.8,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 52,
+  "fields": {
+    "user": 1,
+    "movie": 130,
+    "rating": 7.5,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 53,
+  "fields": {
+    "user": 1,
+    "movie": 131,
+    "rating": 7.7,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 54,
+  "fields": {
+    "user": 1,
+    "movie": 132,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 55,
+  "fields": {
+    "user": 1,
+    "movie": 133,
+    "rating": 7.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 56,
+  "fields": {
+    "user": 1,
+    "movie": 134,
+    "rating": 8.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 57,
+  "fields": {
+    "user": 1,
+    "movie": 135,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 58,
+  "fields": {
+    "user": 1,
+    "movie": 136,
+    "rating": 7.7,
     "review": ""
   }
 }
