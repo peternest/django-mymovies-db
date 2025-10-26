@@ -65,7 +65,7 @@ class MoviesListView(ListView):
         context["text_value"] = self.request.GET.get("text", "")
         return context
 
-    def get_queryset(self) -> models.QuerySet[Any, Any]:
+    def get_queryset(self) -> models.QuerySet[Any]:
         text_value = self.request.GET.get("text", "")
         country_value = self.request.GET.get("country", "")
         genre_value = self.request.GET.get("genre", "")
@@ -148,7 +148,7 @@ def movie_detail(request: HttpRequest, pk: int) -> HttpResponse:
 
     user_rating = None
     if request.user.is_authenticated:
-        record = movie.movierating_set.filter(user=request.user).first()
+        record = movie.movierating_set.filter(user=request.user).first()  # pyright: ignore[reportAttributeAccessIssue]
         if record:
             user_rating = record.rating
     return render(request, "movies/movie_detail.html", {"movie": movie, "user_rating": user_rating})
@@ -260,6 +260,6 @@ def get_objlist(request: HttpRequest, field_name: Literal["country", "director",
 
     if model:
         queryset = model.objects.all().order_by(field_name)
-        objlist = [{"id": obj.id, "name": getattr(obj, field_name)} for obj in queryset]
+        objlist = [{"id": obj.id, "name": getattr(obj, field_name)} for obj in queryset]  # pyright: ignore[reportAttributeAccessIssue]
         return JsonResponse({"success": True, "objlist": objlist})
     return JsonResponse({"success": False, "objlist": []})

@@ -1,5 +1,6 @@
 {% extends "base_generic.html" %}
 {% load static %}
+{% load pagination_extras %}
 
 {% block title %}
 <title>{% if is_series %}50 лучших сериалов{% else %}100 лучших фильмов{% endif %}</title>
@@ -114,13 +115,13 @@
         <div class="paginator-block">
             <span class="page-links">
                 {% if page_obj.has_previous %}
-                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">[ &lt;&lt; ]</a>
+                    <a href="?{% url_replace page=page_obj.previous_page_number %}">[ &lt;&lt; ]</a>
                 {% endif %}
                 <span class="page-current">
                     {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}
                 </span>
                 {% if page_obj.has_next %}
-                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">[ &gt;&gt; ]</a>
+                    <a href="?{% url_replace page=page_obj.next_page_number %}">[ &gt;&gt; ]</a>
                 {% endif %}
             </span>
         </div>
