@@ -1,6 +1,7 @@
 services:
   postgres:
     image: postgres:15-alpine
+    container_name: mymovies-postgres
     restart: always
     environment:
       - POSTGRES_DB=${DB_NAME}
@@ -13,6 +14,7 @@ services:
 
   web:
     build: .
+    container_name: mymovies-web
     command: [ "./wait-for-it.sh", "postgres:5432", "--", "python3", "./src/manage.py", "runserver", "0.0.0.0:8001"]
     restart: always
     env_file:
