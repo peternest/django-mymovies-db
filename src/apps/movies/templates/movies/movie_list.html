@@ -3,7 +3,7 @@
 {% load pagination_extras %}
 
 {% block title %}
-<title>{% if is_series %}50 лучших сериалов{% else %}100 лучших фильмов{% endif %}</title>
+<title>{% if is_series %}30 лучших сериалов{% else %}100 лучших фильмов{% endif %}</title>
 {% endblock %}
 
 
@@ -16,7 +16,7 @@
         <div class="sticky-sidebar-left">
 
             <form id="filter-sort-form" 
-                action={% if is_series %}"/movies/series-top50/"{% else %}"/movies/top100/"{% endif %} 
+                action={% if is_series %}"/movies/series-top30/"{% else %}"/movies/top100/"{% endif %} 
                 method="get" class="form-direction">
                 <label>Страны</label><br>
                 <select name="country" class="sort-selector" required>
@@ -65,7 +65,7 @@
     </td>
 
     <td class="main-table-center">
-        <h1 class="big-header">{% if is_series %}50 лучших сериалов{% else %}100 лучших фильмов{% endif %}</h1>
+        <h1 class="big-header">{% if is_series %}30 лучших сериалов{% else %}100 лучших фильмов{% endif %}</h1>
 
         <!-- Используем форму из контейнера 'main-table-left', см. атрибут form ниже -->
         <label>Искать по названию&nbsp;</label>
