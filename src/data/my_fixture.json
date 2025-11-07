@@ -945,6 +945,90 @@
   }
 },
 {
+  "model": "movies.director",
+  "pk": 99,
+  "fields": {
+    "director": "Паво Чойнинг Доржи"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 100,
+  "fields": {
+    "director": "Пит Доктер"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 101,
+  "fields": {
+    "director": "Кемп Пауэрс"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 102,
+  "fields": {
+    "director": "Роналдо Дель Кармен"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 103,
+  "fields": {
+    "director": "Келси Манн"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 104,
+  "fields": {
+    "director": "Сергей Бондарчук"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 105,
+  "fields": {
+    "director": "Алексей Герман"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 106,
+  "fields": {
+    "director": "Станислав Ростоцкий"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 107,
+  "fields": {
+    "director": "Лев Кулиджанов"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 108,
+  "fields": {
+    "director": "Леонид Быков"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 109,
+  "fields": {
+    "director": "Тодд Хейнс"
+  }
+},
+{
+  "model": "movies.director",
+  "pk": 110,
+  "fields": {
+    "director": "Шари Спрингер Берман"
+  }
+},
+{
   "model": "movies.movie",
   "pk": 1,
   "fields": {
@@ -3730,6 +3814,645 @@
   }
 },
 {
+  "model": "movies.movie",
+  "pk": 137,
+  "fields": {
+    "title": "Лунана: Як в классной комнате",
+    "title_orig": "Lunana: A Yak in the Classroom",
+    "is_series": false,
+    "release_year": 2019,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Начинающий певец отправляется из столицы Бутана в горную деревушку Лунана. Он вынужден в течение года работать учителем в местной школе, чтобы исполнить свою мечту и переехать в Австралию. Он ещё не подозревает, насколько рабочая поездка изменит его жизнь.",
+    "kp_rating": 7.2,
+    "poster": "images/Lunana_cR2urTZ.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1261757/",
+    "countries": [
+      44
+    ],
+    "genres": [
+      2,
+      17
+    ],
+    "directors": [
+      99
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 138,
+  "fields": {
+    "title": "Душа",
+    "title_orig": "Soul",
+    "is_series": false,
+    "release_year": 2020,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Everybody has a soul. Joe Gardner is about to find his»",
+    "description": "Уже немолодой школьный учитель музыки Джо Гарднер всю жизнь мечтал выступать на сцене в составе джазового ансамбля. Однажды он успешно проходит прослушивание у легендарной саксофонистки и, возвращаясь домой вне себя от счастья, падает в люк и умирает. Теперь у Джо одна дорога — в Великое После, но он сбегает с идущего в вечность эскалатора и случайно попадает в Великое До. Тут новенькие души обретают себя, и у будущих людей зарождаются увлечения, мечты и интересы. Джо становится наставником упрямой души 22, которая уже много веков не может найти свою искру и отправиться на Землю.",
+    "kp_rating": 8.4,
+    "poster": "images/Soul_2uIBU4l.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/775273/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      1,
+      21,
+      16,
+      4,
+      17,
+      6
+    ],
+    "directors": [
+      101,
+      100
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 139,
+  "fields": {
+    "title": "Головоломка",
+    "title_orig": "Inside Out",
+    "is_series": false,
+    "release_year": 2015,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Нет слов, одни эмоции»",
+    "description": "В голове у обычной 11-летней школьницы Райли живут пять базовых эмоций: Радость, Грусть, Страх, Гнев и Отвращение. Каждый день они помогают девочке справляться с проблемами, руководя всеми её поступками. Вдруг выясняется, что Райли с родителями предстоит переезд из небольшого уютного городка в шумный и людный мегаполис. Каждая из эмоций считает, что именно она лучше прочих знает, что нужно делать в этой непростой ситуации, и в голове у девочки наступает полный хаос.",
+    "kp_rating": 8.1,
+    "poster": "images/Inside_Out_oNjuVWe.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/645118/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      1,
+      16,
+      17,
+      6
+    ],
+    "directors": [
+      100,
+      102
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 140,
+  "fields": {
+    "title": "Головоломка 2",
+    "title_orig": "Inside Out 2",
+    "is_series": false,
+    "release_year": 2024,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«Найди место для новых эмоций»",
+    "description": "Райли уже подросток, и штаб-квартира в её мозгу подвергается капитальному ремонту, чтобы дать место новым эмоциям. Радость, Грусть, Гнев, Страх и Отвращение никак не ожидали появления Тревожности, Зависти, Смущения и Скуки. Райли с двумя лучшими подругами отправляется в хоккейный лагерь, где у неё появляется шанс попасть в команду старшей школы, и Радость уверена, что лучше всех знает, что делать в данной ситуации. Так же считает и Тревожность.",
+    "kp_rating": 7.8,
+    "poster": "images/Inside_Out2_fvg32VP.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/5102255/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      1,
+      16,
+      17,
+      6
+    ],
+    "directors": [
+      103
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 141,
+  "fields": {
+    "title": "Судьба человека",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1959,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Фильм рассказывает о русском солдате, которого война подвергла страшным испытаниям, лишила дома и семьи, бросила в концлагерь. Но судьба не сломила его дух - он выжил, отстоял своё право быть человеком, сохранил способность любить...",
+    "kp_rating": 8.5,
+    "poster": "images/Судьба_человека_8XpkqZI.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/44027/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      11,
+      2
+    ],
+    "directors": [
+      104
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 142,
+  "fields": {
+    "title": "Они сражались за Родину",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1975,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Июль 1942 года. На подступах к Сталинграду обескровленные, измотанные советские войска ведут тяжелые оборонительные бои, неся огромные потери... Фильм рассказывает о подвиге рядовых солдат, любви к родной земле, об истинной цене победы...",
+    "kp_rating": 8.5,
+    "poster": "images/Они_сражались_за_Родину_PJ7cDxl.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/42770/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      11,
+      2
+    ],
+    "directors": [
+      104
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 143,
+  "fields": {
+    "title": "Иваново детство",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1962,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Детство 12-летнего Ивана закончилось в тот день, когда у него на глазах немцы расстреляли мать и сестренку. Отец мальчика погиб на фронте. Оставшись сиротой, Иван уходит в воинскую часть и становится разведчиком.",
+    "kp_rating": 8.1,
+    "poster": "images/Иваново_детство_g6esEi1.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/42667/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      11,
+      2,
+      10
+    ],
+    "directors": [
+      3
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 144,
+  "fields": {
+    "title": "Зеркало",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1974,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Алексей мучительно боится потерять любовь и понимание близких людей: матери, любимой женщины, сына. И чувствует, что жизнь с каждым днем все дальше уводит их друг от друга. Пытаясь сохранить семью, он обращается к самым сильным впечатлениям детства, стараясь в том, детском, мировосприятии найти опору и оправдание своим сегодняшним переживаниям.",
+    "kp_rating": 8.1,
+    "poster": "images/Зеркало_k9xqhRQ.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/45275/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      14,
+      2
+    ],
+    "directors": [
+      3
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 145,
+  "fields": {
+    "title": "Сталкер",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1979,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "В некой запретной Зоне, по слухам, существует комната, где исполняются самые заветные желания. К этой комнате отправляются модный Писатель и авторитетный Профессор — каждый по своим причинам, о которых предпочитают не говорить. А ведет их туда Сталкер — проводник по Зоне — то ли юродивый, то ли апостол новой веры.",
+    "kp_rating": 8.1,
+    "poster": "images/Сталкер_20grBJ9.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/43970/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      7,
+      2,
+      4,
+      5
+    ],
+    "directors": [
+      3
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 146,
+  "fields": {
+    "title": "Солярис",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1972,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "На космическую станцию, сотрудники которой давно и тщетно пытаются сладить с загадкой планеты Солярис, полностью покрытой Океаном, прибывает новый учёный, психолог Крис Кельвин. Его задача - разобраться в странных сообщениях, поступающих со станции и закрыть её вместе со всей бесплодной «соляристикой». Поначалу ему кажется, что немногие уцелевшие на станции ученые сошли с ума, а потом он и сам становится жертвой жуткого наваждения: ему является его жена Хари, некоторое время назад покончившая с собой.",
+    "kp_rating": 8.0,
+    "poster": "images/Солярис_mKQIttI.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/43911/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      7,
+      2,
+      5
+    ],
+    "directors": [
+      3
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 147,
+  "fields": {
+    "title": "Проверка на дорогах",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1971,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Зима 1942 года. В одной из северо-западных областей России, оккупированной фашистами, действует партизанский отряд лейтенанта Ивана Локоткова, в прошлом - сельского милиционера. Отряд кормить нечем: в округе - одни сожженные деревни и каратели.\r\n\r\nКомандир принимает решение захватить фашистский эшелон с продовольствием на узловой станции, где охраняется каждый метр. Провести операцию берется раскаявшийся полицай Лазарев, которого немцы знают в лицо. Но можно ли ему довериться?..",
+    "kp_rating": 8.1,
+    "poster": "images/Проверка_на_дорогах_mCWqmO9.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/43332/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      11,
+      2
+    ],
+    "directors": [
+      105
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 148,
+  "fields": {
+    "title": "...А зори здесь тихие",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1972,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "В прифронтовой полосе группа девушек-зенитчиц вынуждена вступить в неравный бой с вражескими десантниками. Эти девчонки мечтали о большой любви, нежности, семейном тепле - но на их долю выпала жестокая война, и они до конца выполнили свой воинский долг…",
+    "kp_rating": 8.6,
+    "poster": "images/А_зори_здесь_тихие_VAhxx4d.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/43395/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      11,
+      2,
+      10
+    ],
+    "directors": [
+      106
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 149,
+  "fields": {
+    "title": "Когда деревья были большими",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1961,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Потерявший во время войны жену, Кузьма Кузьмич Иорданов начал пить и совершенно опустился. Но однажды, случайно узнав о девочке, потерявшей на войне родителей, Иорданов решил стать ей отцом. Оставив Москву, он отправляется на встречу с будущей дочерью...",
+    "kp_rating": 8.0,
+    "poster": "images/Когда_деревья_были_большими_Wf88uZV.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/44838/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      2,
+      3
+    ],
+    "directors": [
+      107
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 150,
+  "fields": {
+    "title": "Аты-баты, шли солдаты...",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1976,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Они погибли в 1944 году, их было всего восемнадцать человек - комсомольский взвод, остановивший колонну немецких танков.\r\n\r\nТрагическое и комедийное, героическое и лирическое сплелись на экране в необычную ткань повествования об отцах, навсегда оставшихся молодыми, и о детях, пришедших туда, где ровно тридцать лет назад приняли свой последний смертный бой самые родные для них люди...",
+    "kp_rating": 8.2,
+    "poster": "images/Аты_баты_шли_солдаты_omZQ6Y2.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/43553/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      11,
+      2
+    ],
+    "directors": [
+      108
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 151,
+  "fields": {
+    "title": "В бой идут одни «старики»",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1973,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Эта эскадрилья стала «поющей» - так капитан Титаренко подбирал себе новичков. Его «старикам» было не больше двадцати, но «желторотиков», пополнение из летных училищ ускоренного выпуска, в бой все равно, по возможности, не пускали.\r\n\r\n\r\nИм еще многое предстояло испытать - и жар боев, и радость первой победы над врагом, и величие братства, скрепленного кровью, и первую любовь, и горечь утраты... И настанет день, когда по команде «в бой идут одни старики» бывшие желторотики бросятся к своим самолетам...",
+    "kp_rating": 8.7,
+    "poster": "images/В_бой_идут_одни_старики_Pro06AQ.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/25108/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      11,
+      2,
+      1
+    ],
+    "directors": [
+      108
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 152,
+  "fields": {
+    "title": "Доживем до понедельника",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1968,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Учителю истории Мельникову знакомы и сомнения, и чувство неудовлетворенности. Пусть он не всегда бывает прав, но он борется, ищет, любит, преодолевает трудности и сомнения.",
+    "kp_rating": 8.2,
+    "poster": "images/Доживем_до_понедельника_dx9AUYO.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/44299/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      2,
+      3
+    ],
+    "directors": [
+      106
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 153,
+  "fields": {
+    "title": "Темные воды",
+    "title_orig": "Dark Waters",
+    "is_series": false,
+    "release_year": 2019,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "«У правды есть свой инсайдер»",
+    "description": "Адвокат Роберт Билотт выступает с обвинением в суде против компании DuPont, которая десятилетиями цинично травила людей, загрязняя химикатами питьевую воду. Он ведет это дело 19 лет. Сможет ли он пролить свет на правду?",
+    "kp_rating": 7.9,
+    "poster": "images/Dark_Waters_zSyEGVx.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/1228069/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      14,
+      7,
+      2,
+      10
+    ],
+    "directors": [
+      109
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 154,
+  "fields": {
+    "title": "Времена года",
+    "title_orig": "The Four Seasons",
+    "is_series": true,
+    "release_year": 2025,
+    "series_last_year": 2026,
+    "num_of_seasons": 2,
+    "slogan": "-",
+    "description": "Три супружеские пары - Джек и Кейт Беррос, Ник и Энн Каллэн и Дэнни и Клаудиа Зиммер - организуют себе совместный отпуск. Они поднимают бокалы за юбилей семейной жизни Ника и Энн, а, заодно, и за то, что, несмотря на череду окружающих их разводов, им удалось сохранить любовь и взаимное уважение. Однако на следующий день Ник делает шокирующее всех заявление...",
+    "kp_rating": 7.3,
+    "poster": "images/The_Four_Seasons_lk8LOQi.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/series/7789364/",
+    "countries": [
+      5
+    ],
+    "genres": [
+      1,
+      3
+    ],
+    "directors": [
+      110
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 155,
+  "fields": {
+    "title": "Шерлок Холмс и доктор Ватсон: Кровавая надпись",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1979,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "В первой серии мы оказываемся свидетелями знакомства Шерлока Холмса с доктором Ватсоном. Во второй — Шерлок Холмс раскроет тайну «кровавой надписи» и выследит загадочного неуловимого убийцу.",
+    "kp_rating": 8.5,
+    "poster": "images/ШХ_Кровавая_надпись_SrXFL4v.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/77265/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      7,
+      8
+    ],
+    "directors": [
+      29
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 156,
+  "fields": {
+    "title": "Шерлок Холмс и доктор Ватсон: Смертельная схватка",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1980,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Шерлок Холмс вступил в смертельную схватку с главарем английской преступности профессором Мориарти. В сети полиции попали все, кроме главаря, и друзья на время решили укрыться в тихой Швейцарии. Но от гнева Мориарти ещё не ускользал никто.",
+    "kp_rating": 8.5,
+    "poster": "images/ШХ_Смертельная_схватка_hRleltu.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/354799/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      7,
+      8
+    ],
+    "directors": [
+      29
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 157,
+  "fields": {
+    "title": "Приключения Шерлока Холмса и доктора Ватсона: Король шантажа",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1980,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "К Шерлоку Холмсу за помощью обращается некая леди Брекуэлл, одна из жертв известного лондонского шантажиста по имени Чарльз Огестос Милвертон. Если великий сыщик не остановит циничного негодяя, семейное благополучие молодой леди окажется под угрозой. Шерлок Холмс и доктор Ватсон как истинные джентельмены не могут отказать в помощи беззащитной женщине.",
+    "kp_rating": 8.4,
+    "poster": "images/ШХ_Король_шантажа_8UNVVsK.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/368936/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      7,
+      8
+    ],
+    "directors": [
+      29
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 158,
+  "fields": {
+    "title": "Приключения Шерлока Холмса и доктора Ватсона: Охота на тигра",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1980,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Доктор Ватсон рано похоронил своего друга в водах Рейхенбахского водопада. Шерлок Холмс не так прост. Он воскрес из мертвых, чтобы вступить в схватку с последним безжалостным убийцей из шайки гения преступного мира профессора Мориарти...",
+    "kp_rating": 8.4,
+    "poster": "images/ШХ_Охота_на_тигра_SyfpEBP.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/368937/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      7,
+      8
+    ],
+    "directors": [
+      29
+    ]
+  }
+},
+{
+  "model": "movies.movie",
+  "pk": 159,
+  "fields": {
+    "title": "Приключения Шерлока Холмса и доктора Ватсона: Собака Баскервилей",
+    "title_orig": "",
+    "is_series": false,
+    "release_year": 1981,
+    "series_last_year": null,
+    "num_of_seasons": 1,
+    "slogan": "-",
+    "description": "Труп Чарльза Баскервиля обнаруживают неподалеку от его родового поместья. Выражение нечеловеческого ужаса на лице покойника и следы крупной собаки поблизости заставляют вспомнить старинную легенду о проклятии, тяготеющем над родом Баскервилей. Шерлоку Холмсу предстоит докопаться до истины.",
+    "kp_rating": 8.7,
+    "poster": "images/ШХ_Собака_Баскервилей_ujXCYbW.webp",
+    "kinopoisk_url": "https://www.kinopoisk.ru/film/77263/",
+    "countries": [
+      8
+    ],
+    "genres": [
+      7,
+      8
+    ],
+    "directors": [
+      29
+    ]
+  }
+},
+{
   "model": "movies.movierating",
   "pk": 6,
   "fields": {
@@ -3765,7 +4488,7 @@
   "fields": {
     "user": 1,
     "movie": 39,
-    "rating": 7.5,
+    "rating": 0.0,
     "review": ""
   }
 },
@@ -4136,6 +4859,236 @@
     "user": 1,
     "movie": 136,
     "rating": 7.7,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 59,
+  "fields": {
+    "user": 1,
+    "movie": 137,
+    "rating": 7.8,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 60,
+  "fields": {
+    "user": 1,
+    "movie": 138,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 61,
+  "fields": {
+    "user": 1,
+    "movie": 139,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 62,
+  "fields": {
+    "user": 1,
+    "movie": 140,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 63,
+  "fields": {
+    "user": 1,
+    "movie": 141,
+    "rating": 8.5,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 64,
+  "fields": {
+    "user": 1,
+    "movie": 142,
+    "rating": 8.5,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 65,
+  "fields": {
+    "user": 1,
+    "movie": 143,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 66,
+  "fields": {
+    "user": 1,
+    "movie": 144,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 67,
+  "fields": {
+    "user": 1,
+    "movie": 145,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 68,
+  "fields": {
+    "user": 1,
+    "movie": 146,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 69,
+  "fields": {
+    "user": 1,
+    "movie": 147,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 70,
+  "fields": {
+    "user": 1,
+    "movie": 148,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 71,
+  "fields": {
+    "user": 1,
+    "movie": 149,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 72,
+  "fields": {
+    "user": 1,
+    "movie": 150,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 73,
+  "fields": {
+    "user": 1,
+    "movie": 151,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 74,
+  "fields": {
+    "user": 1,
+    "movie": 152,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 75,
+  "fields": {
+    "user": 1,
+    "movie": 153,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 76,
+  "fields": {
+    "user": 1,
+    "movie": 154,
+    "rating": 7.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 77,
+  "fields": {
+    "user": 1,
+    "movie": 155,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 78,
+  "fields": {
+    "user": 1,
+    "movie": 156,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 79,
+  "fields": {
+    "user": 1,
+    "movie": 157,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 80,
+  "fields": {
+    "user": 1,
+    "movie": 158,
+    "rating": 0.0,
+    "review": ""
+  }
+},
+{
+  "model": "movies.movierating",
+  "pk": 81,
+  "fields": {
+    "user": 1,
+    "movie": 159,
+    "rating": 0.0,
     "review": ""
   }
 }
