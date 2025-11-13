@@ -7,6 +7,15 @@ services:
       - POSTGRES_DB=${DB_NAME}
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
+        # Reduce memory usage
+      - POSTGRES_INITDB_ARGS=--auth-host=scram-sha-256
+    command: >
+      postgres
+      -c shared_buffers=128MB
+      -c effective_cache_size=256MB
+      -c work_mem=4MB
+      -c maintenance_work_mem=32MB
+      -c max_connections=20
     ports:
       - 5433:5432  # external port (on the host) changed!
     volumes:
