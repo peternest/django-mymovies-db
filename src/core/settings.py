@@ -146,3 +146,10 @@ MEDIA_ROOT = BASE_DIR / "media/"
 LOGIN_URL = "/admin/login/"
 
 FORMS_URLFIELD_ASSUME_HTTPS = True
+
+
+# Use Proxy headers from Nginx
+# Allow Django to use X-Forwarded-Host instead of Host
+
+USE_X_FORWARDED_HOST = True
+# SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")  # If HTTPS is used  # noqa: ERA001
