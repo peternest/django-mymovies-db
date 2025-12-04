@@ -1,7 +1,7 @@
-django==5.2.8
+django==6.0
 django-debug-toolbar==6.1.0
 django-environ==0.12.0
-django-stubs==5.2.5
+django-stubs==5.2.9
 djangorestframework==3.16.1
 pillow==12.0.0
 psycopg2-binary==2.9.11
