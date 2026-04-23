@@ -20,7 +20,7 @@ dependencies = [
     "django-environ>=0.13.0",
     "djangorestframework>=3.17.0",
     "pillow>=12.2.0",
-    "psycopg2-binary>=2.9.10",
+    "psycopg2-binary>=2.9.0",
 ]
 
 [dependency-groups]
